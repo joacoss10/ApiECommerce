@@ -8,7 +8,7 @@ function App() {
     <>
       <div id="Nombre" >
         <h1>
-          CamisetasBianchi
+          Camisetas Bianchi
         </h1>
       </div>
       <main class="Menu">
