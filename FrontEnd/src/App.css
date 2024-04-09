@@ -1,0 +1,64 @@
+#Nombre {
+    background-color: #23ACDD;
+    padding: 1%;
+}
+
+#Nombre h1 {
+    font-family: "Arial", sans-serif;
+    margin: 0em;
+    text-align: center;
+    color: #ffffff;
+}
+
+.Menu {
+    margin-top: 3em;
+    text-align: center;
+    font-family: "Arial", sans-serif;
+}
+
+.navigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.navigation li {
+    display: inline-block;
+    margin-right: 1em;
+    margin-bottom: 0.5em;
+}
+
+.navigation li a {
+    text-decoration: none;
+    color: #333;
+    padding: 1em;
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 1em;
+
+}
+
+.dropdownContent li {
+    display: block;
+    text-align: left;
+
+}
+
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
+.Imagenes {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.imagenMessi {
+    display: block;
+    width: 100%;
+}
