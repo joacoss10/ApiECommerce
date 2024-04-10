@@ -14,7 +14,7 @@ function App() {
     <>
       <div id="NombreDeLaPagina" >
         <h1>
-          Camisetas Bianchi
+          Camisetas Brunito Bianchi
         </h1>
       </div>
       <Menu />
