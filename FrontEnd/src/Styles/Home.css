@@ -1,0 +1,9 @@
+.ImagenesContenedor {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.ImagenArg {
+    display: block;
+    width: 100%;
+}

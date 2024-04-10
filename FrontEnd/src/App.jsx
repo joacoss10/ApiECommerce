@@ -1,25 +1,32 @@
-import React from 'react'
-import './App.css'
-import Menu from "./commons/molecules/Menu"
-import arg from "./assets/arg.jpg"
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import './Styles/App.css'
+import Menu from './views/Menu';
+import Home from './views/Home';
+import Producto from './views/Producto';
+import Vender from './views/Vender';
+import Buscar from './views/Buscar';
+import Carrito from './views/Carrito';
+
 
 function App() {
   return (
     <>
-      <div id="Nombre" >
+      <div id="NombreDeLaPagina" >
         <h1>
-          CamisetasBianchi
+          Camisetas Bianchi
         </h1>
       </div>
-      <main class="Menu">
-        <Menu></Menu>
-      </main >
-      <aside class='Imagenes'>
-        <img class="imagenMessi" src={arg}></img >
-      </aside>
-
+      <Menu />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/Producto' element={<Producto />} />
+        <Route path='/Vender' element={<Vender />} />
+        <Route path='/Carrito' element={<Carrito />} />
+        <Route path='/Buscar' element={<Buscar />} />
+      </Routes>
     </>
-  )
-}
+  );
+};
 
 export default App

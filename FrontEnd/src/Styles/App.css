@@ -1,0 +1,11 @@
+#NombreDeLaPagina {
+    background-color: #23ACDD;
+    padding: 1%;
+}
+
+#NombreDeLaPagina h1 {
+    font-family: "Arial", sans-serif;
+    margin: 0em;
+    text-align: center;
+    color: #ffffff;
+}

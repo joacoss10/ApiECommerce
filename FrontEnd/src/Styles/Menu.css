@@ -1,15 +1,3 @@
-#Nombre {
-    background-color: #23ACDD;
-    padding: 1%;
-}
-
-#Nombre h1 {
-    font-family: "Arial", sans-serif;
-    margin: 0em;
-    text-align: center;
-    color: #ffffff;
-}
-
 .Menu {
     margin-top: 3em;
     text-align: center;
@@ -51,14 +39,4 @@
 
 .dropdown:hover .dropdownContent {
     display: block;
-}
-
-.Imagenes {
-    text-align: center;
-    margin-top: 1em;
-}
-
-.imagenMessi {
-    display: block;
-    width: 100%;
 }
