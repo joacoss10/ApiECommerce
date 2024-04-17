@@ -10,7 +10,7 @@ const Menu = () => {
                     <a href="#">Indumentaria ⮟</a>
                     <ul className="dropdownContent">
                         <li><Link to="/Producto">Boca</Link></li>
-                        <li><Link to="/Producto">Riber</Link></li>
+                        <li><Link to="/Producto">River</Link></li>
                         <li><Link to="/Producto">Lanus</Link></li>
                         <li><Link to="/Producto">Independiente</Link></li>
                         <li><Link to="/Producto">Racing</Link></li>
