@@ -26,10 +26,15 @@ const Menu = () => {
                         <li><Link to="/Producto">Argentina</Link></li>
                         <li><Link to="/Producto">Brasil</Link></li>
                         <li><Link to="/Producto">Uruguay</Link></li>
+                        <li><Link to="/Producto">Resto de selecciones</Link></li>
                     </ul>
                 </li>
-                <li>
-                    <Link to="/Vender">Vender</Link>
+                <li className="dropdown">
+                    <a href="#">Vender ⮟</a>
+                    <ul className="dropdownContent">
+                        <li><Link to="/Vender">Nueva publicacion</Link></li>
+                        <li><Link to="/PublicacionesVendedor">Mis publicaciones</Link></li>
+                    </ul>
                 </li>
                 <li>
                     <Link to="/Buscar">Buscar 🔍</Link>

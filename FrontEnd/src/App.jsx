@@ -9,6 +9,7 @@ import Carrito from './views/Carrito';
 import CabeceraFija from './views/CabeceraFija';
 import EstadoDeLoggeo from './views/EstadoDeLoggeo';
 import Loggeo from './views/Loggeo'
+import PublicacionesVendedor from './views/PublicacionesVendedor'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path='/Carrito' element={<Carrito />} />
         <Route path='/Buscar' element={<Buscar />} />
         <Route path='/Loggeo' element={<Loggeo />} />
+        <Route path='PublicacionesVendedor' element={<PublicacionesVendedor />} />
       </Routes>
     </>
   );
