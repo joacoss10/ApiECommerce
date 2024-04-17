@@ -1,0 +1,44 @@
+.accordion{
+    width: 360px;
+}
+
+.item-accordion{
+    
+    margin-bottom: 0px;
+    padding: 10px 0px;
+    
+}
+
+.title-accordion{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.title-accordion h4{
+    font-size: 18px;
+    font-weight: 510;
+}
+
+.content-accordion{
+    margin-top: 5px;
+    font-size: 14px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.7s cubic-bezier(0,1,0,1);
+    
+    
+}
+
+.content.show{
+    margin-top: 5px;
+    font-size: 14px;
+    max-height: 9999px;
+    transition: all 0.7s cubic-bezier(0.8,0.1,0,1);
+    
+    
+}
+
+

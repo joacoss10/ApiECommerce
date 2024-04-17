@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    width: 450px;
+    background: none;
+    border: 2px solid rgba(255,255,255,.2);
+    backdrop-filter: blur(20px);
+    box-shadow:   0 10px rgba(0,0,0,.2);
+    color: #fff;
+    border-radius: 9px;
+    padding: 30px 40px;
+    
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.wrapper .input-box{
+    width: 100%;
+    height: 50px;
+    margin-top: 35px;
+    margin-bottom: 5px;
+    
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    border: 2px solid rgba(255,255,255,.2);
+    border-radius: 10px;
+    padding: 17px ;
+    padding-right: 7px;
+}
+
+.input-box input{
+    width: 90%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 25px 20px 0px;
+    margin-left: 17px;
+    
+}
+
+/*
+.input-box select {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16.5px;
+    color: #fff;
+    padding: 20px 25px 20px 0px;
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFFFFF' width='24px' height='24px'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); 
+    background-repeat: no-repeat;
+    background-position: right 316px top 50%; 
+}
+
+
+.input-box select::-ms-expand {
+    display: none;
+}
+
+
+.input-box select option {
+    color: #000; 
+}
+
+
+.input-box select option:checked {
+    background-color: #ccc; 
+}
+*/
+
+
+.input-box input::placeholder{
+    color: #818181;
+}
+
+.login-error{
+    width: 100%;
+    height: 15px;
+    margin-bottom: 35px;
+    margin-left: 5px;
+}
+.login-error span{
+    font-size: 14px;
+    color: red;
+    font-weight: 600;
+}
+
+
+
+.wrapper .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: -15px 0 14px;
+    margin-left: 5px;
+}
+
+.remember-forgot label input{
+    accent-color: #fff;
+    margin-right: 3px;
+
+}
+
+.remember-forgot a{
+    color: #fff;
+    text-decoration: none;
+
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.wrapper .btn {
+    width: 99.5%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.wrapper .register-link{
+    font-size: 14.5px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover{
+    text-decoration: underline;
+}

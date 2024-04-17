@@ -1,0 +1,6 @@
+.press-button {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 0;
+  }

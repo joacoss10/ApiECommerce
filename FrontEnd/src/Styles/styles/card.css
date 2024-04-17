@@ -1,0 +1,91 @@
+.container{
+    position:relative;
+    width: 100%;
+    max-width: 320px;
+    max-height: 550px;
+    border-radius: 5px;
+    padding: 0px 0px 0px 0px;
+    background: #fff;
+    z-index: 9;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    cursor: pointer;
+}
+
+
+
+
+.container .imgBox{
+    height: 310px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.container .imgBox img{
+    position: absolute;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.container .info {
+    
+    padding: 15px 20px 10px 20px;
+    
+}
+.container .info .descripcion{
+    margin-top: 8px;
+  display: -webkit-box; /* Establece el modo de visualización como flexible */
+  -webkit-line-clamp: 2; /* Limita el número de líneas a mostrar */
+  -webkit-box-orient: vertical; /* Orientación vertical */
+  overflow: hidden; /* Oculta el texto que excede las tres líneas */
+  line-height: 1.4em; /* Altura de línea, ajusta según sea necesario */
+}
+
+.container .info h2{
+    font-size: 24px;
+    font-weight: 600;
+    
+    
+}
+.container .info span{
+    display: block;
+    text-overflow: ellipsis; /* Agrega los puntos suspensivos (...) al final del texto truncado */
+    white-space: normal; /* Permitir que el texto se divida en varias líneas */
+}
+
+.price-space{
+    height: 48px;
+}
+
+
+.price {
+    position: absolute; /* Para posicionar el precio de forma absoluta */
+    bottom: 10px; /* Alinea el precio 10px desde el borde inferior */
+    left: 20px; /* Alinea el precio 10px desde el borde izquierdo */
+}
+
+.price span {
+    font-size: 23px;
+    font-weight: 400;
+    text-align: justify;
+    margin-right: 3px; /* Espacio entre el signo y el número */
+}
+.info span{
+    font-size: 13px;
+}
+
+.container .info p {
+    font-size: 23px;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.signo{
+    margin-right: 3px;
+}
