@@ -12,7 +12,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Return from '../components/Return';
 
-import "../styles/signup.css";
+import "../Styles/signup.css";
 
 function Signup() {
   const [selectedOption, setSelectedOption] = useState("");

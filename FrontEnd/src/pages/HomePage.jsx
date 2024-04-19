@@ -1,5 +1,5 @@
 import React from 'react'
-import "../styles/home.css"
+import "../Styles/home.css"
 
 import Navbar from '../components/Navbar';
 import Card from '../components/Card';

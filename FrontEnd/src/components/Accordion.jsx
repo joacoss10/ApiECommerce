@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/accordion.css'
+import '../Styles/accordion.css'
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import {useState} from 'react';

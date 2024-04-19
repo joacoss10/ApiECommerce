@@ -1,5 +1,5 @@
 import React from 'react';
-import "../styles/productcard.css";
+import "../Styles/productcard.css";
 import logo from "../assets/logo.png";
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 

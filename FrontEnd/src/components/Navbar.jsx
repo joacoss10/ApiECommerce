@@ -1,11 +1,12 @@
 import React from 'react'
 import {Button as MuiButton} from "@mui/material";
 import logo from "../assets/90fulbo.png";
-import "../styles/navbar.css";
+import "../Styles/navbar.css";
 import PersonIcon from '@mui/icons-material/Person';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import {useNavigate} from 'react-router-dom';
+import Menu from '../views/Menu';
 
 
 
@@ -47,14 +48,9 @@ const Navbar = () => {                                           // logo centro 
 
                 {/* Parte inferior */}
                 <div className="navbar-bottom">
-                    <MuiButton style={{ color: 'white', textTransform: 'none', fontFamily: 'Poppins, sans Serif'}} onClick={handleClickHome}>Inicio</MuiButton>
-                    <MuiButton style={{ color: 'white', textTransform: 'none', fontFamily: 'Poppins, sans Serif'}}>Remeras</MuiButton>
-                    <MuiButton style={{ color: 'white', textTransform: 'none', fontFamily: 'Poppins, sans Serif'}}>Buzos</MuiButton>
-                    <MuiButton style={{ color: 'white', textTransform: 'none', fontFamily: 'Poppins, sans Serif'}}>Shorts</MuiButton>
-                    <MuiButton style={{ color: 'white', textTransform: 'none', fontFamily: 'Poppins, sans Serif'}}>Pantalones</MuiButton>
-                    <MuiButton style={{ color: 'white', textTransform: 'none', fontFamily: 'Poppins, sans Serif'}}>Accesorios</MuiButton>
-                    <MuiButton style={{ color: 'white', textTransform: 'none', fontFamily: 'Poppins, sans Serif'}} onClick={handleClickSeller}>Vender</MuiButton>
+                    <Menu></Menu>
                 </div>
+                
 
                 
             </div>

@@ -1,9 +1,55 @@
-.ImagenesContenedor {
-    text-align: center;
-    margin-top: 1em;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-.ImagenArg {
-    display: block;
-    width: 100%;
+.home {
+    margin: 0;
+    background-color: #fafafa;
 }
+
+.inicio {
+    text-align: center;
+    margin: 45px;
+    font-size: 40px;
+}
+
+.product-box { /*product cards*/
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px; /* Espacio entre las tarjetas */
+    max-width: 1400px; /* Ancho máximo para el contenedor de tarjetas */
+    justify-content: flex-start;
+}
+
+/* Media Queries para diseño responsive */
+@media screen and (max-width: 768px) {
+    .cards {
+        justify-content: center; /* Centrar las tarjetas en dispositivos de hasta 768px */
+    }
+    .inicio {
+        font-size: 30px; /* Reducir el tamaño del texto en dispositivos de hasta 768px */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .inicio {
+        font-size: 25px; /* Reducir aún más el tamaño del texto en dispositivos de hasta 576px */
+    }
+}
+
+
+
+
+

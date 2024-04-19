@@ -1,0 +1,355 @@
+.cart-page{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgb(252, 252, 252);
+    padding-bottom: 70px;
+}
+.cart-container{
+    
+    height: auto;
+    width: 58%;
+    margin: 0 auto;
+    
+    
+    margin-top: 40px;
+    
+    
+}
+.cart-title{
+    margin-bottom: 30px;
+    
+}
+.cart-title h2{
+    font-size: 35px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.cart-content{
+    display: flex;
+}
+.cart-items{
+    width: 68%;
+    height: auto;
+    margin-right: 4%;
+    padding: 20px 15px;
+    padding-bottom: 14px;
+    background-color: #fff;
+    border: 0px solid black;
+    border-radius: 30px;
+    z-index: 9;
+    overflow: hidden;
+    box-shadow:10px 10px 25px 10px rgba(0, 0, 0, 0.05);
+    
+}
+.cart-items .clear{
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    background: none;
+    outline: none;
+    border:none;
+    font-size: 16px;
+    cursor: pointer;
+}
+.item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.item .info{
+    width: 62%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-right: 15px;
+}
+.item img{
+    max-width: 70px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.item .delete{
+    margin-right: 10px;
+}
+.item p{
+    margin-left: 10px;
+    font-size: 16.5px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.item .item-price{
+    
+    margin-left: 7.7%;
+    font-size: 17.5px;
+    font-weight: 500;
+    text-align: end;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cart-manage-container{
+    
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cart-manage {
+    text-align: end;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0px;
+    
+    
+  }
+  
+  .cart-manage .cart-cantidad {
+    border: 1.4px solid rgb(199, 199, 199);
+    border-radius: 50px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px; /* Ajusta según necesites */
+    margin-right: 25px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+  }
+  
+  
+  .cart-manage .cart-cantidad span {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 12px; /* Combina los márgenes horizontalmente */
+  }
+  
+  .cart-manage .cart-cantidad .cart-number {
+    width: 40px; /* Ajusta el ancho según necesites */
+    text-align: center;
+  }
+  
+  .cart-manage .cart-cantidad .cart-controllers {
+    cursor: pointer;
+    
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cart-info{
+    width: 27%;
+    height: 360px;
+    
+    border-radius: 32px;
+    background-color: #fff;
+    padding: 25px 26px;
+    z-index: 9;
+    overflow: hidden;
+    box-shadow:10px 10px 25px 10px rgba(0, 0, 0, 0.05);
+   
+}
+.cart-info .resumen span{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+.cart-info .cart-total {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+.cart-info h4{
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.cart-info .productos{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.cart-info .envio{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.cart-info .cupon{
+    margin-top: 30px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart-info .cupon .cupon-btn{
+    margin-right: 20px;
+    max-width: 30%;
+}
+.cart-info .cupon .cupon-input{
+    
+    max-width: 68%;
+    margin-right: 20px;
+    border: 2px solid #e6e6e6;
+    border-radius: 12px;
+    padding: 1px 7px;
+}
+.cart-info .cupon .cupon-input input{
+    max-width: 100%;
+    background: none;
+    outline: none;
+    border:none;
+    font-size: 15px;
+    color: #929292; /* Cambiar el color del texto al gris deseado */
+}
+.cart-info .cupon .cupon-input input::placeholder {
+    color: #cecece; /* Cambiar el color del texto del placeholder al gris deseado */
+}
+.cart-info .cupon button{
+    font-size: 16px;
+    background: none;
+    outline: none;
+    border:none;
+    cursor: pointer;
+    margin-right: 10px;
+    text-decoration:underline;
+}
+
+.cart-info .cupon button:active{
+    text-shadow:0px 2px 1px 1px rgba(0, 0, 0, 0.233);
+    color: #808080;
+    transform: translatey(-2%); /* Empuja la capa hacia arriba cuando se presiona */
+}
+
+
+.cart-info .cart-total{
+    margin-top: 40px;
+    font-size: 19.4px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+
+/* CHECKOUT */
+
+.cart-info .btn{
+    
+    position:relative;
+    height: 48px;
+    width: 100%;
+    
+    border-radius: 40px;
+    border-color: #2c2c2c;
+    overflow: hidden;
+    
+}
+
+.cart-info .btn .layer{
+    position: absolute;
+    height: 100%;
+    width: 300%;
+    left: -100%;
+    background: linear-gradient(135deg, #00629e, #000c14,#00629e,#fff);
+    border-radius: 40px;
+    transition: all 0.45s ease;
+}
+
+.cart-info .btn:hover .layer{
+    
+    left: 0;
+    
+}
+.cart-info .btn:active {
+    box-shadow:0px 2px 1px 1px rgba(0, 0, 0, 0.233);
+    transform: translatey(-2%); /* Empuja la capa hacia arriba cuando se presiona */
+}
+
+.cart-info .btn button{
+    color: #fff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: none;
+    outline: none;
+    border:none;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+
+
+
+

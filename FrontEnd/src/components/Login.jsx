@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import "../styles/login.css";
+import "../Styles/login.css";
 import {useNavigate} from 'react-router-dom';
 import Return from '../components/Return';
 

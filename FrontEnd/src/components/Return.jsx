@@ -1,7 +1,7 @@
 import React from 'react';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { useNavigate } from 'react-router-dom';
-import "../styles/return.css";
+import "../Styles/return.css";
 
 
 function Return() {
