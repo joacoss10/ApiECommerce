@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select'
 
-const ComboBox = ({ options, placeholder, onChange }) => {
+const ComboBox = ({ options, placeholder, onChange, styles }) => {
     const handleChange = (selectedOption) => {
         if (onChange) {
             onChange(selectedOption);
@@ -13,6 +13,7 @@ const ComboBox = ({ options, placeholder, onChange }) => {
             options={options}
             onChange={handleChange}
             placeholder={placeholder}
+            styles={styles}
         />
     );
 };

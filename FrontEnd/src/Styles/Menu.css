@@ -28,14 +28,18 @@
     position: absolute;
     background-color: #f9f9f9;
     min-width: 1em;
-
+    padding: 0em;
+    border: 0.1em solid #ccc;
 }
 
 .dropdownContent li {
+    margin-top: 0.7em;
+    border-bottom: 0.1em ridge #1233c4;
     display: block;
     text-align: left;
-
+    width: 100%;
 }
+
 
 .dropdown:hover .dropdownContent {
     display: block;

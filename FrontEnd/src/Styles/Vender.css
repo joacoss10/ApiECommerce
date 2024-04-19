@@ -1,0 +1,77 @@
+.Formulario {
+    margin-top: 3em;
+}
+
+.Formulario label {
+    font-family: "Arial", sans-serif;
+}
+
+.Formulario input {
+    margin-top: 1em;
+}
+
+#Titulo {
+    width: 20em;
+    height: 2em;
+    margin-right: 36em;
+    margin-left: 2em;
+}
+
+#TituloLabel {
+    margin-left: 8em;
+}
+
+#ComboBoxLabel {
+    margin-left: 44em;
+}
+
+.InputTituloYComboBox {
+    display: flex;
+}
+
+#DescripcionLabel {
+    margin-right: 41em;
+    margin-left: 7em;
+}
+
+.LabelImagenDescripcion {
+    margin-top: 1em;
+}
+
+#Descripcion {
+    margin-top: 1em;
+    width: 30em;
+    height: 7em;
+    margin-left: 2em;
+    margin-right: 29em;
+}
+
+.StockYPrecio input {
+    width: 6em;
+    height: 2em;
+}
+
+#Stock {
+    margin-right: 8em;
+}
+
+#StockLabel {
+    margin-right: 9.5em;
+}
+
+.LabelsStockPrecio {
+    margin-top: 1em;
+    margin-left: 3em;
+}
+
+.StockYPrecio {
+    margin-left: 1.6em;
+}
+
+#Precio {
+    margin-right: 40em;
+}
+
+#Enviar {
+    margin-right: 2em;
+}
