@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 const Logeo = ({ onLogin }) => {
-    const [loginSuccess, setLoginSuccess] = useState();
+    const [loginSuccess, setLoginSuccess] = useState(true);
     const usuario = '' //es el nombre de usuario que se traeria de la bd o el que se registra
     if (loginSuccess) {
         onLogin(usuario)
