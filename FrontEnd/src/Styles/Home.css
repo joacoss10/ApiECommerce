@@ -14,7 +14,7 @@
 
 .inicio {
     text-align: center;
-    margin: 45px;
+    margin: 40px;
     font-size: 40px;
 }
 
@@ -32,6 +32,8 @@
     max-width: 1400px; /* Ancho máximo para el contenedor de tarjetas */
     justify-content: flex-start;
 }
+
+
 
 /* Media Queries para diseño responsive */
 @media screen and (max-width: 768px) {

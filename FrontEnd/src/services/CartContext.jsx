@@ -51,20 +51,27 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeFromCart = (productId) => {
-    setCartItems(cartItems.filter(item => item.id !== productId));
+    const updatedCartItems = cartItems.filter(item => item.id !== productId);
+    setCartItems(updatedCartItems);
+    localStorage.setItem('cart', JSON.stringify(updatedCartItems)); // Actualizar el almacenamiento local
   };
 
   const clearCart = () => {
     setCartItems([]);
+    localStorage.removeItem('cart'); // Vaciar el carrito del almacenamiento local
   };
 
   const getTotal = () => {
     // Calcular el total sumando los precios de todos los productos en el carrito
     return cartItems.reduce((total, item) => total + (item.precio * item.cantidad), 0);
   };
+  const getCantidadItems = () => {
+    // Calcular el total sumando los precios de todos los productos en el carrito
+    return cartItems.reduce((total, item) => total + (item.cantidad), 0);
+  };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart, getTotal, checkAndRestoreCartFromLocalStorage }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart, getTotal, checkAndRestoreCartFromLocalStorage,  getCantidadItems, setCartItems}}>
       {children}
     </CartContext.Provider>
   );

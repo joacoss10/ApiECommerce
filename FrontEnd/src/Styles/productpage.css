@@ -147,6 +147,11 @@
     background-color: #000;
 }
 
+.manage .btn:active {
+  box-shadow:0px 2px 1px 1px rgba(0, 0, 0, 0.233);
+  transform: translatey(-2%); /* Empuja la capa hacia arriba cuando se presiona */
+}
+
 .manage .btn button{
     color: #fff;
     position: relative;

@@ -4,25 +4,25 @@
     box-sizing: border-box;
 }
 
-.wrapper{
+.signup-wrapper{
     width: 450px;
-    background: none;
-    border: 2px solid rgba(255,255,255,.2);
+    background: rgba(73, 73, 73, 0.116);
+    border: 2px solid rgba(255, 255, 255, 0.26);
     backdrop-filter: blur(20px);
     box-shadow:   0 10px rgba(0,0,0,.2);
-    color: #fff;
+    color: #f3f3f3;
     border-radius: 9px;
     padding: 30px 40px;
     
 }
 
-.wrapper h1 {
+.signup-wrapper h1 {
     font-size: 36px;
     text-align: center;
     margin-bottom: 45px;
 }
 
-.wrapper .input-box{
+.signup-wrapper .signup-input-box{
     width: 100%;
     height: 50px;
     margin-top: 35px;
@@ -30,7 +30,7 @@
     
 }
 
-.input-box {
+.signup-input-box {
     display: flex;
     align-items: center;
     margin-top: 10px;
@@ -40,7 +40,7 @@
     padding-right: 7px;
 }
 
-.input-box input{
+.signup-input-box input{
     width: 90%;
     height: 100%;
     background: transparent;
@@ -89,17 +89,17 @@
 */
 
 
-.input-box input::placeholder{
+.signup-input-box input::placeholder{
     color: #818181;
 }
 
-.login-error{
+.signup-login-error{
     width: 100%;
     height: 15px;
     margin-bottom: 35px;
     margin-left: 5px;
 }
-.login-error span{
+.signup-login-error span{
     font-size: 14px;
     color: red;
     font-weight: 600;
@@ -107,7 +107,7 @@
 
 
 
-.wrapper .remember-forgot{
+.signup-wrapper .signup-remember-forgot{
     display: flex;
     justify-content: space-between;
     font-size: 14px;
@@ -115,23 +115,23 @@
     margin-left: 5px;
 }
 
-.remember-forgot label input{
+.signup-remember-forgot label input{
     accent-color: #fff;
     margin-right: 3px;
 
 }
 
-.remember-forgot a{
+.signup-remember-forgot a{
     color: #fff;
     text-decoration: none;
 
 }
 
-.remember-forgot a:hover{
+.signup-remember-forgot a:hover{
     text-decoration: underline;
 }
 
-.wrapper .btn {
+.signup-wrapper .signup-btn {
     width: 99.5%;
     height: 45px;
     background: #fff;
@@ -145,18 +145,19 @@
     font-weight: 600;
 }
 
-.wrapper .register-link{
+.signup-wrapper .signup-register-link{
     font-size: 14.5px;
     text-align: center;
     margin-top: 20px;
 }
 
-.register-link p a {
+.signup-register-link p a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
+    cursor: pointer;
 }
 
-.register-link p a:hover{
+.signup-register-link p a:hover{
     text-decoration: underline;
 }

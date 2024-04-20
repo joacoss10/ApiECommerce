@@ -1,6 +1,6 @@
 import React from 'react'
 
-import "../Styles/card.css";
+import "../styles/card.css";
 import {useNavigate} from 'react-router-dom';
 
 

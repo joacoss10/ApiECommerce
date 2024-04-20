@@ -1,44 +1,65 @@
-.Menu {
-    margin-top: 1em;
-    text-align: center;
-    font-family: "Arial", sans-serif;
-    padding-bottom: 5px;
-    
-}
+
 
 .navigation {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: inline-block;
+    padding-bottom: 5px;
 }
 
 .navigation li {
     display: inline-block;
-    margin-right: 1em;
-    margin-bottom: 0.5em;
+    margin-right: 0em;
+    margin-bottom: 0em;
 }
 
-.navigation li a {
+.navigation li .a {
     text-decoration: none;
-    color: #dfdfdf;
-    padding: 1em;
+    color: #f1f1f1;
+    padding-left: 1em;
+    padding-right: 1em;
+    display: flex;
+    align-items: center;
 }
 
 .dropdownContent {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #00132065;
+    backdrop-filter: blur(20px);
     min-width: 1em;
-
+    padding: 5px 30px;
+    padding-top: 0px;
+    padding-bottom: 35px;
+    z-index: 999999;
+    color: #000;
+    border-radius: 5px;
+    min-width: 250px;
+    
 }
+
 
 .dropdownContent li {
     display: block;
     text-align: left;
-
+    
 }
-
 .dropdown:hover .dropdownContent {
     display: block;
+}
+.desplegable{
+    margin-top: 25px;
+}
+.desplegable a{
+    text-decoration: none;
+    margin-top: 16px;
+    color: white;
+    padding: 18px 10px;
+}
+#inicio{
+    margin-right: 5px;
+}
+.Menu .navigation .desplegable a:hover {
+    color: rgb(218, 218, 218); /* Cambia el color del texto a gris oscuro al pasar el ratón */
 }

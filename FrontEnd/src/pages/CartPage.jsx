@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Return from '../components/Return';
 import Navbar from '../components/Navbar';
-import "../Styles/cart.css";
+import "../styles/cart.css";
 import { useCart } from '../services/CartContext'; // Importa el hook useCart
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';

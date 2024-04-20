@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Accordion from '../components/Accordion';
-import "../Styles/productpage.css"
+import "../styles/productpage.css"
 import Chip from '@mui/material/Chip';
 import { useNavigate } from 'react-router-dom';
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
