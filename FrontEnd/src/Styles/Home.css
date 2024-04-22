@@ -9,7 +9,7 @@
 
 .home {
     margin: 0;
-    background-color: #fafafa;
+    background-color: #f3f3f3;
 }
 
 .inicio {
@@ -22,15 +22,16 @@
     display: flex;
     justify-content: center;
     padding: 25px;
+    padding-bottom: 80px;
 }
 
 .cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 40px; /* Espacio entre las tarjetas */
+    gap: 34px; /* Espacio entre las tarjetas */
     max-width: 1400px; /* Ancho máximo para el contenedor de tarjetas */
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 

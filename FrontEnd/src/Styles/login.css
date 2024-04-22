@@ -105,6 +105,12 @@
     font-size: 16px;
     color: #333;
     font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.wrapper .btn:hover {
+    background: #d3d3d3fd;
+    color: #000b1a;
 }
 
 .wrapper .register-link{

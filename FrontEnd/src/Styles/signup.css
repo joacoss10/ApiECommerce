@@ -143,6 +143,12 @@
     font-size: 16px;
     color: #333;
     font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.signup-wrapper .signup-btn:hover {
+    background: #d3d3d3fd;
+    color: #000b1a;
 }
 
 .signup-wrapper .signup-register-link{

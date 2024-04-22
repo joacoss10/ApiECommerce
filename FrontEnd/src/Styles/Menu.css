@@ -24,18 +24,19 @@
 }
 
 .dropdownContent {
-    display: none;
+    display: block;
     position: absolute;
     background-color: #00132065;
     backdrop-filter: blur(20px);
     min-width: 1em;
-    padding: 5px 30px;
-    padding-top: 0px;
-    padding-bottom: 35px;
+    
     z-index: 999999;
     color: #000;
     border-radius: 5px;
     min-width: 250px;
+    overflow: hidden; /* Asegurar que el contenido oculto no se desborde */
+    max-height: 0; /* Comenzar con altura cero para ocultar el contenido */
+    transition: max-height 0s ease;
     
 }
 
@@ -46,7 +47,10 @@
     
 }
 .dropdown:hover .dropdownContent {
-    display: block;
+    padding: 5px 30px;
+    padding-top: 0px;
+    padding-bottom: 35px;
+    max-height: 4000px;
 }
 .desplegable{
     margin-top: 25px;

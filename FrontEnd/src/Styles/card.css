@@ -10,6 +10,15 @@
     overflow: hidden;
     box-shadow: 0 5px 10px rgba(0,0,0,0.05);
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.container:hover{
+    box-shadow: 0 5px 20px rgba(0, 16, 53, 0.178);
+    transform: scale(1.03);
+}
+.container:active{
+    transform: scale(1);
 }
 
 
@@ -60,13 +69,13 @@
 }
 
 .price-space{
-    height: 48px;
+    height: 50px;
 }
 
 
 .price {
     position: absolute; /* Para posicionar el precio de forma absoluta */
-    bottom: 10px; /* Alinea el precio 10px desde el borde inferior */
+    bottom: 16px; /* Alinea el precio 10px desde el borde inferior */
     left: 20px; /* Alinea el precio 10px desde el borde izquierdo */
 }
 
