@@ -14,8 +14,8 @@
 }
 
 .container:hover{
-    box-shadow: 0 5px 20px rgba(0, 16, 53, 0.178);
-    transform: scale(1.03);
+    box-shadow: 0 5px 20px rgba(0, 16, 53, 0.128);
+    transform: scale(1.015);
 }
 .container:active{
     transform: scale(1);

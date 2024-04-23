@@ -310,7 +310,7 @@
     border-radius: 40px;
     border-color: #2c2c2c;
     overflow: hidden;
-    
+    transition: 0.3s ease;
 }
 
 .cart-info .btn .layer{
@@ -328,9 +328,14 @@
     left: 0;
     
 }
+.cart-info .btn:hover{
+    transform: scale(1.01);
+}
 .cart-info .btn:active {
     box-shadow:0px 2px 1px 1px rgba(0, 0, 0, 0.233);
     transform: translatey(-2%); /* Empuja la capa hacia arriba cuando se presiona */
+    transform: scale(1);
+    
 }
 
 .cart-info .btn button{
