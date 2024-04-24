@@ -14,7 +14,7 @@
 }
 
 #ImagenLogo {
-    position: absolute;
+    position: sticky;
     top: 5em;
     right: 43.5%;
 }
