@@ -7,7 +7,7 @@ const EstadoDeLoggeo = ({ isLoggedIn, userName }) => {
     return (
         <div class="ContenedorLoggeo">
             <a href="/">
-                <img class="ImagenLogo" src={logo} width='10%'></img >
+                <img id="ImagenLogo" src={logo} width='10%'></img >
             </a>
 
             {

@@ -1,15 +1,11 @@
 .ContenedorLoggeo {
-    margin-top: 2em;
+    margin-top: 1em;
     margin-right: 3em;
     text-align: right;
     font-family: "Arial", sans-serif;
 }
 
-#Saludo {
-    list-style: none;
-    display: inline-block;
-    background-color: #f8f9fa;
-}
+#Saludo,
 
 #InciarSesion {
     list-style: none;
@@ -17,8 +13,8 @@
     background-color: #f8f9fa;
 }
 
-.ImagenLogo {
-    margin-top: -2em;
-    margin-right: 32em;
-
+#ImagenLogo {
+    position: fixed;
+    top: 5em;
+    right: 43.5%;
 }
