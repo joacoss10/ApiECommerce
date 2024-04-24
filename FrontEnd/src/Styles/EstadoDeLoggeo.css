@@ -1,5 +1,4 @@
 .ContenedorLoggeo {
-    margin-top: 1em;
     margin-right: 3em;
     text-align: right;
     font-family: "Arial", sans-serif;
@@ -15,7 +14,7 @@
 }
 
 #ImagenLogo {
-    position: fixed;
+    position: absolute;
     top: 5em;
     right: 43.5%;
 }
