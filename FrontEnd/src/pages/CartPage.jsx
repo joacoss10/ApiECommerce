@@ -152,36 +152,3 @@ function CartPage() {
 
 export default CartPage
 
-
-/*
-import React from 'react'
-import "../styles/cart.css";
-import { useCart } from '../services/CartContext'; // Importa el hook useCart
-
-function Cart() {
-    const { addToCart, checkAndRestoreCartFromLocalStorage, getTotal, cartItems, clearCart } = useCart();
-    const firstThreeItems = cartItems.slice(0, 3);
-  return (
-    <div className="cart-container">
-        <h4>Carrito</h4>
-        <div className="items">
-            {firstThreeItems.map((item, index) => (
-                <div className="item" key={index}>
-                    <p>x{item.cantidad} - {item.nombre}</p>
-                </div>
-            ))}
-        </div>
-        <div className="cart-total">
-            <span className='cart-price'>Total: {getTotal()}</span>
-        </div>
-        <div className="cart-btn">
-            <button onClick={clearCart}>Limpiar</button>
-            <button>Ver todo</button>
-        </div>
-    </div>
-  )
-}
-
-export default Cart
-
-*/
