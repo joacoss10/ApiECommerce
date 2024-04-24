@@ -27,10 +27,12 @@
 
 .cart-content{
     display: flex;
+    align-items: flex-start;
 }
 .cart-items{
     width: 68%;
     height: auto;
+    min-height: 120px;
     margin-right: 4%;
     padding: 20px 15px;
     padding-bottom: 14px;
