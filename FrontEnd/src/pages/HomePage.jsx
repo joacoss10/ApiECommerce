@@ -18,7 +18,7 @@ function HomePage() {
   return (
     <div className="home">
         <Navbar></Navbar>
-        <h2 className='inicio'>Inicio</h2>
+        <h2 className='inicio'>Camisetas Bianchi</h2>
         <div className='product-box'>
             <div className="cards">
               
