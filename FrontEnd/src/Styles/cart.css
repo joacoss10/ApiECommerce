@@ -4,11 +4,10 @@
     background-color: rgb(252, 252, 252);
     padding-bottom: 70px;
 }
-
 .cart-container{
     
     height: auto;
-    width: 68%;
+    width: 62%;
     margin: 0 auto;
     
     
@@ -44,7 +43,7 @@
     z-index: 9;
     overflow: hidden;
     box-shadow:10px 10px 25px 10px rgba(0, 0, 0, 0.05);
-
+    
 }
 .cart-items .clear{
     margin-left: 20px;
@@ -255,7 +254,7 @@
     align-items: center;
 }
 .cart-info .cupon .cupon-btn{
-    margin-right: 20px;
+    
     max-width: 30%;
 }
 .cart-info .cupon .cupon-input{
@@ -283,7 +282,7 @@
     outline: none;
     border:none;
     cursor: pointer;
-    margin-right: 10px;
+    margin-right: 0px;
     text-decoration:underline;
 }
 
