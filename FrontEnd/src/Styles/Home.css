@@ -14,8 +14,9 @@
 
 .inicio {
     text-align: center;
-    margin: 40px;
-    font-size: 40px;
+    margin: 00px;
+    font-size: 60px;
+    font-weight: 600;
 }
 
 .product-box { /*product cards*/
@@ -34,6 +35,62 @@
     justify-content: center;
 }
 
+.img-container-arg{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 82vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.5em;
+    
+}
+
+.img-container-arg img{
+    margin-top: 340px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(0px); /* Aplica un desenfoque de 5 píxeles */
+    
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(0, 7, 19)); /* Crea una máscara lineal que se desvanece hacia abajo */
+    background: linear-gradient(110deg, #10344b79, #000000a8, #000000a8, #0f314688);;
+}
+.img-container-arg .inicio {
+    position: absolute;
+    top: 83%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(180, 180, 180); /* Color del texto */
+    
+    
+  }
+
+
+
+
+
+
+
+  .imagen-fondo{
+    background-image: url(../assets/arg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 20em;
+
+  }
 
 
 /* Media Queries para diseño responsive */
@@ -51,8 +108,5 @@
         font-size: 25px; /* Reducir aún más el tamaño del texto en dispositivos de hasta 576px */
     }
 }
-
-
-
 
 
