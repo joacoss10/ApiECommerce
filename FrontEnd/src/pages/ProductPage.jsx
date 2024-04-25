@@ -69,7 +69,7 @@ function ProductPage({ producto }) {
           <Chip label={producto.categoria} variant="outlined" color="primary" size="small" onClick={handleClick} />
           <Chip label={producto.stockDisponible > 0 ? "Hay stock" : "Sin stock"} color={producto.stockDisponible > 0 ? "success" : "error"} size="small" className='stock'/>
           <h2 className='title'> {producto.nombre} </h2>
-          <span className='description'>{producto.descripcion}</span>
+          <span className='description-product'>{producto.descripcion}</span>
           <div className="precio">
             <span className='signo'>$</span>
             <span>{producto.precio}</span>
