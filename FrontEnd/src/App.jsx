@@ -38,7 +38,7 @@ function App() {
           <Route path='/' element={<HomePage/>} />
           <Route path='/login' element={<LoginPage/>} />
           <Route path='/signup' element={<SignupPage/>} />
-          <Route path='/sell' element={<SellerPage/>} />
+          <Route path='/vender' element={<SellerPage/>} />
           <Route path='/cart' element={<CartPage/>} />
           {productos.map(producto => (
             <Route

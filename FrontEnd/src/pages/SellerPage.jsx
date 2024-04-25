@@ -7,6 +7,8 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import Return from '../components/Return';
 import Navbar from '../components/Navbar';
+import Vender from '../components/Vender';
+import '../styles/sellerpage.css';
 
 
 
@@ -18,10 +20,9 @@ function SellerPage() {
 
 
   return (
-    <div>
+    <div className='sell-container'>
         <Navbar></Navbar>
-        <h2>SELLER PAGE</h2>
-        <Return></Return>
+        <Vender></Vender>
         
     </div>
   )

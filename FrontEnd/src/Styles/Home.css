@@ -44,11 +44,11 @@
     width: 100%;
     position: relative;
     overflow: hidden;
-    height: 82vh;
+    height: 81vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2.5em;
+    margin-bottom: 4em;
     
 }
 
@@ -70,11 +70,11 @@
     background-color: rgba(0, 0, 0, 0.7); 
     pointer-events: none;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(0, 7, 19)); /* Crea una máscara lineal que se desvanece hacia abajo */
-    background: linear-gradient(110deg, #10344b79, #000000a8, #000000a8, #0f314688);;
+    background: linear-gradient(110deg, #0a233388, #000000a8, #000000a0, #0b2b3f88);;
 }
 .img-container-arg .inicio {
     position: absolute;
-    top: 83%;
+    top: 84%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: rgb(180, 180, 180); /* Color del texto */
