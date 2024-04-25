@@ -1,5 +1,6 @@
 .cart-page{
-    width: 100vw;
+    display: flex;
+    width: 99.14vw;
     min-height: 100vh;
     background-color: rgb(252, 252, 252);
     padding-bottom: 70px;
@@ -11,7 +12,7 @@
     margin: 0 auto;
     
     
-    margin-top: 40px;
+    margin-top: 13em;
     
     
 }

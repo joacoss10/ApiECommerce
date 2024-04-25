@@ -1,8 +1,14 @@
-
+.productPage{
+  display: flex;
+    margin: 0 auto;
+    
+    
+    margin-top: 0px;
+}
 
 .productContainer{
     
-    
+  
     display: flex;
     justify-content:center;
     align-items:flex-start;
@@ -11,7 +17,7 @@
     margin: 0 auto;
     
     
-    margin-top: 58px;
+    margin-top: 240px;
     
 }
 

@@ -38,7 +38,7 @@ function HomePage() {
 
   return (
     <div className="home">
-        <Navbar></Navbar>
+        <Navbar className='navbar-home'/>
        
         <div className="img-container-arg">
           <img src={arg} alt="Camisetas Bianchi" />
