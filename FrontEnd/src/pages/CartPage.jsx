@@ -17,7 +17,7 @@ function CartPage() {
     const { removeFromCart, getCantidadItems, getTotal, cartItems, clearCart,setCartItems } = useCart();
     const [envio, setEnvio] = useState('Gratis');
     console.log("cart: ",cartItems);
-
+    
     const navigate = useNavigate();
 
     const handleProductClick = (id) =>{
@@ -60,6 +60,31 @@ function CartPage() {
         }
     }, [getTotal()]);
 
+
+
+
+    //CUPON
+
+    const [cupon, setCupon] = useState('');
+    const [cuponAplicado, setCuponAplicado] = useState(false);
+
+    const handleCuponChange = (event) => {
+        setCupon(event.target.value);
+    };
+
+    const handleCuponClick = () => {
+        if (cupon === '90futbol' || cupon === 'bianchi') {
+          setCuponAplicado(true);
+        }
+    };
+
+    //CHECKOUT
+
+    const handleCheckOutClick = () =>{
+        //clearCart();
+        navigate('/checkout/success');
+    }
+
     
   return (
     <div className="cart-page">
@@ -101,7 +126,7 @@ function CartPage() {
                     
                 </div>
 
-
+                
 
 
                 <div className="cart-info">
@@ -117,24 +142,28 @@ function CartPage() {
                     </div>
                     <div className="cupon">
                         <div className="cupon-input">
-                            <input type="text" placeholder='Cupon'/>
+                            <input type="text" placeholder='Cupon' value={cupon} onChange={handleCuponChange}/>
                         </div>
                         <div className="cupon-btn">
-                            <button>Aplicar</button>
+                            <button onClick={handleCuponClick}>Aplicar</button>
                         </div>
                         
                     </div>
                     <div className="cart-total">
                         <span className='cart-price'>Total: </span>
-                        <span className='cart-price'>$ {getTotal() + envio}</span>
+                        {cuponAplicado ? (
+                            <span className='cart-price'>$ {getTotal() * 0.8 + envio}</span>
+                            ) : (
+                            <span className='cart-price'>$ {getTotal() + envio}</span>
+                        )}
                     </div>
                     <div className="btn">
                         <div className="layer"></div>
-                        <button>Iniciar Pedido</button>
+                        <button onClick={handleCheckOutClick}>Iniciar Pedido</button>
                     </div>
                 </div>
 
-
+                    
 
 
             </div>

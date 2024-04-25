@@ -13,6 +13,8 @@ import SellerPage from './pages/SellerPage'
 
 import CartPage from './pages/CartPage'
 
+import Checkout from './pages/Checkout'
+
 
 
 import {Routes, Route} from 'react-router-dom';
@@ -45,6 +47,7 @@ function App() {
               element={<ProductPage producto={producto} />}
             />
           ))}
+          <Route path='/checkout/success' element={<Checkout/>}/>
         </Routes>
       </CartProvider>
     </AuthProvider>
