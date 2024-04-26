@@ -1,0 +1,55 @@
+.product-card {
+    display: flex;
+    flex-direction: column;
+    border: 0.2em solid #ccc;
+    border-radius: 1em;
+    overflow: hidden;
+    width: 20em;
+}
+
+.product-image {
+    width: 100%;
+    object-fit: cover;
+}
+
+#product-title {
+    margin-top: -0.3em;
+    text-align: center;
+}
+
+#product-description {
+    margin-top: -0.2em;
+    font-family: "Arial", sans-serif;
+}
+
+.Texto {
+    padding: 16px;
+}
+
+.StockYPrecio {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em;
+    margin-top: -2em;
+    font-size: 1.4em;
+}
+
+.Botones {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em;
+    margin-top: -2em;
+}
+
+.Eliminar,
+.Editar {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5em;
+}
+
+.Editar {
+    background-color: #2196f3;
+}
