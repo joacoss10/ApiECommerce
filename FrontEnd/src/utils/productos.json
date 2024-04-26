@@ -3,7 +3,7 @@
     "id": 1,
     "nombre": "Remera de Argentina",
     "descripcion": "Remera oficial de la selección argentina de fútbol. Perfecta para mostrar tu apoyo al equipo nacional. Hecha con materiales de alta calidad y cómoda de llevar.",
-    "categoria": "Ropa",
+    "categoria": "Argentina",
     "precio": 25990,
     "stockDisponible": 50,
     "imagenURL": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c4c8dee7623f4209b76dfd333a68c812_9366/Camiseta_Titular_Argentina_24_Blanco_IP8400_01_laydown.jpg"
@@ -12,7 +12,7 @@
     "id": 2,
     "nombre": "Camiseta San Lorenzo",
     "descripcion": "Remera oficial del equipo San Lorenzo de Almagro. El complemento perfecto para cualquier fanático del fútbol. Diseño elegante y cómodo de llevar.",
-    "categoria": "Ropa",
+    "categoria": "San Lorenzo",
     "precio": 19990,
     "stockDisponible": 30,
     "imagenURL": "https://nikearprod.vtexassets.com/arquivos/ids/788751/CK9872-490-frente-v3.jpg?v=638337674534570000"
@@ -21,7 +21,7 @@
     "id": 3,
     "nombre": "Gorra de Brasil",
     "descripcion": "Gorra oficial del equipo de fútbol de Brasil. Ideal para los aficionados al fútbol brasileño. Logo bordado y diseño moderno.",
-    "categoria": "Accesorios",
+    "categoria": "Brasil",
     "precio": 18990,
     "stockDisponible": 35,
     "imagenURL": "https://i.ebayimg.com/thumbs/images/g/FPcAAOSwpHVksj8j/s-l640.jpg"
@@ -30,7 +30,7 @@
     "id": 4,
     "nombre": "Remera de River Plate",
     "descripcion": "Remera oficial del Club Atlético River Plate de Argentina. Confeccionada con materiales de alta calidad y diseño exclusivo del club.",
-    "categoria": "Ropa",
+    "categoria": "River",
     "precio": 29990,
     "stockDisponible": 0,
     "imagenURL": "https://www.opensports.com.ar/media/catalog/product/cache/4769e4d9f3516e60f2b4303f8e5014a8/H/T/HT3679_0.jpg"
@@ -39,7 +39,7 @@
     "id": 5,
     "nombre": "Camiseta de CAI",
     "descripcion": "Remera oficial del Club Atlético Independiente de Argentina. Diseño moderno y materiales de primera calidad.",
-    "categoria": "Ropa",
+    "categoria": "Camiseta",
     "precio": 27990,
     "stockDisponible": 45,
     "imagenURL": "https://acdn.mitiendanube.com/stores/001/150/754/products/img-20231114-wa0020-ed35dec95dca8e0e3116999716167612-1024-1024.jpg"
@@ -48,7 +48,7 @@
     "id": 6,
     "nombre": "Champions Argentina",
     "descripcion": "Remera oficial de la victoria en la final del mundial Qatar 2022. Diseño exclusivo y materiales duraderos.",
-    "categoria": "Accesorios",
+    "categoria": "Argentina",
     "precio": 24990,
     "stockDisponible": 20,
     "imagenURL": "https://acdn.mitiendanube.com/stores/002/240/024/products/img-20230227-wa00141-321b1874b8ae0acb1c16783002601431-1024-1024.jpg"
@@ -57,7 +57,7 @@
     "id": 7,
     "nombre": "Short de Boca Juniors",
     "descripcion": "Short oficial del Club Atlético Boca Juniors de Argentina. Diseño moderno y cómodo para practicar deporte.",
-    "categoria": "Ropa",
+    "categoria": "Boca",
     "precio": 22990,
     "stockDisponible": 25,
     "imagenURL": "https://www.stockcenter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw1b872e58/products/ADIT9369/ADIT9369-1.JPG"
@@ -66,7 +66,7 @@
     "id": 8,
     "nombre": "Campera Real Madrid",
     "descripcion": "Campera oficial del Real Madrid con diseño vintage. Ideal para los fanáticos del equipo más exitoso de España.",
-    "categoria": "Ropa",
+    "categoria": "Equipos Europeos",
     "precio": 34990,
     "stockDisponible": 2,
     "imagenURL": "https://assets.adidas.com/images/w_600,f_auto,q_auto/ca98dc42e8b44c7dbfaead9f00ed279d_9366/Campera_Teamgeist_Real_Madrid_Tejida_Blanco_HA2537_01_laydown.jpg"
@@ -75,7 +75,7 @@
     "id": 9,
     "nombre": "Remera de Lanús",
     "descripcion": "Remera oficial del Club Atlético Lanús de Argentina. Con diseño moderno y materiales de alta calidad.",
-    "categoria": "Ropa",
+    "categoria": "Lanus",
     "precio": 23990,
     "stockDisponible": 15,
     "imagenURL": "https://tiendagranate.clublanus.com/archivos/productos/16758860625099_CAMISETA-ERREA-HOMENAJE-2007.png"
@@ -84,7 +84,7 @@
     "id": 10,
     "nombre": "Short de Países Bajos",
     "descripcion": "Short oficial de la selección de fútbol de los Países Bajos. Diseño moderno y cómodo para jugar.",
-    "categoria": "Ropa",
+    "categoria": "Europa",
     "precio": 21990,
     "stockDisponible": 10,
     "imagenURL": "https://www.merchandisingplaza.es/407056/2/Shorts-Holanda-Futbol-Shorts-Holanda-Futbol-2020-21-Home--Naranja--l.jpg"
@@ -93,7 +93,7 @@
     "id": 11,
     "nombre": "Remera Bélgica away",
     "descripcion": "Remera vintage oficial de la selección de fútbol de Bélgica. Diseño retro y materiales de alta calidad.",
-    "categoria": "Ropa",
+    "categoria": "Europa",
     "precio": 29990,
     "stockDisponible": 5,
     "imagenURL": "https://www.sportsdirect.com/images/imgzoom/37/37917318_xxl.jpg"
@@ -102,7 +102,7 @@
     "id": 12,
     "nombre": "Camiseta de Arsenal",
     "descripcion": "Camiseta oficial del Arsenal Football Club. Diseño icónico y materiales de alta calidad para lucir como un verdadero fanático del equipo londinense.",
-    "categoria": "Ropa",
+    "categoria": "Equipos Europeos",
     "precio": 28990,
     "stockDisponible": 8,
     "imagenURL": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/acbe32fdb7a042658a96add00016c8d1_9366/Camiseta_Arsenal_Teamgeist_Granate_H35891_01_laydown.jpg"

@@ -35,8 +35,7 @@
     height: auto;
     min-height: 120px;
     margin-right: 4%;
-    padding: 20px 15px;
-    padding-bottom: 14px;
+    padding: 16px;
     background-color: #fff;
     border: 0px solid black;
     
@@ -60,8 +59,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 .item .info{
     width: 62%;
