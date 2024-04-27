@@ -15,6 +15,7 @@ import CartPage from './pages/CartPage'
 
 import Checkout from './pages/Checkout'
 
+import PublicacionesVendedor from './views/PublicacionesVendedor'
 
 
 import {Routes, Route} from 'react-router-dom';
@@ -48,6 +49,7 @@ function App() {
             />
           ))}
           <Route path='/checkout/success' element={<Checkout/>}/>
+          <Route path='/PublicacionesVendedor' element={<PublicacionesVendedor/>}/>
         </Routes>
       </CartProvider>
     </AuthProvider>

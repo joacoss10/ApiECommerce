@@ -2,7 +2,7 @@
     width: 100vw;
     min-height: 100vh;
     background-color: rgb(253, 253, 253);
-    
+    margin-top: 0px;
 }
 
 .checkout-container{
@@ -11,18 +11,20 @@
     margin: 0 auto;
     
     
-    margin-top: 40px;
+    
     background-color: rgba(196, 196, 196, 0);
+    
 }
 
 .checkout-img{
     display: flex;
     justify-content: center;
     max-width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 1px;
 }
 .checkout-img img{
     max-width: 38%;
+    margin-top: 45%;
 }
 
 .checkout-text{
