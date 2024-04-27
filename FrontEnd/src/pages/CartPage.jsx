@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Return from '../components/Return';
 import Navbar from '../components/Navbar';
+import Nav from '../components/Nav';
 import "../styles/cart.css";
 import { useCart } from '../services/CartContext'; // Importa el hook useCart
 import AddIcon from '@mui/icons-material/Add';
@@ -88,7 +89,7 @@ function CartPage() {
     
   return (
     <div className="cart-page">
-        <Navbar/>
+        <Nav/>
         <div className="cart-container">
             <div className="cart-title">
                 <h2>Carrito</h2>

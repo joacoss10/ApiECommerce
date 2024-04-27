@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar';
+import Nav from '../components/Nav';
 import '../styles/checkout.css'
 import { useNavigate } from 'react-router-dom';
 
@@ -10,7 +11,7 @@ function Checkout() {
     }
   return (
     <div className='checkout-page'>
-        <Navbar></Navbar>
+        <Nav/>
         <div className="checkout-container">
             <div className="checkout-img">
                 <img src="https://png.pngtree.com/png-vector/20191113/ourmid/pngtree-green-check-mark-icon-flat-style-png-image_1986021.jpg" />

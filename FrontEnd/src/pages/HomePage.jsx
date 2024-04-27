@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Card from '../components/Card';
 import productos from '../utils/productos.json';
 import arg from "../assets/arg.jpg";
+import Nav from '../components/Nav';
 
 
 
@@ -38,7 +39,8 @@ function HomePage() {
 
   return (
     <div className="home">
-        <Navbar className='navbar-home'/>
+        {/*<Navbar className='navbar-home'/>*/}
+        <Nav/>
        
         <div className="img-container-arg">
           <img src={arg} alt="Camisetas Bianchi" />

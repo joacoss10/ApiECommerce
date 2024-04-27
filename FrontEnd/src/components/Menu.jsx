@@ -21,7 +21,7 @@ const Menu = () => {
                     <a className='a' href="#">Indumentaria <ArrowDropDownIcon/></a>
                     <ul className="dropdownContent">
                         <li className='desplegable'><Link to="/Producto">Boca</Link></li>
-                        <li className='desplegable'><Link to="/Producto">Riber</Link></li>
+                        <li className='desplegable'><Link to="/Producto">River</Link></li>
                         <li className='desplegable'><Link to="/Producto">Lanus</Link></li>
                         <li className='desplegable'><Link to="/Producto">Independiente</Link></li>
                         <li className='desplegable'><Link to="/Producto">Racing</Link></li>

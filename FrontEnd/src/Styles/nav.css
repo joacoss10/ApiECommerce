@@ -1,0 +1,121 @@
+.div-nav {
+    max-width: 100vw;
+    background: rgb(245, 245, 245);
+    /*background: rgba(0, 0, 0, 0.829);*/
+    
+     
+  }
+
+  /*nuevo*/
+  .nav-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+    width: 100%;
+    background-color: rgb(40, 174, 228);
+    color: white;
+  }
+  .nav-title h2{
+    padding: 3px;
+    letter-spacing: 1px;
+    font-size: 1.4em;
+    font-weight: 450;
+  }
+  .nav-bottom .Menu .navigation li .a{
+    color: rgb(0, 0, 0);
+  }
+  /*nuevo*/
+  
+  .nav-top {
+    max-height: 125px;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 1400px;
+  }
+  
+  .comps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1700px;
+    margin: 0 auto;
+  }
+  
+  .nav-top-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0px;
+    position: absolute;
+    left: 50%;
+    top: 58px;
+    content:"";
+    transform: translateX(-50%);
+  }
+  
+  .nav-top-logo img {
+    max-width: 6.82em;
+    padding-bottom: 1%;
+    cursor: pointer;
+    
+  }
+  
+  .nav-top-right {
+    display: inline-block;
+    align-items: center;
+    padding-top: 38px;
+  }
+  
+  .left {
+    padding-left: 8.5%;
+    
+  }
+  
+  .nav-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 10px;
+    padding-bottom: 15px;
+    padding-top: 55px;
+    
+  }
+  
+  .nav-bottom button {
+    
+    margin: 0 10px;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  
+  
+  
+  #username{
+    font-weight: 200;
+    margin-left: 3px;
+  }
+  
+  
+  
+  @media only screen and (max-width: 768px) {
+    .comps {
+      flex-direction: column; /* Cambia la dirección del flexbox a columna */
+      align-items: flex-start; /* Alinea los elementos al inicio */
+    }
+    
+    .nav-top-logo,
+    .nav-top-right {
+      margin-top: 0px; /* Añade espacio entre el logo y los botones en dispositivos móviles */
+      margin-left: 0; /* Ajusta el margen izquierdo a 0 */
+    }
+    
+    .nav-top-right {
+      margin-right: 0px; /* Ajusta el margen derecho para centrar los botones */
+    }
+  
+    .left {
+      padding-left: 0; /* Elimina el padding izquierdo */
+    }
+  }
