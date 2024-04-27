@@ -8,8 +8,7 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const [isLoggedIn, setIsLoggedIn] = useState(()=>{
-    const isLoggedInSaved = localStorage.getItem('isLoggedIn');
-    return isLoggedInSaved ? JSON.parse(isLoggedInSaved) : [];
+    return localStorage.getItem('isLoggedIn') || '';
   });
 
   const [username, setUsername] = useState(() => {
