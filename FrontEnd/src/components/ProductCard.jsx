@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/ProductCard.css'
+import '../styles/productcard.css'
 const ProductCard = ({ product, onDeleteProduct }) => {
     const { id, imagen, titulo, descripcion, precio, stock } = product;
 
