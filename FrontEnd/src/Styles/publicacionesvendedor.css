@@ -1,0 +1,22 @@
+.div-publicaciones {
+    margin: 0 auto;
+  }
+  
+  .publicaciones-container {
+    padding-top: 18em; /* Ajusta el valor según la altura de tu barra de navegación */
+    width: 71.05%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+.publicaciones-container Nav{
+    position: absolute;
+}
+.publicaciones-aux{
+    
+}

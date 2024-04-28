@@ -1,6 +1,7 @@
 import React from "react";
 import ProductCard from "../components/ProductCard";
 import Nav from "../components/Nav";
+import '../styles/publicacionesvendedor.css'
 
 const PublicacionesVendedor = (userName) => {
     const producto = {
@@ -12,9 +13,18 @@ const PublicacionesVendedor = (userName) => {
     }
 
     return (
-        <div>
+        <div className="div-publicaciones">
             <Nav></Nav>
-            <ProductCard product={producto} />
+            <div className="publicaciones-container">
+                
+                
+                <ProductCard product={producto} />
+                <ProductCard product={producto} />
+                <ProductCard product={producto} />
+                <ProductCard product={producto} />
+                
+            </div>
+            
         </div >
     );
 };

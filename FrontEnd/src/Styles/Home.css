@@ -76,14 +76,14 @@
     background-color: rgba(0, 0, 0, 0.7); 
     pointer-events: none;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(0, 7, 19)); /* Crea una máscara lineal que se desvanece hacia abajo */
-    background: linear-gradient(110deg, #0a233388, #000000a8, #000000a0, #0b2b3f88);;
+    background: linear-gradient(110deg, #0a23337e, #00000085, #00000085, #0a23337e);;
 }
 .img-container-arg .inicio {
     position: absolute;
-    top: 84%;
+    top: 87%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: rgb(180, 180, 180); /* Color del texto */
+    color: rgb(209, 209, 209); /* Color del texto */
     
     
   }
