@@ -21,7 +21,7 @@
     "id": 3,
     "nombre": "Gorra de Brasil",
     "descripcion": "Gorra oficial del equipo de fútbol de Brasil. Ideal para los aficionados al fútbol brasileño. Logo bordado y diseño moderno.",
-    "categoria": "Brasil",
+    "categoria": "Brasil", 
     "precio": 18990,
     "stockDisponible": 35,
     "imagenURL": "https://i.ebayimg.com/thumbs/images/g/FPcAAOSwpHVksj8j/s-l640.jpg"
@@ -39,7 +39,7 @@
     "id": 5,
     "nombre": "Camiseta de CAI",
     "descripcion": "Remera oficial del Club Atlético Independiente de Argentina. Diseño moderno y materiales de primera calidad.",
-    "categoria": "Camiseta",
+    "categoria": "Independiente",
     "precio": 27990,
     "stockDisponible": 45,
     "imagenURL": "https://acdn.mitiendanube.com/stores/001/150/754/products/img-20231114-wa0020-ed35dec95dca8e0e3116999716167612-1024-1024.jpg"
