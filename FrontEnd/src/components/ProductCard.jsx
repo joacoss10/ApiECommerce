@@ -1,7 +1,6 @@
 import React from "react";
 import '../styles/productcard.css'
 const ProductCard = ({ product, onDeleteProduct }) => {
-    const { id, imagen, titulo, descripcion, precio, stock } = product;
 
     const handleDeleteClick = () => {
         const isConfirmed = window.confirm('¿Estás seguro de que queres eliminar este producto?');
@@ -11,19 +10,19 @@ const ProductCard = ({ product, onDeleteProduct }) => {
             onDeleteProduct(product.id);
         }
     };
-
+    console.log(product.nombre)
     return (
         <div className="product-card">
             <section>
-                <img src={imagen} className="product-image" alt={titulo} />
+                <img src={product.imagenURL} className="product-image" alt={product.nombre} />
             </section>
             <section className="Texto">
-                <h2 id="product-title">{titulo}</h2>
-                <p id="product-description">{descripcion}</p>
+                <h2 id="product-title">{product.nombre}</h2>
+                <p id="product-description">{product.descripcion}</p>
             </section>
             <section className="StockYPrecio">
-                <p><b>${precio}</b></p>
-                <p><b>Stock: {stock}</b></p>
+                <p><b>${product.precio}</b></p>
+                <p><b>Stock: {product.stockDisponible}</b></p>
             </section>
             <section className="Botones">
                 <button className="Eliminar" onClick={handleDeleteClick}>🗑️</button>

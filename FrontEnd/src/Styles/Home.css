@@ -6,16 +6,23 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-.div-navbar{
-    position: fixed; /* Cambiado a fixed */
-    width: 100%; /* Asegura que ocupe todo el ancho */
+
+.div-navbar {
+    position: fixed;
+    /* Cambiado a fixed */
+    width: 100%;
+    /* Asegura que ocupe todo el ancho */
     z-index: 1000;
 }
-.div-nav{
-    position: fixed; /* Cambiado a fixed */
-    width: 100%; /* Asegura que ocupe todo el ancho */
+
+.div-nav {
+    position: fixed;
+    /* Cambiado a fixed */
+    width: 100%;
+    /* Asegura que ocupe todo el ancho */
     z-index: 1000;
 }
+
 .home {
     margin: 0;
     background-color: #f3f3f3;
@@ -28,7 +35,8 @@
     font-weight: 600;
 }
 
-.product-box { /*product cards*/
+.product-box {
+    /*product cards*/
     display: flex;
     justify-content: center;
     padding: 25px;
@@ -39,12 +47,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 34px; /* Espacio entre las tarjetas */
-    max-width: 1400px; /* Ancho máximo para el contenedor de tarjetas */
+    gap: 34px;
+    /* Espacio entre las tarjetas */
+    max-width: 1400px;
+    /* Ancho máximo para el contenedor de tarjetas */
     justify-content: center;
 }
 
-.img-container-arg{
+.img-container-arg {
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -53,10 +63,10 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 4em;
-    
+
 }
 
-.img-container-arg img{
+.img-container-arg img {
     /*nuevo*/
     margin-top: 440px;
     /*nuevo*/
@@ -64,29 +74,35 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: blur(0px); /* Aplica un desenfoque de 5 píxeles */
-    
+    filter: blur(0px);
+    /* Aplica un desenfoque de 5 píxeles */
+
 }
+
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); 
+    background-color: rgba(0, 0, 0, 0.7);
     pointer-events: none;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(0, 7, 19)); /* Crea una máscara lineal que se desvanece hacia abajo */
-    background: linear-gradient(110deg, #0a23337e, #00000085, #00000085, #0a23337e);;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(0, 7, 19));
+    /* Crea una máscara lineal que se desvanece hacia abajo */
+    background: linear-gradient(110deg, #0a23337e, #00000085, #00000085, #0a23337e);
+    ;
 }
+
 .img-container-arg .inicio {
     position: absolute;
     top: 87%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: rgb(209, 209, 209); /* Color del texto */
-    
-    
-  }
+    color: rgb(209, 209, 209);
+    /* Color del texto */
+
+
+}
 
 
 
@@ -94,30 +110,32 @@
 
 
 
-  .imagen-fondo{
+.imagen-fondo {
     background-image: url(../assets/arg.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     height: 20em;
 
-  }
+}
 
 
 /* Media Queries para diseño responsive */
 @media screen and (max-width: 768px) {
     .cards {
-        justify-content: center; /* Centrar las tarjetas en dispositivos de hasta 768px */
+        justify-content: center;
+        /* Centrar las tarjetas en dispositivos de hasta 768px */
     }
+
     .inicio {
-        font-size: 30px; /* Reducir el tamaño del texto en dispositivos de hasta 768px */
+        font-size: 30px;
+        /* Reducir el tamaño del texto en dispositivos de hasta 768px */
     }
 }
 
 @media screen and (max-width: 576px) {
     .inicio {
-        font-size: 25px; /* Reducir aún más el tamaño del texto en dispositivos de hasta 576px */
+        font-size: 25px;
+        /* Reducir aún más el tamaño del texto en dispositivos de hasta 576px */
     }
 }
-
-

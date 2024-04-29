@@ -1,5 +1,5 @@
 import React from "react";
-import ComboBox from "../components/ComboBox";
+import ComboBox from "./ComboBox";
 import '../styles/Vender.css'
 const Vender = () => {
     const opciones = [
