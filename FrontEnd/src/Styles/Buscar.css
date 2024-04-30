@@ -1,0 +1,39 @@
+.Contenedor {
+    margin-top: 0em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 0em;
+}
+
+#input {
+    margin-top: 20em;
+    box-shadow: 0.5em 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.05);
+    border-radius: 1.5em;
+    background-color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    width: 30em;
+    padding: 0.5em 2.3em;
+}
+
+.buscar-productos {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    padding-bottom: 80px;
+}
+
+.buscar-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 34px;
+    /* Espacio entre las tarjetas */
+    max-width: 1400px;
+    /* Ancho máximo para el contenedor de tarjetas */
+    justify-content: center;
+}
