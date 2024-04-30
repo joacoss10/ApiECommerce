@@ -5,11 +5,13 @@
     border-radius: 1em;
     overflow: hidden;
     width: 20em;
+    height: 35em;
 }
 
 .product-image {
     width: 100%;
     object-fit: cover;
+    height: 20em;
 }
 
 #product-title {
@@ -18,9 +20,20 @@
 }
 
 #product-description {
-    margin-top: -0.2em;
-    font-family: "Arial", sans-serif;
+    margin-top: 8px;
+    display: -webkit-box;
+    /* Establece el modo de visualización como flexible */
+    -webkit-line-clamp: 3;
+    /* Limita el número de líneas a mostrar */
+    -webkit-box-orient: vertical;
+    /* Orientación vertical */
+    overflow: hidden;
+    /* Oculta el texto que excede las tres líneas */
+    line-height: 1.4em;
+    /* Altura de línea, ajusta según sea necesario */
 }
+
+
 
 .Texto {
     padding: 16px;
@@ -38,7 +51,8 @@
     display: flex;
     justify-content: space-between;
     margin: 2em;
-    margin-top: -1em;
+    margin-top: 0.2em;
+
 }
 
 .Eliminar,
@@ -48,8 +62,25 @@
     border: none;
     padding: 0.5em 1em;
     border-radius: 5em;
+    cursor: pointer;
+}
+
+.Eliminar:hover {
+    transform: scale(1.15);
+    background-color: #A52A2A;
+    /* Tono rojo */
+
 }
 
 .Editar {
     background-color: #2196f3;
 }
+
+.Editar:hover {
+    transform: scale(1.15);
+    background-color: #005da6;
+    /* Azul intenso */
+
+}
+
+.SeccionImagen {}

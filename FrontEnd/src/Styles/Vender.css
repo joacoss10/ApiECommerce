@@ -9,13 +9,12 @@
 }
 
 
-
 .Formulario {
     margin-top: 15.5em;
-    box-shadow:10px 10px 15px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 10px 10px 15px 10px rgba(0, 0, 0, 0.05);
     border-radius: 1.5em;
-    background-color: #ffffff; 
-    
+    background-color: #ffffff;
+
     display: flex;
     flex-direction: column;
     width: 30em;
@@ -27,12 +26,11 @@
     text-align: start;
     margin-top: 1em;
     padding-left: 5px;
-    
+
 }
 
 .Formulario input {
     margin-top: 1em;
-    
     border: 0.1em solid #ccc;
     border-radius: 0.3em;
     text-decoration: none;
@@ -40,13 +38,15 @@
     outline: none;
     padding: 5px;
     padding-left: 8px;
-    
-    
+
+
 }
-#Titulo{
+
+#Titulo {
     font-size: 14.2px;
 }
-.description{
+
+.description {
     width: 100%;
     height: 5em;
     border: 0.1em solid #ccc;
@@ -56,9 +56,11 @@
     justify-content: flex-start;
 
 }
+
 .Formulario textarea {
     resize: none;
     width: 100%;
+    height: 100%;
     border: 0.1em solid #ccc;
     border-radius: 0.3em;
     text-decoration: none;
@@ -66,39 +68,38 @@
     outline: none;
     padding: 6px;
     padding-left: 8px;
-    
-    
-    
 }
 
-#LabelStockPrecio{
+#LabelStockPrecio {
     display: flex;
     justify-content: flex-start;
 }
 
-#InputStockPrecio{
+#InputStockPrecio {
     display: flex;
     justify-content: flex-start;
 }
 
 #Descripcion {
-   
-    
-    
-    
+
+
+
+
     border-radius: 0.3em;
     background: none;
     outline: none;
-    border:none;
+    border: none;
     font-size: 14px;
 }
 
 #Titulo {
     height: 3em;
 }
-#DescripcionLabel{
+
+#DescripcionLabel {
     margin-bottom: 0.8em;
 }
+
 #LabelStockPrecio {
     margin-top: 0.4em;
 }
@@ -128,45 +129,37 @@
     cursor: pointer;
     transition: 0.3 ease;
 }
+
 #Botones input:hover {
     background-color: #187bcc;
-    
+
 }
-.comboBox-container{
+
+.comboBox-container {
     width: 100%;
 }
+
 #ComboBox {
     width: 100%;
-    
-}
-#File {
-    display: none;
+
 }
 
 /* Estilo del botón personalizado */
 
-#custom-file-input {
-    background-color: #ffffff; /* Color de fondo */
-    color: #9b9b9b; /* Color del texto */
-    border-bottom: 0.1em solid #ccc;
-    padding: 10px 15px; /* Espaciado interno */
-    font-size: 15.5px;
-    cursor: pointer; /* Cursor de puntero */
-    border-radius: 0px; /* Bordes redondeados */
-}
-
-#Stock{
+#Stock {
     margin-right: 3em;
     margin-bottom: 0.6em;
     font-size: 14px;
 }
-#Precio{
+
+#Precio {
     font-size: 14px;
 }
 
-#PrecioLabel{
+#PrecioLabel {
     margin-left: 7.7em;
 }
-#StockLabel{
+
+#StockLabel {
     margin-left: 0em;
 }

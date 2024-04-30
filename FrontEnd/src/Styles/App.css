@@ -18,7 +18,8 @@
     font-size: 40px;
 }
 
-.product-box { /*product cards*/
+.product-box {
+    /*product cards*/
     display: flex;
     justify-content: center;
     padding: 25px;
@@ -28,8 +29,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 40px; /* Espacio entre las tarjetas */
-    max-width: 1400px; /* Ancho máximo para el contenedor de tarjetas */
+    gap: 40px;
+    /* Espacio entre las tarjetas */
+    max-width: 1400px;
+    /* Ancho máximo para el contenedor de tarjetas */
     justify-content: flex-start;
 }
 
@@ -38,17 +41,19 @@
 /* Media Queries para diseño responsive */
 @media screen and (max-width: 768px) {
     .cards {
-        justify-content: center; /* Centrar las tarjetas en dispositivos de hasta 768px */
+        justify-content: center;
+        /* Centrar las tarjetas en dispositivos de hasta 768px */
     }
+
     .inicio {
-        font-size: 30px; /* Reducir el tamaño del texto en dispositivos de hasta 768px */
+        font-size: 30px;
+        /* Reducir el tamaño del texto en dispositivos de hasta 768px */
     }
 }
 
 @media screen and (max-width: 576px) {
     .inicio {
-        font-size: 25px; /* Reducir aún más el tamaño del texto en dispositivos de hasta 576px */
+        font-size: 25px;
+        /* Reducir aún más el tamaño del texto en dispositivos de hasta 576px */
     }
 }
-
-

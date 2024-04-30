@@ -1,7 +1,5 @@
-import React, {useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import "../styles/Home.css"
-
-import Navbar from '../components/Navbar';
 import Card from '../components/Card';
 import productos from '../utils/productos.json';
 import arg from "../assets/arg.jpg";
@@ -35,40 +33,40 @@ function HomePage() {
 
 
 
-      
+
 
   return (
     <div className="home">
-        {/*<Navbar className='navbar-home'/>*/}
-        <Nav/>
-       
-        <div className="img-container-arg">
-          <img src={arg} alt="Camisetas Bianchi" />
-          <div className="overlay"></div>
-          <h2 className='inicio'>Inicio</h2>
-        </div>
-        
+      {/*<Navbar className='navbar-home'/>*/}
+      <Nav />
 
-         {/*   
+      <div className="img-container-arg">
+        <img src={arg} alt="Camisetas Bianchi" />
+        <div className="overlay"></div>
+        <h2 className='inicio'>Inicio</h2>
+      </div>
+
+
+      {/*   
         <div className="imagen-fondo">
           
           <h1>Inicio</h1>
           <p></p>
         </div>
         */}
-        
-        
-        
-        <div className='product-box'>
-            <div className="cards">
-              
-              {productos.map(producto => (
-                <Card key={producto.id} producto={producto} />
-              ))}
 
-            </div>
+
+
+      <div className='product-box'>
+        <div className="cards">
+
+          {productos.map(producto => (
+            <Card key={producto.id} producto={producto} />
+          ))}
+
         </div>
-        
+      </div>
+
     </div>
   )
 }

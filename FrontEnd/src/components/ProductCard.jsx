@@ -1,19 +1,27 @@
 import React from "react";
 import '../styles/productcard.css'
-const ProductCard = ({ product, onDeleteProduct }) => {
+import { useNavigate } from 'react-router-dom';
+
+const ProductCard = ({ product }) => {
+    const navigate = useNavigate();
 
     const handleDeleteClick = () => {
-        const isConfirmed = window.confirm('¿Estás seguro de que queres eliminar este producto?');
-
+        const isConfirmed = window.confirm('¿Está seguro que quiere eliminar este producto?');
         if (isConfirmed) {
-            // Llamar a la función para eliminar el producto
-            onDeleteProduct(product.id);
+            // Lógica para eliminar el producto...
+        }
+    };
+
+    const handleEditClick = () => {
+        const isConfirmed = window.confirm('¿Quiere editar este producto?');
+        if (isConfirmed) {
+            navigate('/EditarVender', { state: { productData: product } });
         }
     };
     console.log(product.nombre)
     return (
         <div className="product-card">
-            <section>
+            <section className="SeccionImagen">
                 <img src={product.imagenURL} className="product-image" alt={product.nombre} />
             </section>
             <section className="Texto">
@@ -26,7 +34,7 @@ const ProductCard = ({ product, onDeleteProduct }) => {
             </section>
             <section className="Botones">
                 <button className="Eliminar" onClick={handleDeleteClick}>🗑️</button>
-                <button className="Editar">✏️</button>
+                <button className="Editar" onClick={handleEditClick}>✏️</button>
             </section>
         </div>
     );

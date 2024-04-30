@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar';
+
 import Nav from '../components/Nav';
 import Accordion from '../components/Accordion';
 import "../styles/productpage.css"
@@ -15,13 +15,13 @@ import { useCart } from '../services/CartContext'; // Importa el hook useCart
 
 function ProductPage({ producto }) {
   const navigate = useNavigate();
-  const handleClick = () => {     
+  const handleClick = () => {
     navigate(`/${producto.categoria}`);
   }
 
   const { addToCart, checkAndRestoreCartFromLocalStorage, getTotal, cartItems } = useCart(); // Obtén las funciones necesarias del contexto del carrito
-  console.log("cart: ",cartItems);
-  console.log("total: ",getTotal());
+  console.log("cart: ", cartItems);
+  console.log("total: ", getTotal());
 
   /*
   useEffect(() => {
@@ -68,7 +68,7 @@ function ProductPage({ producto }) {
         </div>
         <div className="infoProduct">
           <Chip label={producto.categoria} variant="outlined" color="primary" size="small" onClick={handleClick} />
-          <Chip label={producto.stockDisponible > 0 ? "Hay stock" : "Sin stock"} color={producto.stockDisponible > 0 ? "success" : "error"} size="small" className='stock'/>
+          <Chip label={producto.stockDisponible > 0 ? "Hay stock" : "Sin stock"} color={producto.stockDisponible > 0 ? "success" : "error"} size="small" className='stock' />
           <h2 className='title'> {producto.nombre} </h2>
           <span className='description-product'>{producto.descripcion}</span>
           <div className="precio">
@@ -77,7 +77,7 @@ function ProductPage({ producto }) {
           </div>
           <div className="manage">
             <div className="cantidad">
-              <RemoveIcon className='controllers'  onClick={disminuirCantidad} />
+              <RemoveIcon className='controllers' onClick={disminuirCantidad} />
               <div className="number">
                 <span>{cantidad}</span>
               </div>
@@ -88,7 +88,7 @@ function ProductPage({ producto }) {
               <button onClick={handleAgregarAlCarrito} disabled={!isClickable}><p>Agregar </p> </button>
             </div>
           </div>
-          <Accordion/>
+          <Accordion />
         </div>
       </div>
     </div>

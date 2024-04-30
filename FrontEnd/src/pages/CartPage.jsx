@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import Return from '../components/Return';
-import Navbar from '../components/Navbar';
+
 import Nav from '../components/Nav';
 import "../styles/cart.css";
 import { useCart } from '../services/CartContext'; // Importa el hook useCart
@@ -11,17 +11,17 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import IconButton from '@mui/material/IconButton';
 import CachedIcon from '@mui/icons-material/Cached';
 import ClearIcon from '@mui/icons-material/Clear';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 function CartPage() {
-    const { removeFromCart, getCantidadItems, getTotal, cartItems, clearCart,setCartItems } = useCart();
+    const { removeFromCart, getCantidadItems, getTotal, cartItems, clearCart, setCartItems } = useCart();
     const [envio, setEnvio] = useState('Gratis');
-    console.log("cart: ",cartItems);
-    
+    console.log("cart: ", cartItems);
+
     const navigate = useNavigate();
 
-    const handleProductClick = (id) =>{
+    const handleProductClick = (id) => {
         navigate(`/product/${id}`)
     }
 
@@ -33,9 +33,9 @@ function CartPage() {
             return item;
         });
         setCartItems(updatedCartItems);
-        
+
     }
-    
+
     const disminuirCantidad = (id) => {
         const updatedCartItems = cartItems.map(item => {
             if (item.id === id && item.cantidad > 1) {
@@ -43,11 +43,11 @@ function CartPage() {
             }
             return item;
         });
-        
+
         setCartItems(updatedCartItems);
-        
+
     }
-    const eliminarProducto = (id) =>{
+    const eliminarProducto = (id) => {
         removeFromCart(id);
     }
 
@@ -75,108 +75,108 @@ function CartPage() {
 
     const handleCuponClick = () => {
         if (cupon === '90futbol' || cupon === 'bianchi') {
-          setCuponAplicado(true);
+            setCuponAplicado(true);
         }
     };
 
     //CHECKOUT
 
-    const handleCheckOutClick = () =>{
+    const handleCheckOutClick = () => {
         //clearCart();
         navigate('/checkout/success');
     }
 
-    
-  return (
-    <div className="cart-page">
-        <Nav/>
-        <div className="cart-container">
-            <div className="cart-title">
-                <h2>Carrito</h2>
-            </div>
-        
+
+    return (
+        <div className="cart-page">
+            <Nav />
+            <div className="cart-container">
+                <div className="cart-title">
+                    <h2>Carrito</h2>
+                </div>
 
 
-            <div className="cart-content">
-                <div className="cart-items">
-                    {cartItems.map((item, index) => (
-                        <div className="item" key={index}>
-                            <div className="info">
-                            <IconButton className='delete' aria-label="delete" onClick={()=>eliminarProducto(item.id)}  >
-                                <ClearIcon  />
-                            </IconButton>
-                            <img src={item.imagenURL} alt="imagen" />
-                            <p onClick={()=>handleProductClick(item.id)}>{item.nombre}</p>
-                            </div>
-                            <div className="cart-manage-container">
-                                <div className="cart-manage">
-                                    <div className="cart-cantidad">
-                                        <RemoveIcon fontSize='small' className='cart-controllers'  onClick={()=>disminuirCantidad(item.id)} />
-                                        <div className="cart-number">
-                                            <span>{item.cantidad}</span>
+
+                <div className="cart-content">
+                    <div className="cart-items">
+                        {cartItems.map((item, index) => (
+                            <div className="item" key={index}>
+                                <div className="info">
+                                    <IconButton className='delete' aria-label="delete" onClick={() => eliminarProducto(item.id)}  >
+                                        <ClearIcon />
+                                    </IconButton>
+                                    <img src={item.imagenURL} alt="imagen" />
+                                    <p onClick={() => handleProductClick(item.id)}>{item.nombre}</p>
+                                </div>
+                                <div className="cart-manage-container">
+                                    <div className="cart-manage">
+                                        <div className="cart-cantidad">
+                                            <RemoveIcon fontSize='small' className='cart-controllers' onClick={() => disminuirCantidad(item.id)} />
+                                            <div className="cart-number">
+                                                <span>{item.cantidad}</span>
+                                            </div>
+                                            <AddIcon fontSize='small' className='cart-controllers' onClick={() => aumentarCantidad(item.id)} />
                                         </div>
-                                        <AddIcon fontSize='small' className='cart-controllers' onClick={()=>aumentarCantidad(item.id)} />
                                     </div>
                                 </div>
+                                <h4 className='item-price'>$ {item.precio * item.cantidad}</h4>
+
                             </div>
-                            <h4 className='item-price'>$ {item.precio * item.cantidad}</h4>
-                            
-                        </div>
-                    ))}
-                    {false && cartItems.length > 0 && <button className='clear' onClick={clearCart}>Limpiar</button>}
-                    
-                </div>
+                        ))}
+                        {false && cartItems.length > 0 && <button className='clear' onClick={clearCart}>Limpiar</button>}
 
-                
+                    </div>
 
 
-                <div className="cart-info">
-                    <h4>Resumen de compra</h4>
-                    
-                    <div className="productos">
-                        <span>Productos({getCantidadItems()}): </span> 
-                        <span>$ {getTotal()}</span>
-                    </div>
-                    <div className="envio">
-                        <span>Envio: </span>
-                        <span>{envio === 0 ? 'Gratis' : `$ ${envio}`}</span>
-                    </div>
-                    <div className="cupon">
-                        <div className="cupon-input">
-                            <input type="text" placeholder='Cupon' value={cupon} onChange={handleCuponChange}/>
+
+
+                    <div className="cart-info">
+                        <h4>Resumen de compra</h4>
+
+                        <div className="productos">
+                            <span>Productos({getCantidadItems()}): </span>
+                            <span>$ {getTotal()}</span>
                         </div>
-                        <div className="cupon-btn">
-                            <button onClick={handleCuponClick}>Aplicar</button>
+                        <div className="envio">
+                            <span>Envio: </span>
+                            <span>{envio === 0 ? 'Gratis' : `$ ${envio}`}</span>
                         </div>
-                        
-                    </div>
-                    <div className="cart-total">
-                        <span className='cart-price'>Total: </span>
-                        {cuponAplicado ? (
-                            <span className='cart-price'>$ {getTotal() * 0.8 + envio}</span>
+                        <div className="cupon">
+                            <div className="cupon-input">
+                                <input type="text" placeholder='Cupon' value={cupon} onChange={handleCuponChange} />
+                            </div>
+                            <div className="cupon-btn">
+                                <button onClick={handleCuponClick}>Aplicar</button>
+                            </div>
+
+                        </div>
+                        <div className="cart-total">
+                            <span className='cart-price'>Total: </span>
+                            {cuponAplicado ? (
+                                <span className='cart-price'>$ {getTotal() * 0.8 + envio}</span>
                             ) : (
-                            <span className='cart-price'>$ {getTotal() + envio}</span>
-                        )}
+                                <span className='cart-price'>$ {getTotal() + envio}</span>
+                            )}
+                        </div>
+                        <div className="btn">
+                            <div className="layer"></div>
+                            <button onClick={handleCheckOutClick}>Iniciar Pedido</button>
+                        </div>
                     </div>
-                    <div className="btn">
-                        <div className="layer"></div>
-                        <button onClick={handleCheckOutClick}>Iniciar Pedido</button>
-                    </div>
-                </div>
 
-                    
+
+
+
+                </div>
 
 
             </div>
-            
-            
+
+
+
         </div>
-        
-        
-    
-    </div>
-    
-  )
+
+    )
 }
 
 
