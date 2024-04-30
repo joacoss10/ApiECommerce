@@ -13,6 +13,8 @@ import { useNavigate } from 'react-router-dom';
 import productos from './utils/productos.json';
 import { CartProvider } from './services/CartContext';
 import { AuthProvider } from './services/AuthContext';
+import BuscarPage from './pages/BuscarPage'
+
 
 
 
@@ -30,6 +32,7 @@ function App() {
           <Route path='/vender' element={<SellerPage />} />
           <Route path='/cart' element={<CartPage />} />
           <Route path='/EditarVender' element={<EditPage />} />
+          <Route path='/buscar' element={<BuscarPage />} />
           {productos.map(producto => (
             <Route
               key={producto.id}
