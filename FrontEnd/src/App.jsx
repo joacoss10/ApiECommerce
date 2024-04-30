@@ -15,6 +15,8 @@ import CartPage from './pages/CartPage'
 
 import Checkout from './pages/Checkout'
 
+import BuscarPage from './pages/BuscarPage'
+
 import PublicacionesVendedor from './views/PublicacionesVendedor'
 
 
@@ -41,6 +43,9 @@ function App() {
           <Route path='/signup' element={<SignupPage/>} />
           <Route path='/vender' element={<SellerPage/>} />
           <Route path='/cart' element={<CartPage/>} />
+          <Route path='/buscar' element={<BuscarPage/>}/>
+
+          
           {productos.map(producto => (
             <Route
               key={producto.id}

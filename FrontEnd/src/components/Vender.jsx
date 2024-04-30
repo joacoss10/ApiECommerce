@@ -1,6 +1,7 @@
 import React from "react";
 import ComboBox from "../components/ComboBox";
 import '../styles/Vender.css'
+
 const Vender = () => {
     const opciones = [
         { value: 'Boca', label: 'Boca' },
