@@ -48,7 +48,7 @@ const EditarVender = () => {
 
   }
   return (
-    <main className="Contenedor">
+    <main className="Contenedor-vender">
       <form className="Formulario" >
 
         <label htmlFor='titulo' id='TituloLabel'><b>Título</b></label>
