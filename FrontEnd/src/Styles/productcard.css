@@ -20,23 +20,16 @@
 }
 
 #product-description {
-    margin-top: 8px;
+    margin-top: 0.8em;
     display: -webkit-box;
-    /* Establece el modo de visualización como flexible */
     -webkit-line-clamp: 3;
-    /* Limita el número de líneas a mostrar */
     -webkit-box-orient: vertical;
-    /* Orientación vertical */
     overflow: hidden;
-    /* Oculta el texto que excede las tres líneas */
     line-height: 1.4em;
-    /* Altura de línea, ajusta según sea necesario */
 }
 
-
-
 .Texto {
-    padding: 16px;
+    padding: 1em;
 }
 
 .StockYPrecio {
@@ -68,8 +61,6 @@
 .Eliminar:hover {
     transform: scale(1.15);
     background-color: #A52A2A;
-    /* Tono rojo */
-
 }
 
 .Editar {
@@ -79,8 +70,4 @@
 .Editar:hover {
     transform: scale(1.15);
     background-color: #005da6;
-    /* Azul intenso */
-
 }
-
-.SeccionImagen {}
