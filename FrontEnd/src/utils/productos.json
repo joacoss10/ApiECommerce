@@ -21,7 +21,7 @@
     "id": 3,
     "nombre": "Gorra de Brasil",
     "descripcion": "Gorra oficial del equipo de fútbol de Brasil. Ideal para los aficionados al fútbol brasileño. Logo bordado y diseño moderno.",
-    "categoria": "Brasil", 
+    "categoria": "Brasil",
     "precio": 18990,
     "stockDisponible": 35,
     "imagenURL": "https://i.ebayimg.com/thumbs/images/g/FPcAAOSwpHVksj8j/s-l640.jpg"
@@ -107,5 +107,4 @@
     "stockDisponible": 8,
     "imagenURL": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/acbe32fdb7a042658a96add00016c8d1_9366/Camiseta_Arsenal_Teamgeist_Granate_H35891_01_laydown.jpg"
   }
-  
 ]

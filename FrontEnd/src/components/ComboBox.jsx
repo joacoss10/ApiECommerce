@@ -15,7 +15,7 @@ const ComboBox = ({ defaultValue, placeholder, onChange, styles }) => {
         { value: 'SeleccionArgentina', label: 'Seleccion argentina' },
         { value: 'SeleccionBrasil', label: 'Seleccion brasil' },
         { value: 'SeleccionUruguay', label: 'Seleccion uruguay' },
-        { value: 'Selecciones', label: 'selecciones' }
+        { value: 'Selecciones', label: 'Selecciones' }
     ];
 
     const handleChange = (selectedOption) => {
