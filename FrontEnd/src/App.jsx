@@ -14,6 +14,7 @@ import productos from './utils/productos.json';
 import { CartProvider } from './services/CartContext';
 import { AuthProvider } from './services/AuthContext';
 import BuscarPage from './pages/BuscarPage'
+import CategoryPage from './pages/CategoryPage'
 
 
 
@@ -21,7 +22,7 @@ import BuscarPage from './pages/BuscarPage'
 
 
 function App() {
-  //const navigate = useNavigate();
+  const categorias = ['Boca','River','Lanus','Independiente','Racing','San-Lorenzo','Equipos-Sudamericanos','Equipos-Europeos','Equipos-Argentinos','Argentina','Brasil','Uruguay','Europa','Otros'];
   return (
     <AuthProvider>
       <CartProvider>
@@ -40,6 +41,14 @@ function App() {
               element={<ProductPage producto={producto} />}
             />
           ))}
+          {categorias.map(categoria =>(
+            <Route
+              key={categoria}
+              path={`/categoria/${categoria}`}
+              element={<CategoryPage categoria={categoria}/>}
+            />
+          ))}
+          
           <Route path='/checkout/success' element={<Checkout />} />
           <Route path='/PublicacionesVendedor' element={<PublicacionesVendedor />} />
         </Routes>

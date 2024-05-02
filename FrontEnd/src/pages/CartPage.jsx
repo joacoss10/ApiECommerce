@@ -124,7 +124,7 @@ function CartPage() {
                                     <h4 className='item-price'>$ {item.precio * item.cantidad}</h4>
                                 </div>
                             ))}
-                            <button className='clear' onClick={clearCart}>Limpiar</button>
+                            
                         </div>
                     ) : (
                         <div className="cart-empty">
