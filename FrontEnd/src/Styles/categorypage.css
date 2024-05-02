@@ -1,0 +1,34 @@
+.categoryPage{
+
+}
+
+.category-products-cards{
+    margin: 0 auto;
+
+    width: 80%;
+    
+}
+.category-products-cards .category-title{
+    padding-top: 6.3em;
+    font-size: 2.7em;
+    margin-left: 5em;
+    margin-bottom: 0.7em;
+}
+.product-box {
+    /*product cards*/
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    padding-bottom: 80px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 34px;
+    /* Espacio entre las tarjetas */
+    max-width: 1400px;
+    /* Ancho máximo para el contenedor de tarjetas */
+    justify-content: center;
+}

@@ -22,7 +22,7 @@ import CategoryPage from './pages/CategoryPage'
 
 
 function App() {
-  const categorias = ['Boca','River','Lanus','Independiente','Racing','San-Lorenzo','Equipos-Sudamericanos','Equipos-Europeos','Equipos-Argentinos','Argentina','Brasil','Uruguay','Europa','Otros'];
+  const categorias = ['Boca','River','Lanus','Independiente','Racing','San Lorenzo','Equipos Sudamericanos','Equipos Europeos','Equipos Argentinos','Argentina','Brasil','Uruguay','Europa','Otros'];
   return (
     <AuthProvider>
       <CartProvider>
