@@ -16,14 +16,14 @@ import '../styles/sellerpage.css';
 
 
 function SellerPage() {
-  
+
 
 
   return (
     <div className='sell-container'>
-        <Nav/>
-        <Vender></Vender>
-        
+      <Nav />
+      <Vender></Vender>
+
     </div>
   )
 }

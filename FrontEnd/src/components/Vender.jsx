@@ -7,7 +7,7 @@ const Vender = () => {
         <main className="Contenedor-vender">
             <form className="Formulario">
                 <label for='Titulo' id='TituloLabel'><b>Título</b></label>
-                <input type="text" id='Titulo' placeholder="Escriba el título" required></input>
+                <input type="text" id='Titulo' placeholder="Escriba el título" maxLength={20} required></input>
                 <label for='Descripcion' id='DescripcionLabel'><b>Descripción</b></label>
                 <div className="description">
                     <textarea type="text" id='Descripcion' placeholder="Describa su producto" required></textarea>

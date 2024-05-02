@@ -1,0 +1,28 @@
+.Contenedor-CarritoVacio {
+    border-radius: 1.5em;
+    background-color: #f0f0f0;
+    border-style: dashed;
+    width: 60em;
+    padding: 3.5em 2.3em;
+}
+
+
+.Foto-Carrito img {
+    margin: auto;
+    height: 5em;
+    width: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -2em;
+    margin-bottom: 1em;
+
+}
+
+.Descripcion h3 {
+    font-size: 1em;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
