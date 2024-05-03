@@ -49,7 +49,9 @@ function HomePage() {
     setMaxPrice('');
     setMinPriceInput('');
     setMaxPriceInput('');
-    applyFilters(); // Aplicar filtros para mostrar todos los productos
+    localStorage.removeItem('minPrice', null);
+    localStorage.removeItem('maxPrice', null);
+    
   };
 
   
