@@ -13,13 +13,13 @@ import Logoo from '../assets/camisetas-bianchi.png'
 function Nav() {
     const { isLoggedIn, username, logout } = useAuth();
     const navigate = useNavigate();
-    console.log({ username });
+    console.log('username: ',{ username });
     const handleClickAccount = () => {     //navega a /login
         if (isLoggedIn != true) {
             navigate("/login");
         } else {
             handleClickLogout(); // Call handleClickTest when logged in
-            console.log('User is logged in and handleClickTest has been executed.');
+            
         }
     }
 

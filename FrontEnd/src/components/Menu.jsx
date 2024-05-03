@@ -25,7 +25,7 @@ const Menu = () => {
             window.location.href = '/login';
         }
     };
-    console.log("log:", isLoggedIn);
+    
     return (
         <div className="Menu">
             < ul className="navigation" >
