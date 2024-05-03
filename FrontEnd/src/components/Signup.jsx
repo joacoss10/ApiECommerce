@@ -5,11 +5,6 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import BadgeOutlinedIcon from '@mui/icons-material/BadgeOutlined';
 import {useNavigate} from 'react-router-dom';
 
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import Return from '../components/Return';
 
 import "../styles/signup.css";
@@ -43,6 +38,9 @@ function Signup() {
     
   });
 
+  const [registrationComplete, setRegistrationComplete] = useState(false);
+  const [registrationResponse, setRegistrationResponse] = useState(null);
+
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -68,7 +66,9 @@ function Signup() {
 
       // Verificar si la solicitud fue exitosa
       if (response.ok) {
-        console.log('ok');
+        
+        const responseBody = await response.text(); // Obtener el cuerpo de la respuesta en formato de texto
+        console.log('response', responseBody);
         // Manejar la respuesta aquí si es necesario
       } else {
         // Si la solicitud falla, manejar el error aquí
@@ -86,6 +86,7 @@ function Signup() {
 
   return (
     <div className="signup-wrapper">
+      {!registrationComplete ? (
       <form>
         <Return></Return>
         <h1>Sign up</h1>
@@ -158,8 +159,14 @@ function Signup() {
           <p>Ya tenes una cuenta? <a onClick={handleClickLogin}>Ingresa</a></p>
         </div>
       </form>
-
-      
+      ) : (
+        <div className="registration-response">
+          <h2>Respuesta del Registro:</h2>
+          <p>Username: {registrationResponse.username}</p>
+          <p>Mail: {registrationResponse.mail}</p>
+          {/* Mostrar más detalles de la respuesta si es necesario */}
+        </div>
+      )}
     </div>
   );
 }
