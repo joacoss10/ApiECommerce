@@ -5,7 +5,21 @@ import productos from '../utils/productos.json'
 import Card from '../components/Card'
 
 function CategoryPage({categoria}) {
-    const productosFiltrados = productos.filter(producto => producto.categoria === categoria);
+    let productosFiltrados;
+
+  if (categoria === 'Equipos Argentinos' || categoria ==='Equipos Sudamericanos') {
+    productosFiltrados = productos.filter(producto =>
+      producto.categoria === categoria ||
+      producto.categoria === 'Boca' ||
+      producto.categoria === 'River' ||
+      producto.categoria === 'Lanus' ||
+      producto.categoria === 'Independiente' ||
+      producto.categoria === 'Racing' ||
+      producto.categoria === 'San Lorenzo'
+    );
+  } else {
+    productosFiltrados = productos.filter(producto => producto.categoria === categoria);
+  }
   return (
     <div className="categoryPage">
         <Nav/>

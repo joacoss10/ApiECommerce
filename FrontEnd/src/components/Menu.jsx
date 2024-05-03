@@ -44,6 +44,7 @@ const Menu = () => {
                         <li className='desplegable'><Link to="/categoria/Equipos Argentinos">Equipos Argentinos</Link></li>
                         <li className='desplegable'><Link to="/categoria/Equipos Sudamericanos">Equipos Sudamericanos</Link></li>
                         <li className='desplegable'><Link to="/categoria/Equipos Europeos">Equipos Europeos</Link></li>
+                        <li className='desplegable'><Link to="/categoria/Otros Equipos">Otros Equipos</Link></li>
                     </ul>
                 </li>
                 <li className="dropdown">
