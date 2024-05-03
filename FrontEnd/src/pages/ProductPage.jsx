@@ -12,6 +12,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
 import productos from '../utils/productos.json';
 import { useCart } from '../services/CartContext'; // Importa el hook useCart
+import { Link } from 'react-router-dom';
 
 function ProductPage({ producto }) {
   const navigate = useNavigate();
@@ -23,12 +24,18 @@ function ProductPage({ producto }) {
   console.log("cart: ", cartItems);
   console.log("total: ", getTotal());
 
-  /*
+  
   useEffect(() => {
-    checkAndRestoreCartFromLocalStorage();
-  }, []); // Verificar y restaurar el carrito del almacenamiento local al cargar la página
-  */
+    
+    const isProductInCart = cartItems.find(item => item.id === producto.id);
+    setIsAddedToCart(!!isProductInCart);
+  }, []);
+  
+
+
   const [cantidad, setCantidad] = useState(1);
+
+  const [isAddedToCart, setIsAddedToCart] = useState(false);
 
   useEffect(() => {
     // Si el stock del producto es 0, establece la cantidad en 0
@@ -57,6 +64,7 @@ function ProductPage({ producto }) {
 
   const handleAgregarAlCarrito = () => {
     addToCart({ ...producto, cantidad }); // Agrega el producto al carrito con la cantidad seleccionada
+    setIsAddedToCart(true);
   };
 
   return (
@@ -88,7 +96,13 @@ function ProductPage({ producto }) {
               <button onClick={handleAgregarAlCarrito} disabled={!isClickable}><p>Agregar </p> </button>
             </div>
           </div>
-          <Accordion />
+          <div className="aviso-producto">
+            {isAddedToCart && <span className="added-to-cart">Agregaste este producto al carrito {/*<Link to='/cart'>Ver Carrito</Link>*/}</span>}
+          </div>
+          <div className="accordion">
+            <Accordion />
+          </div>
+          
         </div>
       </div>
     </div>
