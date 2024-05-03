@@ -63,12 +63,17 @@ function Signup() {
         },
         body: JSON.stringify(formData) // Enviar datos del formulario como JSON
       });
+      
+      const responseBody = await response.text(); // Obtener el cuerpo de la respuesta en formato de texto
+      console.log('response', responseBody);
+      navigate(`/signup/result/${responseBody}`);
+
 
       // Verificar si la solicitud fue exitosa
       if (response.ok) {
-        
         const responseBody = await response.text(); // Obtener el cuerpo de la respuesta en formato de texto
         console.log('response', responseBody);
+        navigate(`/otra-ruta/${responseBody}`);
         // Manejar la respuesta aquí si es necesario
       } else {
         // Si la solicitud falla, manejar el error aquí

@@ -15,6 +15,9 @@ import { CartProvider } from './services/CartContext';
 import { AuthProvider } from './services/AuthContext';
 import BuscarPage from './pages/BuscarPage'
 import CategoryPage from './pages/CategoryPage'
+import SignupResponse from './pages/SignupResponse'
+
+
 
 
 
@@ -51,6 +54,7 @@ function App() {
           
           <Route path='/checkout/success' element={<Checkout />} />
           <Route path='/PublicacionesVendedor' element={<PublicacionesVendedor />} />
+          <Route path='/signup/result/:response' element={<SignupResponse/>}/>
         </Routes>
       </CartProvider>
     </AuthProvider>
