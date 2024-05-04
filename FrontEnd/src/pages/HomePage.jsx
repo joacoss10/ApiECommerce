@@ -16,12 +16,9 @@ function HomePage() {
   const applyFilters = () => {
     console.log('min',minPrice);
     console.log('max',maxPrice);
-    if (minPrice==''){
-      setMinPrice(minPriceInput);
-    }
-    if (minPrice==''){
-      setMaxPrice(maxPriceInput);
-    }
+    setMinPrice(minPriceInput);
+    setMaxPrice(maxPriceInput);
+    
 
     const filtered = productos.filter(producto => {
       if (minPrice && maxPrice) {
