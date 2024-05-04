@@ -10,6 +10,8 @@ import { useAuth } from '../services/AuthContext';
 import Menu from '../components/Menu';
 import "../styles/Menu.css";
 import Logoo from '../assets/camisetas-bianchi.png'
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 
 function Nav() {
     const { isLoggedIn, username, logout } = useAuth();
@@ -72,19 +74,20 @@ function Nav() {
                                     <MuiButton className='top-right-buttons' style={{ color: 'black', textTransform: 'none' }} onClick={handleClickAccount}>
                                         <PersonOutlineOutlinedIcon /> <span id='username'>{username}</span>
                                     </MuiButton>
-                                    <MuiMenu
+                                    <MuiMenu className='MuiMenu'
                                         anchorEl={anchorEl}
                                         open={Boolean(anchorEl)}
                                         onClose={handleClose}
                                         PaperProps={{
                                             style: {
-                                                width: '180px', // Ancho fijo del menú
-                                                maxHeight: '400px', // Altura máxima del menú si es necesario
+                                                width: '200px', // Ancho fijo del menú
+                                                height: '98px', // Altura máxima del menú si es necesario
+                                                padding: '4px',
                                             },
                                         }}
                                     >
-                                        <MenuItem onClick={handleClose}>Ver pedidos</MenuItem>
-                                        <MenuItem onClick={handleClickLogout}>Cerrar sesión</MenuItem>
+                                        <MenuItem onClick={handleClose}><ShoppingBagOutlinedIcon fontSize='small' style={{marginRight:'7px'}}/>Ver pedidos</MenuItem>
+                                        <MenuItem onClick={handleClickLogout}><LogoutOutlinedIcon fontSize='small' style={{marginRight:'7px'}}/> Cerrar sesión</MenuItem>
                                     </MuiMenu>
                                 </div>
                                 
