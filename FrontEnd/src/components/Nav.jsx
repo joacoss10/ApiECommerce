@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Button as MuiButton } from "@mui/material";
+import { Menu as MuiMenu, MenuItem } from '@mui/material';
 import "../styles/nav.css";
 import PersonIcon from '@mui/icons-material/Person';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
@@ -13,19 +14,31 @@ import Logoo from '../assets/camisetas-bianchi.png'
 function Nav() {
     const { isLoggedIn, username, logout } = useAuth();
     const navigate = useNavigate();
+    const [anchorEl, setAnchorEl] = useState(null);
+    
+
     console.log('username: ',{ username });
-    const handleClickAccount = () => {     //navega a /login
+
+    const handleClickAccount = (event) => {     //navega a /login
         if (isLoggedIn != true) {
             navigate("/login");
         } else {
-            handleClickLogout(); // Call handleClickTest when logged in
-            
+            setAnchorEl(event.currentTarget); // Call handleClickTest when logged in
+            document.querySelector('.div-nav').classList.add("menu-open");
+            document.querySelector('.nav-top-logo').classList.add("menu-open");
         }
     }
 
+    const handleClose = () => {
+        setAnchorEl(null);
+        document.querySelector('.div-nav').classList.remove("menu-open");
+        document.querySelector('.nav-top-logo').classList.remove("menu-open");
+    };
+
     const handleClickLogout = () => {
-        window.alert('Ya estas logeado');  //FALTA DESARROLLAR
-        //logout();
+        document.querySelector('.div-nav').classList.remove("menu-open");
+        document.querySelector('.nav-top-logo').classList.remove("menu-open");
+        logout();
     }
 
     const handleClickHome = () => {
@@ -55,9 +68,26 @@ function Nav() {
                         </div>
                         <div className="nav-top-right">
                             {isLoggedIn ? (
-                                <MuiButton className='top-right-buttons' style={{ color: 'black', textTransform: 'none' }} onClick={handleClickAccount}>
-                                    <PersonOutlineOutlinedIcon /> <span id='username'>{username}</span>
-                                </MuiButton>
+                                <div className="user-manage">
+                                    <MuiButton className='top-right-buttons' style={{ color: 'black', textTransform: 'none' }} onClick={handleClickAccount}>
+                                        <PersonOutlineOutlinedIcon /> <span id='username'>{username}</span>
+                                    </MuiButton>
+                                    <MuiMenu
+                                        anchorEl={anchorEl}
+                                        open={Boolean(anchorEl)}
+                                        onClose={handleClose}
+                                        PaperProps={{
+                                            style: {
+                                                width: '180px', // Ancho fijo del menú
+                                                maxHeight: '400px', // Altura máxima del menú si es necesario
+                                            },
+                                        }}
+                                    >
+                                        <MenuItem onClick={handleClose}>Ver pedidos</MenuItem>
+                                        <MenuItem onClick={handleClickLogout}>Cerrar sesión</MenuItem>
+                                    </MuiMenu>
+                                </div>
+                                
                             ) : (
                                 <MuiButton className='top-right-buttons' style={{ color: 'black', textTransform: 'none' }} onClick={handleClickAccount}>
                                     <PersonOutlineOutlinedIcon />

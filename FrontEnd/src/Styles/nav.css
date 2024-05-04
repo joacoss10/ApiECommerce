@@ -6,6 +6,7 @@
     position: fixed; 
     width: 100%; 
     z-index: 1000;
+    
      
   }
 
@@ -52,20 +53,20 @@
     margin-left: 0px;
     position: absolute;
     left: 50%;
-    top: 58px;
+    top: 57px;
     content:"";
     transform: translateX(-50%);
   }
   
   .nav-top-logo img {
-    max-width: 6.72em;
-    padding-bottom: 1%;
+    width: 26%;
+    padding-bottom: 0%;
     cursor: pointer;
     
   }
   
   .nav-top-right {
-    display: inline-block;
+    display: flex;
     align-items: center;
     padding-top: 38px;
   }
