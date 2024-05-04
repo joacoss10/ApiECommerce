@@ -5,7 +5,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-
 }
 
 .div-nav {
@@ -15,17 +14,10 @@
     /* Asegura que ocupe todo el ancho */
     z-index: 1000;
 }
-.div-nav.menu-open {
-    padding-right: 1.0625em; /* Ancho de la barra de desplazamiento */
-}
-.nav-top-logo.menu-open {
-    padding-right: 1.0625em; /* Ancho de la barra de desplazamiento */
-}
 
 .home {
     margin: 0;
     background-color: #f3f3f3;
-    
 }
 
 .inicio {

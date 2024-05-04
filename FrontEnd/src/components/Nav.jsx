@@ -26,20 +26,26 @@ function Nav() {
             navigate("/login");
         } else {
             setAnchorEl(event.currentTarget); // Call handleClickTest when logged in
-            document.querySelector('.div-nav').classList.add("menu-open");
-            document.querySelector('.nav-top-logo').classList.add("menu-open");
+            if (window.location.pathname==='/'){
+                document.querySelector('.div-nav').classList.add("menu-open");
+                document.querySelector('.nav-top-logo').classList.add("menu-open");
+            }
         }
     }
 
     const handleClose = () => {
         setAnchorEl(null);
-        document.querySelector('.div-nav').classList.remove("menu-open");
-        document.querySelector('.nav-top-logo').classList.remove("menu-open");
+        if (window.location.pathname==='/'){
+            document.querySelector('.div-nav').classList.remove("menu-open");
+            document.querySelector('.nav-top-logo').classList.remove("menu-open");
+        }
     };
 
     const handleClickLogout = () => {
-        document.querySelector('.div-nav').classList.remove("menu-open");
-        document.querySelector('.nav-top-logo').classList.remove("menu-open");
+        if (window.location.pathname==='/'){
+            document.querySelector('.div-nav').classList.remove("menu-open");
+            document.querySelector('.nav-top-logo').classList.remove("menu-open");
+        }
         logout();
     }
 
@@ -87,7 +93,7 @@ function Nav() {
                                         }}
                                     >
                                         <MenuItem onClick={handleClose}><ShoppingBagOutlinedIcon fontSize='small' style={{marginRight:'7px'}}/>Ver pedidos</MenuItem>
-                                        <MenuItem onClick={handleClickLogout}><LogoutOutlinedIcon fontSize='small' style={{marginRight:'7px'}}/> Cerrar sesión</MenuItem>
+                                        <MenuItem onClick={handleClickLogout}><LogoutOutlinedIcon fontSize='small'style={{marginRight:'7px'}}/> Cerrar sesión</MenuItem>
                                     </MuiMenu>
                                 </div>
                                 

@@ -3,11 +3,15 @@
     background: rgb(245, 245, 245);
     /*background: rgba(0, 0, 0, 0.829);*/
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    position: fixed; 
+    
     width: 100%; 
     z-index: 1000;
     
      
+  }
+
+  .div-nav.menu-open{
+    padding-right: 1.0625em;
   }
 
   /*nuevo*/
@@ -56,6 +60,9 @@
     top: 57px;
     content:"";
     transform: translateX(-50%);
+  }
+  .nav-top-logo.menu-open{
+    padding-right: 1.0625em;
   }
   
   .nav-top-logo img {
