@@ -1,0 +1,42 @@
+.signup-result-wrapper{
+    width: 32em;
+    background: rgba(73, 73, 73, 0.116);
+    border: 2px solid rgba(255, 255, 255, 0.26);
+    backdrop-filter: blur(20px);
+    box-shadow:   0 10px rgba(0,0,0,.2);
+    color: #f3f3f3;
+    border-radius: 9px;
+    padding: 28px 38px;
+}
+
+.signup-result-title{
+    margin-bottom: 0.5em;
+    text-align: center;
+    font-size: 2em;
+}
+
+.signup-result-error{
+    text-align: center;
+    margin-bottom: 3.7em;
+    font-size: 1.2em;
+}
+
+.signup-result-link{
+    
+    color: rgb(230, 230, 230);
+    text-decoration:underline;
+}
+.signup-result-link:hover{
+    color: rgb(168, 168, 168);
+    text-decoration:underline;
+}
+
+.signup-result-title-ok{
+    margin-bottom: 1.5em;
+    text-align: center;
+    font-size: 2em;
+}
+
+.signup-result-span{
+    font-size: 0.9em;
+}
