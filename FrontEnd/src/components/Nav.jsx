@@ -22,20 +22,21 @@ function Nav() {
     if (window.location.pathname==='/' || 
             window.location.pathname==='/categoria/boca' || 
             window.location.pathname==='/categoria/river' || 
-            window.location.pathname==='/categoria/lanus' || 
-            window.location.pathname==='/categoria/independiente' || 
-            window.location.pathname==='/categoria/racing' || 
-            window.location.pathname==='/categoria/san lorenzo' || 
-            window.location.pathname==='/categoria/equipos argentinos' || 
-            window.location.pathname==='/categoria/equipos europeos' || 
-            window.location.pathname==='/categoria/equipos sudamericanos' || 
-            window.location.pathname==='/categoria/equipos europeos' || 
-            window.location.pathname==='/categoria/otros equipos' || 
-            window.location.pathname==='/categoria/argentina' ||
-            window.location.pathname==='/categoria/brasil' || 
-            window.location.pathname==='/categoria/uruguay' || 
-            window.location.pathname==='/categoria/europa' || 
-            window.location.pathname==='/categoria/otros' )
+            window.location.pathname==='/categoria/Lanus' || 
+            window.location.pathname==='/categoria/Independiente' || 
+            window.location.pathname==='/categoria/Racing' || 
+            window.location.pathname==='/categoria/San%20Lorenzo' || 
+            window.location.pathname==='/categoria/Equipos%20Argentinos' || 
+            window.location.pathname==='/categoria/Equipos%20Europeos' || 
+            window.location.pathname==='/categoria/Equipos%20Sudamericanos' || 
+            window.location.pathname==='/categoria/Equipos%20Europeos' || 
+            window.location.pathname==='/categoria/Otros%20Equipos' || 
+            window.location.pathname==='/categoria/Argentina' ||
+            window.location.pathname==='/categoria/Brasil' || 
+            window.location.pathname==='/categoria/Uruguay' || 
+            window.location.pathname==='/categoria/Europa' || 
+            window.location.pathname==='/categoria/Otros' ||
+            window.location.pathname==='/PublicacionesVendedor'  )
         {
         aux=true;
     }else{
@@ -130,7 +131,7 @@ function Nav() {
                                 
                             ) : (                                                                                                       
                                 <MuiButton className='top-right-buttons' style={{ color: 'black', textTransform: 'none' }} onClick={(event)=> handleClickAccount(event)}>
-                                    <PersonOutlineOutlinedIcon />
+                                    <PersonOutlineOutlinedIcon /> <span id='login'></span>
                                 </MuiButton>
                             )}
                             <MuiButton className='top-right-buttons' style={{ color: 'black', textTransform: 'none' }} onClick={handleCartClick}><ShoppingCartOutlinedIcon ></ShoppingCartOutlinedIcon></MuiButton>
