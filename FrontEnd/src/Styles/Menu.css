@@ -1,11 +1,9 @@
-
-
 .navigation {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: inline-block;
-    padding-bottom: 5px;
+    padding-bottom: 0.5em;
 }
 
 .navigation li {
@@ -26,17 +24,18 @@
     overflow: hidden;
 }
 
-.navigation li .a::after{
+.navigation li .a::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 0;
-    height: 2px;
+    height: 0.1em;
     background-color: #000;
     transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
 }
-.navigation li .a:hover::after{
+
+.navigation li .a:hover::after {
     width: 100%;
     left: 0;
 }
@@ -50,44 +49,52 @@
     padding-top: 0.2em;
     z-index: 999999;
     color: #000;
-    border-radius: 5px;
-    min-width: 250px;
-    overflow: hidden; /* Asegurar que el contenido oculto no se desborde */
-    max-height: 0; /* Comenzar con altura cero para ocultar el contenido */
+    border-radius: 1em;
+    min-width: 15em;
+    overflow: hidden;
+    /* Asegurar que el contenido oculto no se desborde */
+    max-height: 0;
+    /* Comenzar con altura cero para ocultar el contenido */
     transition: max-height 0s ease;
-    
+
 }
 
 
 .dropdownContent li {
     display: block;
     text-align: left;
-    
+
 }
+
 .dropdown:hover .dropdownContent {
     padding: 5px 35px;
     padding-top: 15px;
     padding-bottom: 35px;
     max-height: 4000px;
 }
+
 .dropdown:hover .a::after {
     width: 100%;
     left: 0;
 }
-.desplegable{
+
+.desplegable {
     margin-top: 25px;
 }
-.desplegable a{
+
+.desplegable a {
     text-decoration: none;
     margin-top: 16px;
     color: rgb(107, 107, 107);
     padding: 18px 10px;
     font-weight: 500;
 }
-#inicio{
-    padding:0em 0.2em;
+
+#inicio {
+    padding: 0em 0.2em;
     margin-right: 1.3em;
 }
+
 .Menu .navigation .desplegable a:hover {
-    color: rgb(0, 0, 0); 
+    color: rgb(0, 0, 0);
 }

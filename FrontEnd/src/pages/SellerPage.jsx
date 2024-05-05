@@ -11,19 +11,12 @@ import Vender from '../components/Vender';
 import '../styles/sellerpage.css';
 
 
-
-
-
-
 function SellerPage() {
-
-
 
   return (
     <div className='sell-container'>
       <Nav />
       <Vender></Vender>
-
     </div>
   )
 }

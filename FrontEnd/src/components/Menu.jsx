@@ -1,22 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import '../styles/Menu.css'
-import { Button as MuiButton } from "@mui/material";
+import { Button as MuiButton } from "@mui/material";//no se usa
 import { useNavigate } from 'react-router-dom';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useAuth } from '../services/AuthContext';
 
 const Menu = () => {
-    const navigate = useNavigate();
+    /*const navigate = useNavigate();
 
     const handleClickHome = () => {
         navigate("/")
-    }
+    }*/
 
 
     const { isLoggedIn } = useAuth();
 
-    const handleNewPostClick = () => {
+    /*const handleNewPostClick = () => {
         if (isLoggedIn) {
             // Si está logueado, redirige a /vender
             window.location.href = '/vender';
@@ -24,8 +24,8 @@ const Menu = () => {
             // Si no está logueado, redirige a /login
             window.location.href = '/login';
         }
-    };
-    
+    };*/
+
     return (
         <div className="Menu">
             < ul className="navigation" >
@@ -66,9 +66,14 @@ const Menu = () => {
                             ) : (
                                 <Link to="/vender">Nueva publicacion</Link>                   /*CAMBIAR A     /login */
                             )
-
                             }</li>
-                        <li className='desplegable'><Link to="/PublicacionesVendedor">Mis publicaciones</Link></li>
+                        <li className='desplegable'>
+                            {isLoggedIn ? (
+                                <Link to="/PublicacionesVendedor">Nueva publicacion</Link>
+                            ) : (
+                                <Link to="/PublicacionesVendedor">Nueva publicacion</Link> /*CAMBIAR A     /login */
+                            )
+                            }</li>
                     </ul>
                 </li>
                 <li>
