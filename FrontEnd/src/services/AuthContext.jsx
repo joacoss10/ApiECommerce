@@ -8,7 +8,9 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const [isLoggedIn, setIsLoggedIn] = useState(()=>{
-    return localStorage.getItem('isLoggedIn') || '';
+    const storedValue = localStorage.getItem('isLoggedIn');
+    // Convertir la cadena almacenada en un booleano
+    return storedValue ? !!JSON.parse(storedValue) : false;
   });
 
   const [username, setUsername] = useState(() => {

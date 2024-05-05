@@ -44,17 +44,24 @@ function Nav() {
     
 
     console.log('username: ',{ username });
+    
 
     const handleClickAccount = (event) => {     //navega a /login
-        if (isLoggedIn != true) {
-            navigate("/login");
-        } else {
+        console.log('event', event)
+        console.log('log',isLoggedIn);
+        if (isLoggedIn == true) {
+            console.log('logt',isLoggedIn);
             setAnchorEl(event.currentTarget); // Call handleClickTest when logged in
             if (aux==true){
                 document.querySelector('.div-nav').classList.add("menu-open");
                 document.querySelector('.nav-top-logo').classList.add("menu-open");
             }
         }
+        else {
+            console.log('logf',isLoggedIn);
+            navigate("/login");
+        }
+        
     }
 
     const handleClose = () => {
@@ -101,7 +108,7 @@ function Nav() {
                         <div className="nav-top-right">
                             {isLoggedIn ? (
                                 <div className="user-manage">
-                                    <MuiButton className='top-right-buttons' style={{ color: 'black', textTransform: 'none' }} onClick={handleClickAccount}>
+                                    <MuiButton className='top-right-buttons' style={{ color: 'black', textTransform: 'none' }} onClick={(event)=> handleClickAccount(event)}>
                                         <PersonOutlineOutlinedIcon /> <span id='username'>{username}</span>
                                     </MuiButton>
                                     <MuiMenu className='MuiMenu'
@@ -121,8 +128,8 @@ function Nav() {
                                     </MuiMenu>
                                 </div>
                                 
-                            ) : (
-                                <MuiButton className='top-right-buttons' style={{ color: 'black', textTransform: 'none' }} onClick={handleClickAccount}>
+                            ) : (                                                                                                       
+                                <MuiButton className='top-right-buttons' style={{ color: 'black', textTransform: 'none' }} onClick={(event)=> handleClickAccount(event)}>
                                     <PersonOutlineOutlinedIcon />
                                 </MuiButton>
                             )}

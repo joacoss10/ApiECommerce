@@ -20,6 +20,7 @@ function Login() {
   const { login, isLoggedIn } = useAuth();
 
   console.log("al iniciar login",isLoggedIn);
+  
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
