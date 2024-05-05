@@ -4,7 +4,7 @@
 
 .publicaciones-container {
   padding-top: 18em;
-  /* Ajusta el valor según la altura de tu barra de navegación */
+  padding-bottom: 4em;
   width: 71.05%;
   display: flex;
   flex-wrap: wrap;

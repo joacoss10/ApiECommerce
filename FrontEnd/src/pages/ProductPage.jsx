@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 function ProductPage({ producto }) {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate(`/${producto.categoria}`);
+    navigate(`/categoria/${producto.categoria}`);
   }
 
   const { addToCart, checkAndRestoreCartFromLocalStorage, getTotal, cartItems } = useCart(); // Obtén las funciones necesarias del contexto del carrito

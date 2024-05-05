@@ -17,6 +17,30 @@ function Nav() {
     const { isLoggedIn, username, logout } = useAuth();
     const navigate = useNavigate();
     const [anchorEl, setAnchorEl] = useState(null);
+    let aux;
+
+    if (window.location.pathname==='/' || 
+            window.location.pathname==='/categoria/boca' || 
+            window.location.pathname==='/categoria/river' || 
+            window.location.pathname==='/categoria/lanus' || 
+            window.location.pathname==='/categoria/independiente' || 
+            window.location.pathname==='/categoria/racing' || 
+            window.location.pathname==='/categoria/san lorenzo' || 
+            window.location.pathname==='/categoria/equipos argentinos' || 
+            window.location.pathname==='/categoria/equipos europeos' || 
+            window.location.pathname==='/categoria/equipos sudamericanos' || 
+            window.location.pathname==='/categoria/equipos europeos' || 
+            window.location.pathname==='/categoria/otros equipos' || 
+            window.location.pathname==='/categoria/argentina' ||
+            window.location.pathname==='/categoria/brasil' || 
+            window.location.pathname==='/categoria/uruguay' || 
+            window.location.pathname==='/categoria/europa' || 
+            window.location.pathname==='/categoria/otros' )
+        {
+        aux=true;
+    }else{
+        aux=false;
+    }
     
 
     console.log('username: ',{ username });
@@ -26,7 +50,7 @@ function Nav() {
             navigate("/login");
         } else {
             setAnchorEl(event.currentTarget); // Call handleClickTest when logged in
-            if (window.location.pathname==='/'){
+            if (aux==true){
                 document.querySelector('.div-nav').classList.add("menu-open");
                 document.querySelector('.nav-top-logo').classList.add("menu-open");
             }
@@ -35,14 +59,14 @@ function Nav() {
 
     const handleClose = () => {
         setAnchorEl(null);
-        if (window.location.pathname==='/'){
+        if (aux==true){
             document.querySelector('.div-nav').classList.remove("menu-open");
             document.querySelector('.nav-top-logo').classList.remove("menu-open");
         }
     };
 
     const handleClickLogout = () => {
-        if (window.location.pathname==='/'){
+        if (aux==true){
             document.querySelector('.div-nav').classList.remove("menu-open");
             document.querySelector('.nav-top-logo').classList.remove("menu-open");
         }
