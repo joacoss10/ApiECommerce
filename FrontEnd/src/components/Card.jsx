@@ -12,12 +12,12 @@ function Card( {producto} ) {
         // Redirige a la página del producto con el ID correspondiente
         navigate(`/product/${producto.id}`);
     };
-
+    const imageUrl = Array.isArray(producto.imagenURL) ? producto.imagenURL[0] : producto.imagenURL;
   return (
     <div className='container' onClick={handleClickProductView}>
 
         <div className='imgBox'>
-            <img src={producto.imagenURL} alt="imagen" />
+            <img src={imageUrl} alt="imagen" />
         </div>
         <div className="info">
             <h2> {producto.nombre} </h2>

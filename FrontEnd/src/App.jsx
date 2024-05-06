@@ -16,6 +16,7 @@ import { AuthProvider } from './services/AuthContext';
 import BuscarPage from './pages/BuscarPage'
 import CategoryPage from './pages/CategoryPage'
 import SignupResponse from './pages/SignupResponse'
+import ProductGallery from './components/ProductGallery'
 
 
 
@@ -55,6 +56,10 @@ function App() {
           <Route path='/checkout/success' element={<Checkout />} />
           <Route path='/PublicacionesVendedor' element={<PublicacionesVendedor />} />
           <Route path='/signup/result/:response' element={<SignupResponse/>}/>
+          <Route 
+  path='/test' 
+  element={<ProductGallery producto={productos.filter(producto => producto.id === 2)[0]} />}
+/>
         </Routes>
       </CartProvider>
     </AuthProvider>

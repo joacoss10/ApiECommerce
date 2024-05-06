@@ -7,7 +7,11 @@
     "precio": 25990,
     "stockDisponible": 50,
     "username_vendedor":"lucianog",
-    "imagenURL": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c4c8dee7623f4209b76dfd333a68c812_9366/Camiseta_Titular_Argentina_24_Blanco_IP8400_01_laydown.jpg"
+    "imagenURL": [
+      "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/101eec630a32476483327831ee627b90_9366/Camiseta_Titular_Argentina_24_Messi_Blanco_IX7791_01_laydown.jpg",
+      "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/218604913c76437fa8b9a996fbd1ae1b_9366/Camiseta_Titular_Argentina_24_Messi_Blanco_IX7791_02_laydown_hover.jpg",
+      "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/49558c200e3f4ed98723941af5a57e74_9366/Camiseta_Titular_Argentina_24_Messi_Blanco_IX7791_41_detail.jpg"
+    ] 
   },
   {
     "id": 2,
@@ -17,7 +21,8 @@
     "precio": 19990,
     "stockDisponible": 30,
     "username_vendedor":"siempreboca12",
-    "imagenURL": "https://nikearprod.vtexassets.com/arquivos/ids/788751/CK9872-490-frente-v3.jpg?v=638337674534570000"
+    "imagenURL": ["https://nikearprod.vtexassets.com/arquivos/ids/788751/CK9872-490-frente-v3.jpg?v=638337674534570000"
+    ]
   },
   {
     "id": 3,
@@ -37,7 +42,10 @@
     "precio": 29990,
     "stockDisponible": 0,
     "username_vendedor":"lucianog",
-    "imagenURL": "https://www.opensports.com.ar/media/catalog/product/cache/4769e4d9f3516e60f2b4303f8e5014a8/H/T/HT3679_0.jpg"
+    "imagenURL": [
+      "https://www.opensports.com.ar/media/catalog/product/cache/4769e4d9f3516e60f2b4303f8e5014a8/H/T/HT3679_0.jpg",
+      "https://acdn.mitiendanube.com/stores/001/312/744/products/196-f18fb9900a9e34e16e16961787988217-640-0.webp"
+    ]
   },
   {
     "id": 5,
@@ -67,7 +75,11 @@
     "precio": 22990,
     "stockDisponible": 25,
     "username_vendedor":"siempreboca12",
-    "imagenURL": "https://www.stockcenter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw1b872e58/products/ADIT9369/ADIT9369-1.JPG"
+    "imagenURL": [
+      "https://www.stockcenter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw1b872e58/products/ADIT9369/ADIT9369-1.JPG",
+      "https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw50ce561f/products/ADIT9369/ADIT9369-2.JPG",
+      "https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw84be0ac8/products/ADIT9369/ADIT9369-4.JPG"
+    ]
   },
   {
     "id": 8,

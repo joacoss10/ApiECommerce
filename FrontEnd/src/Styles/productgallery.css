@@ -1,0 +1,49 @@
+.imgs {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    width: 550px;
+  }
+  
+  .selected-img {
+     /* Ajusta el espaciado alrededor de la imagen seleccionada */
+    height: 525px;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .selected-img img {
+    position: absolute;
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+  }
+  
+  .product-imgs {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan a la siguiente línea si el espacio es insuficiente */
+    height: auto; /* Ajusta automáticamente la altura según el contenido */
+    margin-top: 9px; /* Añade espacio entre la imagen principal y la galería */
+  }
+  
+  .product-imgs img {
+    width: calc(17.3% - 10px); /* Establece el ancho de las imágenes disponibles, asegurando que haya espacio entre ellas */
+    max-height: 90px; /* Limita la altura de las imágenes */
+    margin-right: 7px; /* Ajusta el margen entre las imágenes */
+    border-radius: 7px;
+    cursor: pointer;
+    object-fit: cover;
+  }
+  
+  .product-imgs img.selected {
+    border: 3px solid rgb(0, 140, 255); /* Establece un borde azul para la imagen seleccionada */
+  }
+  

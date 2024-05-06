@@ -18,11 +18,13 @@ const ProductCard = ({ product }) => {
             navigate('/EditarVender', { state: { productData: product } });
         }
     };
+    const imageUrl = Array.isArray(product.imagenURL) ? product.imagenURL[0] : product.imagenURL;
+
     console.log(product.nombre)
     return (
         <div className="product-card">
             <section className="SeccionImagen">
-                <img src={product.imagenURL} className="product-image" alt={product.nombre} />
+                <img src={imageUrl} className="product-image" alt={product.nombre} />
             </section>
             <section className="Texto">
                 <h2 id="product-title">{product.nombre}</h2>
