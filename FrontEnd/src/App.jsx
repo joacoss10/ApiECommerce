@@ -17,6 +17,7 @@ import BuscarPage from './pages/BuscarPage'
 import CategoryPage from './pages/CategoryPage'
 import SignupResponse from './pages/SignupResponse'
 import ProductGallery from './components/ProductGallery'
+import ProdsPage from './pages/ProdsPage'
 
 
 
@@ -27,6 +28,7 @@ import ProductGallery from './components/ProductGallery'
 
 function App() {
   const categorias = ['Boca','River','Lanus','Independiente','Racing','San Lorenzo','Equipos Sudamericanos','Equipos Europeos','Equipos Argentinos','Argentina','Brasil','Uruguay','Europa','Otros', 'Otros Equipos'];
+  const [currentPage, setCurrentPage] = useState(1);
   return (
     <AuthProvider>
       <CartProvider>
@@ -56,10 +58,9 @@ function App() {
           <Route path='/checkout/success' element={<Checkout />} />
           <Route path='/PublicacionesVendedor' element={<PublicacionesVendedor />} />
           <Route path='/signup/result/:response' element={<SignupResponse/>}/>
-          <Route 
-  path='/test' 
-  element={<ProductGallery producto={productos.filter(producto => producto.id === 2)[0]} />}
-/>
+
+          <Route path='/productos/page/:paginaActual' element={<ProdsPage />} />
+
         </Routes>
       </CartProvider>
     </AuthProvider>

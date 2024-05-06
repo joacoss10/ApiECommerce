@@ -36,7 +36,9 @@ function Nav() {
             window.location.pathname==='/categoria/Uruguay' || 
             window.location.pathname==='/categoria/Europa' || 
             window.location.pathname==='/categoria/Otros' ||
-            window.location.pathname==='/PublicacionesVendedor'  )
+            window.location.pathname==='/PublicacionesVendedor' ||
+            /^\/productos\/page\/\d+$/.test(window.location.pathname)
+            )
         {
         aux=true;
     }else{

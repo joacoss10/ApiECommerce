@@ -5,6 +5,7 @@ import productos from '../utils/productos.json'; // Importamos el JSON de produc
 import arg from "../assets/arg.jpg";
 import Nav from '../components/Nav';
 import FilterListIcon from '@mui/icons-material/FilterList';
+import { useNavigate } from 'react-router-dom';
 
 function HomePage() {
   const [minPrice, setMinPrice] = useState(localStorage.getItem('minPrice') || '');
@@ -12,6 +13,9 @@ function HomePage() {
   const [filteredProducts, setFilteredProducts] = useState(productos);
   const [minPriceInput, setMinPriceInput] = useState(localStorage.getItem('minPrice') || '');
   const [maxPriceInput, setMaxPriceInput] = useState(localStorage.getItem('maxPrice') || '');
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const applyFilters = () => {
     console.log('min',minPrice);
@@ -59,6 +63,12 @@ function HomePage() {
     applyFilters(); // Aplicar filtros cada vez que cambian los precios mínimos o máximos
   }, [minPrice, maxPrice]);
 
+  const navigate = useNavigate();
+
+  const handleClickProdsPage = () =>{
+    navigate('productos/page/1')
+  }
+
   return (
     <div className="home">
       <Nav/>
@@ -100,11 +110,18 @@ function HomePage() {
       
       <div className='product-box'>
         <div className="cards">
-          {filteredProducts.map(producto => (
+          {filteredProducts.slice(0,8).map(producto => (
             <Card key={producto.id} producto={producto} />
           ))}
         </div>
       </div>
+      <div className="ver-todo">
+          
+            <button onClick={handleClickProdsPage}>
+              Ver todo
+            </button>
+          
+        </div>
     </div>
   );
 }
