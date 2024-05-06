@@ -6,10 +6,11 @@ const Vender = () => {
         event.preventDefault();
 
         const titulo = document.getElementById('Titulo').value;
-        const descripcion = document.getElementById('Descripcion').value;
+        const descripcion = document.getElementById('Descripcion').value.trim();
         const stock = document.getElementById('Stock').value;
         const precio = document.getElementById('Precio').value;
         const file = document.getElementById('File').value;
+
 
         if (titulo && descripcion && stock && precio && file) {
             window.alert("Publicacion creada exitosamente")
