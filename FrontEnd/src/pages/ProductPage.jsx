@@ -13,11 +13,12 @@ import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
 import productos from '../utils/productos.json';
 import { useCart } from '../services/CartContext'; // Importa el hook useCart
 import { Link } from 'react-router-dom';
+import ProductGallery from '../components/ProductGallery';
 
 function ProductPage({ producto }) {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate(`/${producto.categoria}`);
+    navigate(`/categoria/${producto.categoria}`);
   }
 
   const { addToCart, checkAndRestoreCartFromLocalStorage, getTotal, cartItems } = useCart(); // Obtén las funciones necesarias del contexto del carrito
@@ -67,14 +68,17 @@ function ProductPage({ producto }) {
     addToCart({ ...producto, cantidad }); // Agrega el producto al carrito con la cantidad seleccionada
     setIsAddedToCart(true);
   };
-
+  const imageUrl = Array.isArray(producto.imagenURL) ? producto.imagenURL[0] : producto.imagenURL;
   return (
     <div className="productPage">
       <Nav />
       <div className="productContainer">
+        <ProductGallery producto={producto}></ProductGallery>
+        {/*
         <div className="imgContainer">
-          <img src={producto.imagenURL} alt="" />
+          <img src={imageUrl} alt="" />
         </div>
+        */}
         <div className="infoProduct">
           <Chip label={producto.categoria} variant="outlined" color="primary" size="small" onClick={handleClick} />
           <Chip label={producto.stockDisponible > 0 ? "Hay stock" : "Sin stock"} color={producto.stockDisponible > 0 ? "success" : "error"} size="small" className='stock' />

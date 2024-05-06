@@ -32,7 +32,7 @@
     display: flex;
     justify-content: center;
     padding: 25px;
-    padding-bottom: 80px;
+    padding-bottom: 50px;
 }
 
 .cards {
@@ -179,6 +179,46 @@
     color: rgb(59, 59, 59);
 }
 
+.ver-todo{
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3.5em;
+}
+.ver-todo button{
+    background-color: transparent;
+    padding: 1px 5px;
+    width: auto;
+    font-size: 25px;
+    font-weight: 500;
+    background-color: none;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: ease 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+.ver-todo button:hover{
+    transform: scale(1.07);
+}
+
+.ver-todo button::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.ver-todo button:hover::after{
+    
+    width: 100%;
+    left: 0;
+}
 
 /* Media Queries para diseño responsive */
 @media screen and (max-width: 768px) {

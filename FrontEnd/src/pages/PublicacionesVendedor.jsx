@@ -3,13 +3,19 @@ import ProductCard from "../components/ProductCard";
 import Nav from "../components/Nav";
 import '../styles/publicacionesvendedor.css';
 import productos from '../utils/productos.json';
+import { useAuth } from "../services/AuthContext";
 
 const PublicacionesVendedor = (userName) => {
+    const {username} = useAuth();
+
+    const productosVendedor = productos.filter(producto => producto.username_vendedor === username)
+
     return (
         <div className="div-publicaciones">
             <Nav />
             <div className="publicaciones-container">
                 {productos.map(producto => (
+                /*productosVendedor.map(producto => (*/                                    //USR ESTA LINEA PARA LA ENTREGA, MUESTRA SOLO LOS DELUSUARIO LOGEADO
                     <ProductCard key={producto.id} product={producto} />
                 ))}
             </div>

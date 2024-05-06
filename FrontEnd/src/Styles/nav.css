@@ -76,6 +76,7 @@
     display: flex;
     align-items: center;
     padding-top: 38px;
+    margin-bottom: 0.1em;
   }
   
   .left {
@@ -106,6 +107,9 @@
   #username{
     font-weight: 200;
     margin-left: 3px;
+  }
+  #login{
+    margin-bottom: 0.1em;
   }
 
   

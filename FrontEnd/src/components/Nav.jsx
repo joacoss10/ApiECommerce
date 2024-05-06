@@ -17,32 +17,66 @@ function Nav() {
     const { isLoggedIn, username, logout } = useAuth();
     const navigate = useNavigate();
     const [anchorEl, setAnchorEl] = useState(null);
+    let aux;
+
+    if (window.location.pathname==='/' || 
+            window.location.pathname==='/categoria/boca' || 
+            window.location.pathname==='/categoria/river' || 
+            window.location.pathname==='/categoria/Lanus' || 
+            window.location.pathname==='/categoria/Independiente' || 
+            window.location.pathname==='/categoria/Racing' || 
+            window.location.pathname==='/categoria/San%20Lorenzo' || 
+            window.location.pathname==='/categoria/Equipos%20Argentinos' || 
+            window.location.pathname==='/categoria/Equipos%20Europeos' || 
+            window.location.pathname==='/categoria/Equipos%20Sudamericanos' || 
+            window.location.pathname==='/categoria/Equipos%20Europeos' || 
+            window.location.pathname==='/categoria/Otros%20Equipos' || 
+            window.location.pathname==='/categoria/Argentina' ||
+            window.location.pathname==='/categoria/Brasil' || 
+            window.location.pathname==='/categoria/Uruguay' || 
+            window.location.pathname==='/categoria/Europa' || 
+            window.location.pathname==='/categoria/Otros' ||
+            window.location.pathname==='/PublicacionesVendedor' ||
+            /^\/productos\/page\/\d+$/.test(window.location.pathname)
+            )
+        {
+        aux=true;
+    }else{
+        aux=false;
+    }
     
 
     console.log('username: ',{ username });
+    
 
     const handleClickAccount = (event) => {     //navega a /login
-        if (isLoggedIn != true) {
-            navigate("/login");
-        } else {
+        console.log('event', event)
+        console.log('log',isLoggedIn);
+        if (isLoggedIn == true) {
+            console.log('logt',isLoggedIn);
             setAnchorEl(event.currentTarget); // Call handleClickTest when logged in
-            if (window.location.pathname==='/'){
+            if (aux==true){
                 document.querySelector('.div-nav').classList.add("menu-open");
                 document.querySelector('.nav-top-logo').classList.add("menu-open");
             }
         }
+        else {
+            console.log('logf',isLoggedIn);
+            navigate("/login");
+        }
+        
     }
 
     const handleClose = () => {
         setAnchorEl(null);
-        if (window.location.pathname==='/'){
+        if (aux==true){
             document.querySelector('.div-nav').classList.remove("menu-open");
             document.querySelector('.nav-top-logo').classList.remove("menu-open");
         }
     };
 
     const handleClickLogout = () => {
-        if (window.location.pathname==='/'){
+        if (aux==true){
             document.querySelector('.div-nav').classList.remove("menu-open");
             document.querySelector('.nav-top-logo').classList.remove("menu-open");
         }
@@ -77,7 +111,7 @@ function Nav() {
                         <div className="nav-top-right">
                             {isLoggedIn ? (
                                 <div className="user-manage">
-                                    <MuiButton className='top-right-buttons' style={{ color: 'black', textTransform: 'none' }} onClick={handleClickAccount}>
+                                    <MuiButton className='top-right-buttons' style={{ color: 'black', textTransform: 'none' }} onClick={(event)=> handleClickAccount(event)}>
                                         <PersonOutlineOutlinedIcon /> <span id='username'>{username}</span>
                                     </MuiButton>
                                     <MuiMenu className='MuiMenu'
@@ -97,9 +131,9 @@ function Nav() {
                                     </MuiMenu>
                                 </div>
                                 
-                            ) : (
-                                <MuiButton className='top-right-buttons' style={{ color: 'black', textTransform: 'none' }} onClick={handleClickAccount}>
-                                    <PersonOutlineOutlinedIcon />
+                            ) : (                                                                                                       
+                                <MuiButton className='top-right-buttons' style={{ color: 'black', textTransform: 'none' }} onClick={(event)=> handleClickAccount(event)}>
+                                    <PersonOutlineOutlinedIcon /> <span id='login'></span>
                                 </MuiButton>
                             )}
                             <MuiButton className='top-right-buttons' style={{ color: 'black', textTransform: 'none' }} onClick={handleCartClick}><ShoppingCartOutlinedIcon ></ShoppingCartOutlinedIcon></MuiButton>
