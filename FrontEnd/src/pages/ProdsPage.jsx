@@ -21,10 +21,11 @@ function ProdsPage() {
     const [filteredProducts, setFilteredProducts] = useState(productos);
     const [minPriceInput, setMinPriceInput] = useState(localStorage.getItem('minPrice') || '');
     const [maxPriceInput, setMaxPriceInput] = useState(localStorage.getItem('maxPrice') || '');
-    const [currentPage, setCurrentPage] = useState(parseInt(paginaActual) || 1);
+    const [currentPage, setCurrentPage] = useState(parseInt(paginaActual));
     const productsPerPage = 8;                                                                              //CAMBIA PRODUCTOS POR PAGINA
 
   const applyFilters = () => {
+    setCurrentPage(1);
     console.log('min',minPrice);
     console.log('max',maxPrice);
     setMinPrice(minPriceInput);
@@ -53,6 +54,7 @@ function ProdsPage() {
   };
 
   const clearFilters = () => {
+    setCurrentPage(1);
     setMinPrice('');
     setMaxPrice('');
     setMinPriceInput('');
@@ -79,6 +81,7 @@ function ProdsPage() {
   };
   const handlePageChange = (pageNumber) => {
     window.scrollTo(0, 0);
+    localStorage.setItem('cPage',pageNumber);
     setCurrentPage(pageNumber);
   };
 

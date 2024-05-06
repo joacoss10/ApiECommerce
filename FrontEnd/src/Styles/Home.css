@@ -180,23 +180,27 @@
 }
 
 .ver-todo{
-    margin-top: 0px;
+    margin-top: 12px;
     display: flex;
     justify-content: center;
     padding-bottom: 3.5em;
 }
 .ver-todo button{
-    padding: 0px 5px;
+    background-color: transparent;
+    padding: 1px 5px;
     width: auto;
-    font-size: 22px;
+    font-size: 25px;
     font-weight: 500;
     background-color: none;
     color: black;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: ease 0.3s;
     position: relative;
     overflow: hidden;
+}
+.ver-todo button:hover{
+    transform: scale(1.07);
 }
 
 .ver-todo button::after{
