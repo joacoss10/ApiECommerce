@@ -7,33 +7,19 @@ import { useNavigate } from 'react-router-dom';
 const EditarVender = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { productData } = location.state; // Obtiene los datos del producto de las props de ubicación
+  const { productData } = location.state;
 
-  // Define el estado para almacenar los valores del formulario
+
   const [formData, setFormData] = useState({
-    titulo: '',
-    descripcion: '',
-    stock: 0,
-    precio: 0,
-    categoria: '',
-    imagen: ''
+    titulo: productData.nombre,
+    descripcion: productData.descripcion,
+    stock: productData.stockDisponible,
+    precio: productData.precio,
+    categoria: productData.categoria,
+    imagen: productData.imagenURL
   });
 
-  // Utiliza useEffect para actualizar el estado del formulario cuando se recibe productData
-  useEffect(() => {
-    if (productData) {
-      setFormData({
-        titulo: productData.nombre,
-        descripcion: productData.descripcion,
-        stock: productData.stockDisponible,
-        precio: productData.precio,
-        categoria: productData.categoria,
-        imagen: productData.imagenURL
-      });
-    }
-  }, [productData]);
 
-  // Función para manejar cambios en los campos del formulario
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -42,9 +28,11 @@ const EditarVender = () => {
     });
   };
   const enviar = () => {
-    window.alert('Publibacion editada');
-    //subir cambios a la bd
-    navigate("/PublicacionesVendedor")
+    if (formData.titulo.trim() && formData.descripcion && formData.precio && formData.stock && formData.categoria && formData.imagen) {
+      window.alert('Publibacion editada');
+      //SUBIR CAMBIOS A LA BD
+      navigate("/PublicacionesVendedor")
+    }
 
   }
   return (
@@ -52,11 +40,11 @@ const EditarVender = () => {
       <form className="Formulario" >
 
         <label htmlFor='titulo' id='TituloLabel'><b>Título</b></label>
-        <input type="text" id='Titulo' name='titulo' value={formData.titulo} onChange={handleInputChange} placeholder="Escriba el título" required />
+        <input type="text" id='Titulo' name='titulo' value={formData.titulo} onChange={handleInputChange} pattern="\S.*" placeholder="Escriba el título" required />
 
         <label htmlFor='descripcion' id='DescripcionLabel'><b>Descripción</b></label>
         <div className="description">
-          <textarea id='descripcion' name='descripcion' value={formData.descripcion} onChange={handleInputChange} placeholder="Describa su producto" required></textarea>
+          <textarea id='descripcion' name='descripcion' value={formData.descripcion} onChange={handleInputChange} pattern="\S.*" placeholder="Describa su producto" required></textarea>
         </div>
 
         <section id="LabelStockPrecio">
