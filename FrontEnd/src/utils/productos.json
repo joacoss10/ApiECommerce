@@ -6,12 +6,12 @@
     "categoria": "Argentina",
     "precio": 25990,
     "stockDisponible": 50,
-    "username_vendedor":"lucianog",
+    "username_vendedor": "lucianog",
     "imagenURL": [
       "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/101eec630a32476483327831ee627b90_9366/Camiseta_Titular_Argentina_24_Messi_Blanco_IX7791_01_laydown.jpg",
       "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/218604913c76437fa8b9a996fbd1ae1b_9366/Camiseta_Titular_Argentina_24_Messi_Blanco_IX7791_02_laydown_hover.jpg",
       "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/49558c200e3f4ed98723941af5a57e74_9366/Camiseta_Titular_Argentina_24_Messi_Blanco_IX7791_41_detail.jpg"
-    ] 
+    ]
   },
   {
     "id": 2,
@@ -20,8 +20,9 @@
     "categoria": "San Lorenzo",
     "precio": 19990,
     "stockDisponible": 30,
-    "username_vendedor":"siempreboca12",
-    "imagenURL": ["https://nikearprod.vtexassets.com/arquivos/ids/788751/CK9872-490-frente-v3.jpg?v=638337674534570000"
+    "username_vendedor": "siempreboca12",
+    "imagenURL": [
+      "https://nikearprod.vtexassets.com/arquivos/ids/788751/CK9872-490-frente-v3.jpg?v=638337674534570000"
     ]
   },
   {
@@ -31,7 +32,7 @@
     "categoria": "Brasil",
     "precio": 18990,
     "stockDisponible": 35,
-    "username_vendedor":"lucianog",
+    "username_vendedor": "lucianog",
     "imagenURL": "https://i.ebayimg.com/thumbs/images/g/FPcAAOSwpHVksj8j/s-l640.jpg"
   },
   {
@@ -40,8 +41,8 @@
     "descripcion": "Remera oficial del Club Atlético River Plate de Argentina. Confeccionada con materiales de alta calidad y diseño exclusivo del club.",
     "categoria": "River",
     "precio": 29990,
-    "stockDisponible": 0,
-    "username_vendedor":"lucianog",
+    "stockDisponible": 50,
+    "username_vendedor": "lucianog",
     "imagenURL": [
       "https://www.opensports.com.ar/media/catalog/product/cache/4769e4d9f3516e60f2b4303f8e5014a8/H/T/HT3679_0.jpg",
       "https://acdn.mitiendanube.com/stores/001/312/744/products/196-f18fb9900a9e34e16e16961787988217-640-0.webp"
@@ -54,7 +55,7 @@
     "categoria": "Independiente",
     "precio": 27990,
     "stockDisponible": 45,
-    "username_vendedor":"siempreboca12",
+    "username_vendedor": "siempreboca12",
     "imagenURL": "https://acdn.mitiendanube.com/stores/001/150/754/products/img-20231114-wa0020-ed35dec95dca8e0e3116999716167612-1024-1024.jpg"
   },
   {
@@ -64,7 +65,7 @@
     "categoria": "Argentina",
     "precio": 24990,
     "stockDisponible": 20,
-    "username_vendedor":"lucianog",
+    "username_vendedor": "lucianog",
     "imagenURL": "https://acdn.mitiendanube.com/stores/002/240/024/products/img-20230227-wa00141-321b1874b8ae0acb1c16783002601431-1024-1024.jpg"
   },
   {
@@ -74,7 +75,7 @@
     "categoria": "Boca",
     "precio": 22990,
     "stockDisponible": 25,
-    "username_vendedor":"siempreboca12",
+    "username_vendedor": "siempreboca12",
     "imagenURL": [
       "https://www.stockcenter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw1b872e58/products/ADIT9369/ADIT9369-1.JPG",
       "https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw50ce561f/products/ADIT9369/ADIT9369-2.JPG",
@@ -88,7 +89,7 @@
     "categoria": "Equipos Europeos",
     "precio": 34990,
     "stockDisponible": 2,
-    "username_vendedor":"lucianog",
+    "username_vendedor": "lucianog",
     "imagenURL": "https://assets.adidas.com/images/w_600,f_auto,q_auto/ca98dc42e8b44c7dbfaead9f00ed279d_9366/Campera_Teamgeist_Real_Madrid_Tejida_Blanco_HA2537_01_laydown.jpg"
   },
   {
@@ -98,7 +99,7 @@
     "categoria": "Lanus",
     "precio": 23990,
     "stockDisponible": 15,
-    "username_vendedor":"lucianog",
+    "username_vendedor": "lucianog",
     "imagenURL": "https://tiendagranate.clublanus.com/archivos/productos/16758860625099_CAMISETA-ERREA-HOMENAJE-2007.png"
   },
   {
@@ -108,7 +109,7 @@
     "categoria": "Europa",
     "precio": 21990,
     "stockDisponible": 10,
-    "username_vendedor":"siempreboca12",
+    "username_vendedor": "siempreboca12",
     "imagenURL": "https://www.merchandisingplaza.es/407056/2/Shorts-Holanda-Futbol-Shorts-Holanda-Futbol-2020-21-Home--Naranja--l.jpg"
   },
   {
@@ -118,7 +119,7 @@
     "categoria": "Europa",
     "precio": 29990,
     "stockDisponible": 5,
-    "username_vendedor":"lucianog",
+    "username_vendedor": "lucianog",
     "imagenURL": "https://www.sportsdirect.com/images/imgzoom/37/37917318_xxl.jpg"
   },
   {
@@ -128,7 +129,7 @@
     "categoria": "Equipos Europeos",
     "precio": 28990,
     "stockDisponible": 8,
-    "username_vendedor":"lucianog",
+    "username_vendedor": "lucianog",
     "imagenURL": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/acbe32fdb7a042658a96add00016c8d1_9366/Camiseta_Arsenal_Teamgeist_Granate_H35891_01_laydown.jpg"
   },
   {
@@ -161,8 +162,10 @@
     "precio": 29000,
     "stockDisponible": 5,
     "username_vendedor": "lucianog",
-    "imagenURL": ["https://assets.adidas.com/images/w_600,f_auto,q_auto/5f4dbb8e8f784702b32eae92012acf00_9366/Buzo_Icon_Alemania_Cuello_Redondo_Negro_HF4064_01_laydown.jpg",
-    "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0ab3a600f3b145e9923caed6011e709b_9366/Buzo_Icon_Alemania_Cuello_Redondo_Negro_HF4064_23_hover_model.jpg"]
+    "imagenURL": [
+      "https://assets.adidas.com/images/w_600,f_auto,q_auto/5f4dbb8e8f784702b32eae92012acf00_9366/Buzo_Icon_Alemania_Cuello_Redondo_Negro_HF4064_01_laydown.jpg",
+      "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0ab3a600f3b145e9923caed6011e709b_9366/Buzo_Icon_Alemania_Cuello_Redondo_Negro_HF4064_23_hover_model.jpg"
+    ]
   },
   {
     "id": 16,
@@ -182,8 +185,9 @@
     "precio": 32990,
     "stockDisponible": 5,
     "username_vendedor": "siempreboca12",
-    "imagenURL": ["https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c34b00c3e3234227b292761084758638_9366/Campera_Deportiva_Tejida_Seleccion_Argentina_1994_Violeta_IS0267_HM1.jpg",
-    "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9e3b64a581f243a3ad6c302185334783_9366/Campera_Deportiva_Tejida_Seleccion_Argentina_1994_Violeta_IS0267_HM3_hover.jpg"
+    "imagenURL": [
+      "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c34b00c3e3234227b292761084758638_9366/Campera_Deportiva_Tejida_Seleccion_Argentina_1994_Violeta_IS0267_HM1.jpg",
+      "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9e3b64a581f243a3ad6c302185334783_9366/Campera_Deportiva_Tejida_Seleccion_Argentina_1994_Violeta_IS0267_HM3_hover.jpg"
     ]
   },
   {
@@ -215,6 +219,25 @@
     "stockDisponible": 5,
     "username_vendedor": "siempreboca12",
     "imagenURL": "https://maskjerseys.com/cdn/shop/products/278181252_10158492333640108_2281113036759583489_n_grande.jpg?v=1649457737"
-
+  },
+  {
+    "id": 21,
+    "nombre": "Camiseta de Boca Titular",
+    "descripcion": "Camiseta titular de Boca 2024 del matador",
+    "categoria": "Boca",
+    "precio": 50000,
+    "stockDisponible": 0,
+    "username_vendedor": "siempreboca12",
+    "imagenURL": "https://acdn.mitiendanube.com/stores/001/312/744/products/wtey4u5rw4e7546-4f50dff2e7c739c04b16989398570599-640-0.jpg"
+  },
+  {
+    "id": 22,
+    "nombre": "Camiseta alternativa de Boca 2024",
+    "descripcion": "3era camiseta de Boca 2024, edicion jugador. Camiseta de Zenon",
+    "categoria": "Boca",
+    "precio": 50000,
+    "stockDisponible": 10,
+    "username_vendedor": "siempreboca12",
+    "imagenURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGi4D3NZUq9Ss7CF9mpOaAz15lOox8NaiuWsrWgm9tyg&s"
   }
 ]
