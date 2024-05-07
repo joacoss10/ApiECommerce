@@ -12,6 +12,7 @@ const ComboBox = ({ defaultValue, placeholder, onChange, styles }) => {
         { value: 'EquipoArgentino', label: 'Equipo argentino' },
         { value: 'EquipoSudamericano', label: 'Equipo sudamericano' },
         { value: 'EquipoEuropeo', label: 'Equipo europeo' },
+        { value: 'OtrosEquipos', label: 'Otros Equipos' },
         { value: 'SeleccionArgentina', label: 'Selección Argentina' },
         { value: 'SeleccionBrasil', label: 'Selección Brasil' },
         { value: 'SeleccionUruguay', label: 'Selección Uruguay' },
