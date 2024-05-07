@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import Nav from '../components/Nav';
 import Accordion from '../components/Accordion';
 import "../styles/productpage.css"
@@ -10,41 +9,32 @@ import RemoveCircleOutlineOutlinedIcon from '@mui/icons-material/RemoveCircleOut
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
-import productos from '../utils/productos.json';
-import { useCart } from '../services/CartContext'; // Importa el hook useCart
+import { useDispatch, useSelector } from 'react-redux'; // Importa useDispatch y useSelector de React Redux
+import { addToCart } from '../redux/cartActions'; // Importa la acción addToCart
 import { Link } from 'react-router-dom';
 import ProductGallery from '../components/ProductGallery';
 
 function ProductPage({ producto }) {
   const navigate = useNavigate();
+  const dispatch = useDispatch(); // Obtén la función dispatch de React Redux
+  const cartItems = useSelector(state => state.cart.cartItems); // Obtén el estado del carrito de compras desde Redux
+  
   const handleClick = () => {
     navigate(`/categoria/${producto.categoria}/1`);
   }
 
-  const { addToCart, checkAndRestoreCartFromLocalStorage, getTotal, cartItems } = useCart(); // Obtén las funciones necesarias del contexto del carrito
-  {/*
-  console.log("cart: ", cartItems);
-  console.log("total: ", getTotal());
-*/}
-  
   useEffect(() => {
-    
     const isProductInCart = cartItems.find(item => item.id === producto.id);
     setIsAddedToCart(!!isProductInCart);
-  }, []);
-  
-
+  }, [cartItems, producto.id]);
 
   const [cantidad, setCantidad] = useState(1);
-
   const [isAddedToCart, setIsAddedToCart] = useState(false);
 
   useEffect(() => {
-    // Si el stock del producto es 0, establece la cantidad en 0
     if (producto.stockDisponible === 0) {
       setCantidad(0);
     } else {
-      // Si el stock es mayor que 0, asegúrate de que la cantidad sea al menos 1
       setCantidad(1);
     }
   }, [producto.stockDisponible]);
@@ -65,20 +55,16 @@ function ProductPage({ producto }) {
   const isOutOfStock = producto.stockDisponible === 0;
 
   const handleAgregarAlCarrito = () => {
-    addToCart({ ...producto, cantidad }); // Agrega el producto al carrito con la cantidad seleccionada
+    dispatch(addToCart({ ...producto, cantidad })); // Despacha la acción addToCart con el producto y la cantidad seleccionada
     setIsAddedToCart(true);
   };
+  
   const imageUrl = Array.isArray(producto.imagenURL) ? producto.imagenURL[0] : producto.imagenURL;
   return (
     <div className="productPage">
       <Nav />
       <div className="productContainer">
         <ProductGallery producto={producto}></ProductGallery>
-        {/*
-        <div className="imgContainer">
-          <img src={imageUrl} alt="" />
-        </div>
-        */}
         <div className="infoProduct">
           <Chip label={producto.categoria} variant="outlined" color="primary" size="small" onClick={handleClick} />
           <Chip label={producto.stockDisponible > 0 ? "Hay stock" : "Sin stock"} color={producto.stockDisponible > 0 ? "success" : "error"} size="small" className='stock' />
@@ -102,12 +88,11 @@ function ProductPage({ producto }) {
             </div>
           </div>
           <div className="aviso-producto">
-            {isAddedToCart && <span className="added-to-cart">Agregaste este producto al carrito {/*<Link to='/cart'>Ver Carrito</Link>*/}</span>}
+            {isAddedToCart && <span className="added-to-cart">Agregaste este producto al carrito</span>}
           </div>
           <div className="accordion">
             <Accordion />
           </div>
-          
         </div>
       </div>
     </div>
@@ -115,5 +100,6 @@ function ProductPage({ producto }) {
 }
 
 export default ProductPage;
+
 
 

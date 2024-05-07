@@ -1,4 +1,8 @@
 import { useState } from 'react'
+
+import { Provider } from 'react-redux'
+import store from './redux/store'
+
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import SignupPage from './pages/SignupPage'
@@ -31,6 +35,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   return (
     <AuthProvider>
+      <Provider store={store}>
       <CartProvider>
         <Routes>
           <Route path='/' element={<HomePage />} />
@@ -63,6 +68,7 @@ function App() {
 
         </Routes>
       </CartProvider>
+      </Provider>
     </AuthProvider>
   );
 }
