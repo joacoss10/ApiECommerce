@@ -28,14 +28,13 @@ function Nav() {
     }
 
 
-    console.log('username: ', { username });
+    
 
 
     const handleClickAccount = (event) => {     //navega a /login
-        console.log('event', event)
-        console.log('log', isLoggedIn);
+        
         if (isLoggedIn == true) {
-            console.log('logt', isLoggedIn);
+            
             setAnchorEl(event.currentTarget); // Call handleClickTest when logged in
             if (aux == true) {
                 document.querySelector('.div-nav').classList.add("menu-open");
@@ -43,7 +42,7 @@ function Nav() {
             }
         }
         else {
-            console.log('logf', isLoggedIn);
+            
             navigate("/login");
         }
 

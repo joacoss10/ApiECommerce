@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
     };
     const imageUrl = Array.isArray(product.imagenURL) ? product.imagenURL[0] : product.imagenURL;
 
-    console.log(product.nombre)
+    
     return (
         <div className="product-card">
             <section className="SeccionImagen">

@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
         body: JSON.stringify({ user: username, pass: password }),
       });
 
-      console.log(response)
+      
       
 
       if (response.ok) {
@@ -35,10 +35,10 @@ export const AuthProvider = ({ children }) => {
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('username', username); // Guardar el nombre de usuario en el almacenamiento local
         setUsername(username); // Guardar el nombre de usuario en el estado del contexto
-        console.log('LOGIN EXITOSO');
+        
         navigate('/');
       } else {
-        console.log('LOGIN MAL');
+        
         throw new Error('Credenciales inválidas');
       }
     } catch (error) {

@@ -48,14 +48,14 @@ const Menu = () => {
                             {isLoggedIn ? (
                                 <Link to="/vender">Nueva publicacion</Link>
                             ) : (
-                                <Link to="/vender">Nueva publicacion</Link>                   /*CAMBIAR A     /login */
+                                <Link to="/login">Nueva publicacion</Link>                   /*CAMBIAR A     /login */
                             )
                             }</li>
                         <li className='desplegable'>
                             {isLoggedIn ? (
                                 <Link to="/PublicacionesVendedor">Mis publicaiones</Link>
                             ) : (
-                                <Link to="/PublicacionesVendedor">Mis publicaiones</Link> /*CAMBIAR A     /login */
+                                <Link to="/login">Mis publicaiones</Link> /*CAMBIAR A     /login */
                             )
                             }</li>
                     </ul>

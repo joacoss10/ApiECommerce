@@ -8,13 +8,14 @@ import IconButton from '@mui/material/IconButton';
 import ClearIcon from '@mui/icons-material/Clear';
 import { useNavigate } from 'react-router-dom';
 import CarritoVacio from '../components/CarritoVacio'
+import { useAuth } from '../services/AuthContext';
 
 
 function CartPage() {
     const { removeFromCart, getCantidadItems, getTotal, cartItems, clearCart, setCartItems } = useCart();
     const [envio, setEnvio] = useState('Gratis');
-    console.log("cart: ", cartItems);
-
+    
+    const { isLoggedIn } = useAuth();
     const navigate = useNavigate();
 
     const handleProductClick = (id) => {
@@ -76,7 +77,12 @@ function CartPage() {
 
     const handleCheckOutClick = () => {
         //clearCart();
-        navigate('/checkout/success');
+        if (isLoggedIn){
+            navigate('/checkout/success');
+        }
+        else{
+            window.alert('Para finalizar la compra debe iniciar sesion');
+        }
     }
 
 

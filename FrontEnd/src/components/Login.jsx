@@ -31,11 +31,10 @@ function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(isLoggedIn);
+    
     try {
       await login(username, password); // Espera a que la solicitud de inicio de sesión se complete
-      console.log("Username:", username);
-      console.log("Password:", password);
+      
       if (isLoggedIn == true) {
         // Si isLoggedIn es true después de iniciar sesión, redirigir al usuario al menú
       } else {

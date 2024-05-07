@@ -14,7 +14,7 @@ const PublicacionesVendedor = (userName) => {
         <div className="div-publicaciones">
             <Nav />
             <div className="publicaciones-container">
-                {productos.map(producto => (
+                {productosVendedor.map(producto => (
                     /*productosVendedor.map(producto => (*/                                    //USR ESTA LINEA PARA LA ENTREGA, MUESTRA SOLO LOS DELUSUARIO LOGEADO
                     <ProductCard key={producto.id} product={producto} />
                 ))}

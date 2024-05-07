@@ -18,11 +18,11 @@ function CategoryPage({ categoria }) {
 
   const [currentPage, setCurrentPage] = useState(parseInt(paginaActual.paginaActual));
   const productsPerPage = 8;
-  console.log('cP', currentPage)
+  
 
   const handlePageChange = (pageNumber) => {
     window.scrollTo(0, 0);
-    console.log('pNum', pageNumber);
+    
     setCurrentPage(parseInt(pageNumber));
     navigate(`/categoria/${categoria}/${pageNumber}`);
   };

@@ -11,7 +11,7 @@ import '../styles/prodspage.css'
 function ProdsPage() {
   const { paginaActual } = useParams();
   const navigate = useNavigate();
-  console.log(paginaActual)
+  
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -27,8 +27,7 @@ function ProdsPage() {
 
   const applyFilters = () => {
     setCurrentPage(1);
-    console.log('min', minPrice);
-    console.log('max', maxPrice);
+    
     setMinPrice(minPriceInput);
     setMaxPrice(maxPriceInput);
 

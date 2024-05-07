@@ -16,10 +16,7 @@ function ProductPage({ producto }) {
   }
 
   const { addToCart, checkAndRestoreCartFromLocalStorage, getTotal, cartItems } = useCart(); // Obtiene las funciones necesarias del contexto del carrito
-  {/*
-  console.log("cart: ", cartItems);
-  console.log("total: ", getTotal());
-*/}
+  
 
   useEffect(() => {
 
