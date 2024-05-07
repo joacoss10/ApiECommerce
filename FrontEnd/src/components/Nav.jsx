@@ -20,7 +20,8 @@ function Nav() {
 
     if (window.location.pathname === '/' ||
         /^\/categoria\/\w+\/\d+$/.test(window.location.pathname) ||
-        /^\/productos\/page\/\d+$/.test(window.location.pathname)
+        /^\/productos\/page\/\d+$/.test(window.location.pathname)||
+        window.location.pathname === '/PublicacionesVendedor'
     ) {
         aux = true;
     } else {
