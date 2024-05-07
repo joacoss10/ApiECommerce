@@ -15,7 +15,7 @@ function ProductPage({ producto }) {
     navigate(`/categoria/${producto.categoria}/1`);
   }
 
-  const { addToCart, checkAndRestoreCartFromLocalStorage, getTotal, cartItems } = useCart(); // Obtén las funciones necesarias del contexto del carrito
+  const { addToCart, checkAndRestoreCartFromLocalStorage, getTotal, cartItems } = useCart(); // Obtiene las funciones necesarias del contexto del carrito
   {/*
   console.log("cart: ", cartItems);
   console.log("total: ", getTotal());

@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import '../styles/Menu.css'
-import { Button as MuiButton } from "@mui/material";//no se usa
-import { useNavigate } from 'react-router-dom';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useAuth } from '../services/AuthContext';
 

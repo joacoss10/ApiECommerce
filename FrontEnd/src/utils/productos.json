@@ -223,21 +223,24 @@
   {
     "id": 21,
     "nombre": "Camiseta de Boca Titular Cavani",
-    "descripcion": "Camiseta titular de Boca 2024 del matador",
+    "descripcion": "Camiseta titular de Boca 2024 del matador.",
     "categoria": "Boca",
     "precio": 50000,
     "stockDisponible": 0,
-    "username_vendedor": "siempreboca12",
+    "username_vendedor": "lucianog",
     "imagenURL": "https://acdn.mitiendanube.com/stores/001/312/744/products/wtey4u5rw4e7546-4f50dff2e7c739c04b16989398570599-640-0.jpg"
   },
   {
     "id": 22,
     "nombre": "Camiseta alternativa de Boca 2024",
-    "descripcion": "3era camiseta de Boca 2024, edicion jugador. Camiseta de Zenon",
+    "descripcion": "Tercera camiseta de Boca 2024, edición jugador.",
     "categoria": "Boca",
     "precio": 50000,
     "stockDisponible": 10,
     "username_vendedor": "siempreboca12",
-    "imagenURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGi4D3NZUq9Ss7CF9mpOaAz15lOox8NaiuWsrWgm9tyg&s"
+    "imagenURL": [
+      "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/2f3eaf66cedb4244aab1ef15db7eb7de_9366/Camiseta_Tercer_Uniforme_Authentic_Boca_Juniors_24-25_Azul_IP6073_01_laydown.jpg",
+      "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fc8f0d667e0d402888ae65002f14dd1f_9366/Camiseta_Tercer_Uniforme_Authentic_Boca_Juniors_24-25_Azul_IP6073_02_laydown_hover.jpg"
+    ]
   }
 ]

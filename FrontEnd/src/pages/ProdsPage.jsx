@@ -72,6 +72,13 @@ function ProdsPage() {
     applyFilters(); // Aplicar filtros cada vez que cambian los precios mínimos o máximos
   }, [minPrice, maxPrice]);
 
+  useEffect(() => {
+    return () => {
+      localStorage.removeItem('minPrice');    //Vacia los filtros cuando se sale de la pagina
+      localStorage.removeItem('maxPrice');
+    };
+  });
+
   const renderProducts = () => {
     const startIndex = (currentPage - 1) * productsPerPage;
     const endIndex = startIndex + productsPerPage;
