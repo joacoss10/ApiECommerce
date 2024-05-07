@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import "../styles/Home.css";
 import Card from '../components/Card';
-import productos from '../utils/productos.json'; // Importamos el JSON de productos
+import productos from '../utils/productos.json';
 import arg from "../assets/arg.jpg";
 import Nav from '../components/Nav';
-import FilterListIcon from '@mui/icons-material/FilterList';
 import { useNavigate } from 'react-router-dom';
 
 function HomePage() {
@@ -17,42 +16,36 @@ function HomePage() {
     window.scrollTo(0, 0);
   }, []);
 
-  
-
-  
 
   const navigate = useNavigate();
 
-  const handleClickProdsPage = () =>{
+  const handleClickProdsPage = () => {
     navigate('productos/page/1')
   }
 
   return (
     <div className="home">
-      <Nav/>
+      <Nav />
 
       <div className="img-container-arg">
         <img src={arg} alt="Camisetas Bianchi" />
         <div className="overlay"></div>
         <h2 className='inicio'>Inicio</h2>
       </div>
-
-      
-      
       <div className='product-box'>
         <div className="cards">
-          {filteredProducts.slice(0,8).map(producto => (
+          {filteredProducts.slice(0, 8).map(producto => (
             <Card key={producto.id} producto={producto} />
           ))}
         </div>
       </div>
       <div className="ver-todo">
-          
-            <button onClick={handleClickProdsPage}>
-              Ver todo
-            </button>
-          
-        </div>
+
+        <button onClick={handleClickProdsPage}>
+          Ver todo
+        </button>
+
+      </div>
     </div>
   );
 }

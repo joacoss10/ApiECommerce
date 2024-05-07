@@ -1,13 +1,11 @@
 import React from 'react'
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 import '../styles/signupresult.css'
 
-
-
 function SignupResponse() {
-    const {response} = useParams();
+    const { response } = useParams();
     const [displayText, setDisplayText] = useState('');
     const [showSuccess, setShowSuccess] = useState(false);
 
@@ -23,7 +21,6 @@ function SignupResponse() {
             setDisplayText('Ocurrió un error al registrar la cuenta');
         }
     }, [response]);
-
 
     return (
         <div className='login-container'>

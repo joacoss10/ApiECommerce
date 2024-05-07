@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import Return from '../components/Return';
-
 import Nav from '../components/Nav';
 import "../styles/cart.css";
 import { useCart } from '../services/CartContext'; // Importa el hook useCart
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import Button from '@mui/material/Button';
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import IconButton from '@mui/material/IconButton';
-import CachedIcon from '@mui/icons-material/Cached';
 import ClearIcon from '@mui/icons-material/Clear';
 import { useNavigate } from 'react-router-dom';
 import CarritoVacio from '../components/CarritoVacio'
@@ -61,9 +56,6 @@ function CartPage() {
             setEnvio(0); // Si el total es mayor o igual a 100000, el envío es gratis
         }
     }, [getTotal()]);
-
-
-
 
     //CUPON
 

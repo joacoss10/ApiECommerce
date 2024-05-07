@@ -3,10 +3,8 @@ import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import BadgeOutlinedIcon from '@mui/icons-material/BadgeOutlined';
-import {useNavigate} from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 import Return from '../components/Return';
-
 import "../styles/signup.css";
 import { Password } from '@mui/icons-material';
 
@@ -20,9 +18,9 @@ function Signup() {
 
   const navigate = useNavigate();
 
-  const handleClickLogin = () =>{
+  const handleClickLogin = () => {
     navigate('/login')
-  } 
+  }
 
 
 
@@ -35,7 +33,7 @@ function Signup() {
     password: '',
     nombre: '',
     apellido: ''
-    
+
   });
 
   const [registrationComplete, setRegistrationComplete] = useState(false);
@@ -54,7 +52,7 @@ function Signup() {
 
   const handleSignUpClick = async (e) => {
     e.preventDefault();
-    
+
     try {
       const response = await fetch('http://localhost:8080/user/create', {
         method: 'POST',
@@ -63,7 +61,7 @@ function Signup() {
         },
         body: JSON.stringify(formData) // Enviar datos del formulario como JSON
       });
-      
+
       const responseBody = await response.text(); // Obtener el cuerpo de la respuesta en formato de texto
       console.log('response', responseBody);
       navigate(`/signup/result/${responseBody}`);
@@ -92,78 +90,78 @@ function Signup() {
   return (
     <div className="signup-wrapper">
       {!registrationComplete ? (
-      <form>
-        <Return></Return>
-        <h1>Sign up</h1>
-        <div className="signup-input-box">
-          <PeopleAltOutlinedIcon fontSize='medium'/>
-          <input 
-            type="text"
-            name='username' 
-            placeholder='username'
-            value={formData.username}
-            onChange={handleInputChange} 
-            required
-          />
-        </div>
-        <div className="signup-input-box">
-          <EmailOutlinedIcon/>
-          <input
-            type="text"
-            name="mail"
-            placeholder='Mail'
-            value={formData.mail}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="signup-input-box">
-          <BadgeOutlinedIcon/>
-          <input
-            type="text"
-            name="nombre"
-            placeholder='Nombre'
-            value={formData.nombre}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="signup-input-box">
-          <BadgeOutlinedIcon/>
-          <input
-            type="text"
-            name="apellido"
-            placeholder='Apellido'
-            value={formData.apellido}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="signup-input-box">
-          <LockOutlinedIcon/>
-          <input
-            type="password"
-            name="password"
-            placeholder='Contraseña'
-            value={formData.password}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
+        <form>
+          <Return></Return>
+          <h1>Sign up</h1>
+          <div className="signup-input-box">
+            <PeopleAltOutlinedIcon fontSize='medium' />
+            <input
+              type="text"
+              name='username'
+              placeholder='username'
+              value={formData.username}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          <div className="signup-input-box">
+            <EmailOutlinedIcon />
+            <input
+              type="text"
+              name="mail"
+              placeholder='Mail'
+              value={formData.mail}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          <div className="signup-input-box">
+            <BadgeOutlinedIcon />
+            <input
+              type="text"
+              name="nombre"
+              placeholder='Nombre'
+              value={formData.nombre}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          <div className="signup-input-box">
+            <BadgeOutlinedIcon />
+            <input
+              type="text"
+              name="apellido"
+              placeholder='Apellido'
+              value={formData.apellido}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          <div className="signup-input-box">
+            <LockOutlinedIcon />
+            <input
+              type="password"
+              name="password"
+              placeholder='Contraseña'
+              value={formData.password}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
 
 
 
-        <div className="signup-login-error">
-          
-        </div>
-        <div className="signup-remember-forgot">
-          
-        </div>
-        <button type='submit' className='signup-btn' onClick={handleSignUpClick}>Registrarse</button>
-        <div className="signup-register-link">
-          <p>Ya tenes una cuenta? <a onClick={handleClickLogin}>Ingresa</a></p>
-        </div>
-      </form>
+          <div className="signup-login-error">
+
+          </div>
+          <div className="signup-remember-forgot">
+
+          </div>
+          <button type='submit' className='signup-btn' onClick={handleSignUpClick}>Registrarse</button>
+          <div className="signup-register-link">
+            <p>Ya tenes una cuenta? <a onClick={handleClickLogin}>Ingresa</a></p>
+          </div>
+        </form>
       ) : (
         <div className="registration-response">
           <h2>Respuesta del Registro:</h2>

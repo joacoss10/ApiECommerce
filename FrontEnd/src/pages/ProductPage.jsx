@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from 'react';
-
 import Nav from '../components/Nav';
 import Accordion from '../components/Accordion';
 import "../styles/productpage.css"
 import Chip from '@mui/material/Chip';
 import { useNavigate } from 'react-router-dom';
-import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
-import RemoveCircleOutlineOutlinedIcon from '@mui/icons-material/RemoveCircleOutlineOutlined';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
-import productos from '../utils/productos.json';
 import { useCart } from '../services/CartContext'; // Importa el hook useCart
-import { Link } from 'react-router-dom';
 import ProductGallery from '../components/ProductGallery';
 
 function ProductPage({ producto }) {
@@ -26,14 +20,12 @@ function ProductPage({ producto }) {
   console.log("cart: ", cartItems);
   console.log("total: ", getTotal());
 */}
-  
+
   useEffect(() => {
-    
+
     const isProductInCart = cartItems.find(item => item.id === producto.id);
     setIsAddedToCart(!!isProductInCart);
   }, []);
-  
-
 
   const [cantidad, setCantidad] = useState(1);
 
@@ -107,7 +99,7 @@ function ProductPage({ producto }) {
           <div className="accordion">
             <Accordion />
           </div>
-          
+
         </div>
       </div>
     </div>

@@ -36,7 +36,7 @@ const Vender = () => {
                 </section>
                 <section id='InputStockPrecio'>
                     <input type="number" id='Stock' min='1' placeholder="Stock" required></input>
-                    <input type="number" id="Precio" min="0" placeholder="Precio" required></input>{/* me deja ponerlo gratis xd */}
+                    <input type="number" id="Precio" min="0" placeholder="Precio" required></input>
                 </section>
 
 

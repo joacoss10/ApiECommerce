@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Nav from '../components/Nav';
 import '../styles/checkout.css'
 import { useNavigate } from 'react-router-dom';
