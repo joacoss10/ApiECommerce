@@ -50,7 +50,7 @@ function App() {
           {categorias.map(categoria =>(
             <Route
               key={categoria}
-              path={`/categoria/${categoria}`}
+              path={`/categoria/${categoria}/:paginaActual`}
               element={<CategoryPage categoria={categoria}/>}
             />
           ))}

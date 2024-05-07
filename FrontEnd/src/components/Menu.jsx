@@ -35,26 +35,26 @@ const Menu = () => {
                 <li className="dropdown">
                     <a className='a' href="#">Indumentaria <ArrowDropDownIcon /></a>
                     <ul className="dropdownContent">
-                        <li className='desplegable'><Link to="/categoria/boca">Boca</Link></li>
-                        <li className='desplegable'><Link to="/categoria/River">River</Link></li>
-                        <li className='desplegable'><Link to="/categoria/Lanus">Lanus</Link></li>
-                        <li className='desplegable'><Link to="/categoria/Independiente">Independiente</Link></li>
-                        <li className='desplegable'><Link to="/categoria/Racing">Racing</Link></li>
-                        <li className='desplegable'><Link to="/categoria/San Lorenzo">San Lorenzo</Link></li>
-                        <li className='desplegable'><Link to="/categoria/Equipos Argentinos">Equipos Argentinos</Link></li>
-                        <li className='desplegable'><Link to="/categoria/Equipos Sudamericanos">Equipos Sudamericanos</Link></li>
-                        <li className='desplegable'><Link to="/categoria/Equipos Europeos">Equipos Europeos</Link></li>
-                        <li className='desplegable'><Link to="/categoria/Otros Equipos">Otros Equipos</Link></li>
+                        <li className='desplegable'><Link to="/categoria/boca/1">Boca</Link></li>
+                        <li className='desplegable'><Link to="/categoria/River/1">River</Link></li>
+                        <li className='desplegable'><Link to="/categoria/Lanus/1">Lanus</Link></li>
+                        <li className='desplegable'><Link to="/categoria/Independiente/1">Independiente</Link></li>
+                        <li className='desplegable'><Link to="/categoria/Racing/1">Racing</Link></li>
+                        <li className='desplegable'><Link to="/categoria/San Lorenzo/1">San Lorenzo</Link></li>
+                        <li className='desplegable'><Link to="/categoria/Equipos Argentinos/1">Equipos Argentinos</Link></li>
+                        <li className='desplegable'><Link to="/categoria/Equipos Sudamericanos/1">Equipos Sudamericanos</Link></li>
+                        <li className='desplegable'><Link to="/categoria/Equipos Europeos/1">Equipos Europeos</Link></li>
+                        <li className='desplegable'><Link to="/categoria/Otros Equipos/1">Otros Equipos</Link></li>
                     </ul>
                 </li>
                 <li className="dropdown">
                     <a className='a' href="#">Selecciones <ArrowDropDownIcon /></a>
                     <ul className="dropdownContent">
-                        <li className='desplegable'><Link to="/categoria/Argentina">Argentina</Link></li>
-                        <li className='desplegable'><Link to="/categoria/Brasil">Brasil</Link></li>
-                        <li className='desplegable'><Link to="/categoria/Uruguay">Uruguay</Link></li>
-                        <li className='desplegable'><Link to="/categoria/Europa">Europa</Link></li>
-                        <li className='desplegable'><Link to="/categoria/Otros">Otros</Link></li>
+                        <li className='desplegable'><Link to="/categoria/Argentina/1">Argentina</Link></li>
+                        <li className='desplegable'><Link to="/categoria/Brasil/1">Brasil</Link></li>
+                        <li className='desplegable'><Link to="/categoria/Uruguay/1">Uruguay</Link></li>
+                        <li className='desplegable'><Link to="/categoria/Europa/1">Europa</Link></li>
+                        <li className='desplegable'><Link to="/categoria/Otros/1">Otros</Link></li>
                     </ul>
                 </li>
                 <li className="dropdown">

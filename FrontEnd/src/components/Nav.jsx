@@ -20,23 +20,7 @@ function Nav() {
     let aux;
 
     if (window.location.pathname==='/' || 
-            window.location.pathname==='/categoria/boca' || 
-            window.location.pathname==='/categoria/river' || 
-            window.location.pathname==='/categoria/Lanus' || 
-            window.location.pathname==='/categoria/Independiente' || 
-            window.location.pathname==='/categoria/Racing' || 
-            window.location.pathname==='/categoria/San%20Lorenzo' || 
-            window.location.pathname==='/categoria/Equipos%20Argentinos' || 
-            window.location.pathname==='/categoria/Equipos%20Europeos' || 
-            window.location.pathname==='/categoria/Equipos%20Sudamericanos' || 
-            window.location.pathname==='/categoria/Equipos%20Europeos' || 
-            window.location.pathname==='/categoria/Otros%20Equipos' || 
-            window.location.pathname==='/categoria/Argentina' ||
-            window.location.pathname==='/categoria/Brasil' || 
-            window.location.pathname==='/categoria/Uruguay' || 
-            window.location.pathname==='/categoria/Europa' || 
-            window.location.pathname==='/categoria/Otros' ||
-            window.location.pathname==='/PublicacionesVendedor' ||
+             /^\/categoria\/\w+\/\d+$/.test(window.location.pathname) || 
             /^\/productos\/page\/\d+$/.test(window.location.pathname)
             )
         {

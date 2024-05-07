@@ -130,5 +130,91 @@
     "stockDisponible": 8,
     "username_vendedor":"lucianog",
     "imagenURL": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/acbe32fdb7a042658a96add00016c8d1_9366/Camiseta_Arsenal_Teamgeist_Granate_H35891_01_laydown.jpg"
+  },
+  {
+    "id": 13,
+    "nombre": "Pantalon Racing",
+    "descripcion": "¡El auténtico Pantalon Racing para los verdaderos fanáticos! Diseño innovador y materiales de alta calidad. Completa tu look con estilo y comodidad.",
+    "categoria": "Racing",
+    "precio": 29990,
+    "stockDisponible": 5,
+    "username_vendedor": "siempreboca12",
+    "imagenURL": "https://www.digitalsport.com.ar/files/products/652f205ab86c5-634304-500x500.jpg"
+  },
+  {
+    "id": 14,
+    "nombre": "Camiseta Gremio",
+    "descripcion": "¡La Camiseta Gremio que estabas buscando! Inspirada en la pasión del fútbol sudamericano. Hecha para destacar en la cancha y en la calle. ¡Hazte con ella y demuestra tu apoyo al equipo!",
+    "categoria": "Equipos Sudamericanos",
+    "precio": 29990,
+    "stockDisponible": 5,
+    "username_vendedor": "siempreboca12",
+    "imagenURL": [
+      "https://acdn.mitiendanube.com/stores/001/312/744/products/kuuyyuyuhhjgfh1-f44df3ad5dd85105ae16959359916949-480-0.jpg"
+    ]
+  },
+  {
+    "id": 15,
+    "nombre": "Buzo Alemania",
+    "descripcion": "¡El Buzo Alemania ideal para los amantes del fútbol europeo! Con un diseño exclusivo y detalles únicos. Mantente abrigado con estilo mientras muestras tu orgullo por tu equipo favorito.",
+    "categoria": "Europa",
+    "precio": 29990,
+    "stockDisponible": 5,
+    "username_vendedor": "lucianog",
+    "imagenURL": ["https://assets.adidas.com/images/w_600,f_auto,q_auto/5f4dbb8e8f784702b32eae92012acf00_9366/Buzo_Icon_Alemania_Cuello_Redondo_Negro_HF4064_01_laydown.jpg",
+    "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0ab3a600f3b145e9923caed6011e709b_9366/Buzo_Icon_Alemania_Cuello_Redondo_Negro_HF4064_23_hover_model.jpg"]
+  },
+  {
+    "id": 16,
+    "nombre": "3rd Kit Arsenal",
+    "descripcion": "¡El 3rd Kit Arsenal imprescindible para cualquier seguidor del fútbol inglés! Con un diseño elegante y moderno. Representa a tu equipo con estilo y distinción en cualquier lugar.",
+    "categoria": "Equipos Europeos",
+    "precio": 29990,
+    "stockDisponible": 5,
+    "username_vendedor": "siempreboca12",
+    "imagenURL": "https://img.fruugo.com/product/4/29/1026226294_max.jpg"
+  },
+  {
+    "id": 17,
+    "nombre": "Vintage Argentina",
+    "descripcion": "¡La Vintage Argentina que evoca la nostalgia del fútbol argentino! Revive los momentos históricos con esta prenda única. Hecha con los mejores materiales para un confort inigualable.",
+    "categoria": "Argentina",
+    "precio": 29990,
+    "stockDisponible": 5,
+    "username_vendedor": "siempreboca12",
+    "imagenURL": ["https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c34b00c3e3234227b292761084758638_9366/Campera_Deportiva_Tejida_Seleccion_Argentina_1994_Violeta_IS0267_HM1.jpg",
+    "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9e3b64a581f243a3ad6c302185334783_9366/Campera_Deportiva_Tejida_Seleccion_Argentina_1994_Violeta_IS0267_HM3_hover.jpg"
+    ]
+  },
+  {
+    "id": 18,
+    "nombre": "Chomba Francia 98",
+    "descripcion": "¡La Chomba Francia 98 que conmemora un hito en la historia del fútbol mundial! Revive la emoción del Mundial con esta prenda exclusiva. Calidad y estilo se unen en esta pieza imprescindible para cualquier coleccionista.",
+    "categoria": "Europa",
+    "precio": 29990,
+    "stockDisponible": 5,
+    "username_vendedor": "lucianog",
+    "imagenURL": "https://acdn.mitiendanube.com/stores/003/634/310/products/img_06391-f4bb200c01996cf78616946360995358-1024-1024.jpeg"
+  },
+  {
+    "id": 19,
+    "nombre": "Campera FC Bayern",
+    "descripcion": "¡La Campera FC Bayern para los seguidores del fútbol alemán! Con un diseño moderno y funcional. Demuestra tu lealtad al Bayern con esta prenda de alta calidad, perfecta para cualquier ocasión.",
+    "categoria": "Equipos Europeos",
+    "precio": 29990,
+    "stockDisponible": 5,
+    "username_vendedor": "lucianog",
+    "imagenURL": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fef0c4a17f1c4140ac39ad9f00d3bd37_9366/Campera_Teamgeist_FC_Bayern_Tejida_Rojo_H67173_01_laydown.jpg"
+  },
+  {
+    "id": 20,
+    "nombre": "Short FC Barcelona",
+    "descripcion": "¡El Short FC Barcelona que refleja la grandeza del fútbol español! Con un diseño dinámico y detalles distintivos. Disfruta del confort y el estilo mientras muestras tu apoyo al Barça.",
+    "categoria": "Equipos Europeos",
+    "precio": 29990,
+    "stockDisponible": 5,
+    "username_vendedor": "siempreboca12",
+    "imagenURL": "https://maskjerseys.com/cdn/shop/products/278181252_10158492333640108_2281113036759583489_n_grande.jpg?v=1649457737"
+
   }
 ]

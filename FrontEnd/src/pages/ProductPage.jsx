@@ -18,7 +18,7 @@ import ProductGallery from '../components/ProductGallery';
 function ProductPage({ producto }) {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate(`/categoria/${producto.categoria}`);
+    navigate(`/categoria/${producto.categoria}/1`);
   }
 
   const { addToCart, checkAndRestoreCartFromLocalStorage, getTotal, cartItems } = useCart(); // Obtén las funciones necesarias del contexto del carrito

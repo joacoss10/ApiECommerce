@@ -1,14 +1,17 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import Card from '../components/Card';
 import productos from '../utils/productos.json'; 
 import Nav from '../components/Nav';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import '../styles/prodspage.css'
 
+
 function ProdsPage() {
     const {paginaActual} = useParams();
+    const navigate = useNavigate();
+    console.log(paginaActual)
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -30,6 +33,7 @@ function ProdsPage() {
     console.log('max',maxPrice);
     setMinPrice(minPriceInput);
     setMaxPrice(maxPriceInput);
+
     
     
     const filtered = productos.filter(producto => {
@@ -82,8 +86,13 @@ function ProdsPage() {
   const handlePageChange = (pageNumber) => {
     window.scrollTo(0, 0);
     localStorage.setItem('cPage',pageNumber);
-    setCurrentPage(pageNumber);
+    setCurrentPage(parseInt(pageNumber));
+    navigate(`/productos/page/${pageNumber}`);
   };
+  useEffect(() => {
+    // Asegúrate de que currentPage se establezca correctamente al cargar la página manualmente
+    setCurrentPage(parseInt(paginaActual) || 1);
+  }, [paginaActual]);
 
   return (
     
