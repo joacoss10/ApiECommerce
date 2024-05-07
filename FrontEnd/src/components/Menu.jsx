@@ -7,24 +7,10 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useAuth } from '../services/AuthContext';
 
 const Menu = () => {
-    /*const navigate = useNavigate();
-
-    const handleClickHome = () => {
-        navigate("/")
-    }*/
 
 
     const { isLoggedIn } = useAuth();
 
-    /*const handleNewPostClick = () => {
-        if (isLoggedIn) {
-            // Si está logueado, redirige a /vender
-            window.location.href = '/vender';
-        } else {
-            // Si no está logueado, redirige a /login
-            window.location.href = '/login';
-        }
-    };*/
 
     return (
         <div className="Menu">

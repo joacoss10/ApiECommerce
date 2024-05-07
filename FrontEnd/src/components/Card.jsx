@@ -9,7 +9,6 @@ function Card( {producto} ) {
 
     const navigate = useNavigate();
     const handleClickProductView = () => {
-        // Redirige a la página del producto con el ID correspondiente
         navigate(`/product/${producto.id}`);
     };
     const imageUrl = Array.isArray(producto.imagenURL) ? producto.imagenURL[0] : producto.imagenURL;

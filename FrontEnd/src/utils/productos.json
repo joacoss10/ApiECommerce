@@ -146,7 +146,7 @@
     "nombre": "Camiseta Gremio",
     "descripcion": "¡La Camiseta Gremio que estabas buscando! Inspirada en la pasión del fútbol sudamericano. Hecha para destacar en la cancha y en la calle. ¡Hazte con ella y demuestra tu apoyo al equipo!",
     "categoria": "Equipos Sudamericanos",
-    "precio": 29990,
+    "precio": 17990,
     "stockDisponible": 5,
     "username_vendedor": "siempreboca12",
     "imagenURL": [
@@ -158,7 +158,7 @@
     "nombre": "Buzo Alemania",
     "descripcion": "¡El Buzo Alemania ideal para los amantes del fútbol europeo! Con un diseño exclusivo y detalles únicos. Mantente abrigado con estilo mientras muestras tu orgullo por tu equipo favorito.",
     "categoria": "Europa",
-    "precio": 29990,
+    "precio": 29000,
     "stockDisponible": 5,
     "username_vendedor": "lucianog",
     "imagenURL": ["https://assets.adidas.com/images/w_600,f_auto,q_auto/5f4dbb8e8f784702b32eae92012acf00_9366/Buzo_Icon_Alemania_Cuello_Redondo_Negro_HF4064_01_laydown.jpg",
@@ -169,7 +169,7 @@
     "nombre": "3rd Kit Arsenal",
     "descripcion": "¡El 3rd Kit Arsenal imprescindible para cualquier seguidor del fútbol inglés! Con un diseño elegante y moderno. Representa a tu equipo con estilo y distinción en cualquier lugar.",
     "categoria": "Equipos Europeos",
-    "precio": 29990,
+    "precio": 24990,
     "stockDisponible": 5,
     "username_vendedor": "siempreboca12",
     "imagenURL": "https://img.fruugo.com/product/4/29/1026226294_max.jpg"
@@ -179,7 +179,7 @@
     "nombre": "Vintage Argentina",
     "descripcion": "¡La Vintage Argentina que evoca la nostalgia del fútbol argentino! Revive los momentos históricos con esta prenda única. Hecha con los mejores materiales para un confort inigualable.",
     "categoria": "Argentina",
-    "precio": 29990,
+    "precio": 32990,
     "stockDisponible": 5,
     "username_vendedor": "siempreboca12",
     "imagenURL": ["https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c34b00c3e3234227b292761084758638_9366/Campera_Deportiva_Tejida_Seleccion_Argentina_1994_Violeta_IS0267_HM1.jpg",
@@ -191,7 +191,7 @@
     "nombre": "Chomba Francia 98",
     "descripcion": "¡La Chomba Francia 98 que conmemora un hito en la historia del fútbol mundial! Revive la emoción del Mundial con esta prenda exclusiva. Calidad y estilo se unen en esta pieza imprescindible para cualquier coleccionista.",
     "categoria": "Europa",
-    "precio": 29990,
+    "precio": 49990,
     "stockDisponible": 5,
     "username_vendedor": "lucianog",
     "imagenURL": "https://acdn.mitiendanube.com/stores/003/634/310/products/img_06391-f4bb200c01996cf78616946360995358-1024-1024.jpeg"
@@ -201,7 +201,7 @@
     "nombre": "Campera FC Bayern",
     "descripcion": "¡La Campera FC Bayern para los seguidores del fútbol alemán! Con un diseño moderno y funcional. Demuestra tu lealtad al Bayern con esta prenda de alta calidad, perfecta para cualquier ocasión.",
     "categoria": "Equipos Europeos",
-    "precio": 29990,
+    "precio": 39990,
     "stockDisponible": 5,
     "username_vendedor": "lucianog",
     "imagenURL": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fef0c4a17f1c4140ac39ad9f00d3bd37_9366/Campera_Teamgeist_FC_Bayern_Tejida_Rojo_H67173_01_laydown.jpg"
@@ -211,7 +211,7 @@
     "nombre": "Short FC Barcelona",
     "descripcion": "¡El Short FC Barcelona que refleja la grandeza del fútbol español! Con un diseño dinámico y detalles distintivos. Disfruta del confort y el estilo mientras muestras tu apoyo al Barça.",
     "categoria": "Equipos Europeos",
-    "precio": 29990,
+    "precio": 19990,
     "stockDisponible": 5,
     "username_vendedor": "siempreboca12",
     "imagenURL": "https://maskjerseys.com/cdn/shop/products/278181252_10158492333640108_2281113036759583489_n_grande.jpg?v=1649457737"

@@ -19,7 +19,7 @@ function Login() {
   
   const { login, isLoggedIn } = useAuth();
 
-  console.log("al iniciar login",isLoggedIn);
+  
   
 
   const handleUsernameChange = (event) => {
@@ -40,19 +40,12 @@ function Login() {
       await login(username, password); // Espera a que la solicitud de inicio de sesión se complete
       console.log("Username:", username);
       console.log("Password:", password);
-      console.log(isLoggedIn);
       if (isLoggedIn == true) {
         // Si isLoggedIn es true después de iniciar sesión, redirigir al usuario al menú
-        console.log('es true');
-        //navigate('/');
       } else {
-        // Si isLoggedIn es false después de iniciar sesión, establecer el estado de error en true
-        console.log('es false');
         setError(true);
       }
     } catch (error) {
-      // Manejar cualquier error que ocurra durante la solicitud de inicio de sesión
-      console.error('Error al iniciar sesión:', error.message);
       // Establecer el estado de error en true
       setError(true);
     }
