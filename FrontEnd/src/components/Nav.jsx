@@ -105,12 +105,12 @@ function Nav() {
                                         PaperProps={{
                                             style: {
                                                 width: '200px', // Ancho fijo del menú
-                                                height: '98px', // Altura máxima del menú si es necesario
+                                                height: '62px', // Altura máxima del menú si es necesario
                                                 padding: '4px',
                                             },
                                         }}
                                     >
-                                        <MenuItem onClick={handleClose}><ShoppingBagOutlinedIcon fontSize='small' style={{marginRight:'7px'}}/>Ver pedidos</MenuItem>
+                                        
                                         <MenuItem onClick={handleClickLogout}><LogoutOutlinedIcon fontSize='small'style={{marginRight:'7px'}}/> Cerrar sesión</MenuItem>
                                     </MuiMenu>
                                 </div>
