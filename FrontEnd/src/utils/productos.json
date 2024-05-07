@@ -222,7 +222,7 @@
   },
   {
     "id": 21,
-    "nombre": "Camiseta de Boca Titular Cavani",
+    "nombre": "Camiseta Boca Cavani",
     "descripcion": "Camiseta titular de Boca 2024 del matador.",
     "categoria": "Boca",
     "precio": 50000,
@@ -232,7 +232,7 @@
   },
   {
     "id": 22,
-    "nombre": "Camiseta alternativa de Boca 2024",
+    "nombre": "Camiseta de Boca",
     "descripcion": "Tercera camiseta de Boca 2024, edición jugador.",
     "categoria": "Boca",
     "precio": 50000,
