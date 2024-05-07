@@ -26,14 +26,17 @@ const ProductCard = ({ product }) => {
             <section className="SeccionImagen">
                 <img src={imageUrl} className="product-image" alt={product.nombre} />
             </section>
+
             <section className="Texto">
                 <h2 id="product-title">{product.nombre}</h2>
                 <p id="product-description">{product.descripcion}</p>
             </section>
+
             <section className="StockYPrecio">
                 <p><b>${product.precio}</b></p>
                 <p><b>Stock: {product.stockDisponible}</b></p>
             </section>
+
             <section className="Botones">
                 <button className="Eliminar" onClick={handleDeleteClick}>🗑️</button>
                 <button className="Editar" onClick={handleEditClick}>✏️</button>
