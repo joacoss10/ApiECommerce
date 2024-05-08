@@ -30,7 +30,7 @@ function Buscar() {
   return (
 
     <div className='Contenedor'>
-      <input id='input' type="text" value={buscar} onChange={handleBuscar} />
+      <input id='input' type="text" onChange={handleBuscar} />
 
       <div className='buscar-productos'>
         <div className='buscar-cards'>
