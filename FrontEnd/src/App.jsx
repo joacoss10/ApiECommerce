@@ -16,7 +16,6 @@ import { AuthProvider } from './services/AuthContext';
 import BuscarPage from './pages/BuscarPage'
 import CategoryPage from './pages/CategoryPage'
 import SignupResponse from './pages/SignupResponse'
-import ProductGallery from './components/ProductGallery'
 import ProdsPage from './pages/ProdsPage'
 
 
