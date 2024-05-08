@@ -73,7 +73,7 @@ function ProdsPage() {
   useEffect(() => {
     localStorage.setItem('minPrice', minPrice);
     localStorage.setItem('maxPrice', maxPrice);
-    applyFilters(); 
+    applyFilters(); // Aplicar filtros cada vez que cambian los precios mínimos o máximos
   }, [minPrice, maxPrice]);
 
   const renderProducts = () => {
@@ -90,7 +90,7 @@ function ProdsPage() {
     navigate(`/productos/page/${pageNumber}`);
   };
   useEffect(() => {
-    
+    // Asegúrate de que currentPage se establezca correctamente al cargar la página manualmente
     setCurrentPage(parseInt(paginaActual) || 1);
   }, [paginaActual]);
 
@@ -100,7 +100,10 @@ function ProdsPage() {
         <Nav></Nav>
         <div className="prods-content">
             <div className="price-filter">
-            
+            {/*<div className="div-filter-title">
+            <span className='filter-title'>Filtrar</span>
+            </div>
+            */}
 
             <div className="div-filter-input">
             <FilterListIcon/>
@@ -144,5 +147,5 @@ function ProdsPage() {
   )
 }
 
-export default ProdsPage;
+export default ProdsPage
 
