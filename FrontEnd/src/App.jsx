@@ -15,12 +15,11 @@ import EditPage from './pages/EditPage'
 import { Routes, Route } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import productos from './utils/productos.json';
-import { CartProvider } from './services/CartContext';
 import { AuthProvider } from './services/AuthContext';
 import BuscarPage from './pages/BuscarPage'
 import CategoryPage from './pages/CategoryPage'
 import SignupResponse from './pages/SignupResponse'
-import ProductGallery from './components/ProductGallery'
+
 import ProdsPage from './pages/ProdsPage'
 
 
@@ -36,7 +35,7 @@ function App() {
   return (
     <AuthProvider>
       <Provider store={store}>
-      <CartProvider>
+      
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/login' element={<LoginPage />} />
@@ -67,7 +66,7 @@ function App() {
           <Route path='/productos/page/:paginaActual' element={<ProdsPage />} />
 
         </Routes>
-      </CartProvider>
+      
       </Provider>
     </AuthProvider>
   );

@@ -17,7 +17,7 @@ import ProductGallery from '../components/ProductGallery';
 function ProductPage({ producto }) {
   const navigate = useNavigate();
   const dispatch = useDispatch(); // Obtén la función dispatch de React Redux
-  const cartItems = useSelector(state => state.cart.cartItems); // Obtén el estado del carrito de compras desde Redux
+  const cartItems = useSelector(state => state.cartItems); // Obtén el estado del carrito de compras desde Redux
   
   const handleClick = () => {
     navigate(`/categoria/${producto.categoria}/1`);
@@ -55,7 +55,11 @@ function ProductPage({ producto }) {
   const isOutOfStock = producto.stockDisponible === 0;
 
   const handleAgregarAlCarrito = () => {
-    dispatch(addToCart({ ...producto, cantidad })); // Despacha la acción addToCart con el producto y la cantidad seleccionada
+    const item = {
+      ...producto,
+      cantidad: cantidad
+  };
+  dispatch(addToCart(item))
     setIsAddedToCart(true);
   };
   
