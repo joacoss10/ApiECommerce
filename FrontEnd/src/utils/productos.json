@@ -32,7 +32,7 @@
     "precio": 18990,
     "stockDisponible": 35,
     "username_vendedor":"lucianog",
-    "imagenURL": "https://i.ebayimg.com/thumbs/images/g/FPcAAOSwpHVksj8j/s-l640.jpg"
+    "imagenURL": ["https://i.ebayimg.com/thumbs/images/g/FPcAAOSwpHVksj8j/s-l640.jpg"]
   },
   {
     "id": 4,
