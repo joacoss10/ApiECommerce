@@ -1,0 +1,51 @@
+/* MediosDePago.css */
+
+/* Estilo para el contenedor principal */
+.medios-de-pago-container {
+    margin-top: 500em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilo para el título */
+#TituloLabel {
+    margin-top: 10em;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Estilo para los botones */
+.payment-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.payment-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo específico para el botón de Mercado Pago */
+#mercadoPagoButton {
+    background-color: #28a745;
+}
+
+#mercadoPagoButton:hover {
+    background-color: #218838;
+}
+
+/* Estilo específico para el botón de Tarjeta */
+#tarjetaButton {
+    background-color: #dc3545;
+}
+
+#tarjetaButton:hover {
+    background-color: #c82333;
+}

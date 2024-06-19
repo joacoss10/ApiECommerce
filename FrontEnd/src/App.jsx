@@ -17,6 +17,10 @@ import BuscarPage from './pages/BuscarPage'
 import CategoryPage from './pages/CategoryPage'
 import SignupResponse from './pages/SignupResponse'
 import ProdsPage from './pages/ProdsPage'
+import MediosDePago from './components/MediosDePago'
+import TarjetaPage from './pages/TarjetaPage'
+import MediosDePagoPage from './pages/MedioDePagoPage'
+import MpPage from './pages/MpPage'
 
 
 
@@ -26,7 +30,7 @@ import ProdsPage from './pages/ProdsPage'
 
 
 function App() {
-  const categorias = ['Boca','River','Lanus','Independiente','Racing','San Lorenzo','Equipos Sudamericanos','Equipos Europeos','Equipos Argentinos','Argentina','Brasil','Uruguay','Europa','Otros', 'Otros Equipos'];
+  const categorias = ['Boca', 'River', 'Lanus', 'Independiente', 'Racing', 'San Lorenzo', 'Equipos Sudamericanos', 'Equipos Europeos', 'Equipos Argentinos', 'Argentina', 'Brasil', 'Uruguay', 'Europa', 'Otros', 'Otros Equipos'];
   const [currentPage, setCurrentPage] = useState(1);
   return (
     <AuthProvider>
@@ -39,6 +43,7 @@ function App() {
           <Route path='/cart' element={<CartPage />} />
           <Route path='/EditarVender' element={<EditPage />} />
           <Route path='/buscar' element={<BuscarPage />} />
+
           {productos.map(producto => (
             <Route
               key={producto.id}
@@ -46,19 +51,21 @@ function App() {
               element={<ProductPage producto={producto} />}
             />
           ))}
-          {categorias.map(categoria =>(
+          {categorias.map(categoria => (
             <Route
               key={categoria}
               path={`/categoria/${categoria}/:paginaActual`}
-              element={<CategoryPage categoria={categoria}/>}
+              element={<CategoryPage categoria={categoria} />}
             />
           ))}
-          
+
           <Route path='/checkout/success' element={<Checkout />} />
           <Route path='/PublicacionesVendedor' element={<PublicacionesVendedor />} />
-          <Route path='/signup/result/:response' element={<SignupResponse/>}/>
-
+          <Route path='/signup/result/:response' element={<SignupResponse />} />
+          <Route path='/medioDePago' element={<MediosDePagoPage />} />
           <Route path='/productos/page/:paginaActual' element={<ProdsPage />} />
+          <Route path='/medioDePago/tarjeta' element={<TarjetaPage />} />
+          <Route path='/medioDePago/mercadoPago' element={<MpPage />} />
 
         </Routes>
       </CartProvider>

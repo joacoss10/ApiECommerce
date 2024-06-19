@@ -1,0 +1,61 @@
+/* Tarjeta.css */
+
+.tarjeta-formulario {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.tarjeta-formulario h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.tarjeta-formulario form {
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-formulario div {
+    margin-bottom: 15px;
+}
+
+.tarjeta-formulario label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.tarjeta-formulario input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.tarjeta-formulario input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.tarjeta-formulario button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.tarjeta-formulario button:hover {
+    background-color: #0056b3;
+}

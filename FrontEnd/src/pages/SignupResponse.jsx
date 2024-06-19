@@ -7,7 +7,7 @@ import '../styles/signupresult.css'
 function SignupResponse() {
     const { response } = useParams();
     const [displayText, setDisplayText] = useState('');
-    const [showSuccess, setShowSuccess] = useState(false);
+    const [showSuccess, setShowSuccess] = useState();
 
     useEffect(() => {
         if (response === 'ok') {

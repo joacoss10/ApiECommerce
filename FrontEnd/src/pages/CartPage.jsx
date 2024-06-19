@@ -14,7 +14,7 @@ import { useAuth } from '../services/AuthContext';
 function CartPage() {
     const { removeFromCart, getCantidadItems, getTotal, cartItems, clearCart, setCartItems } = useCart();
     const [envio, setEnvio] = useState('Gratis');
-    
+
     const { isLoggedIn } = useAuth();
     const navigate = useNavigate();
 
@@ -77,10 +77,12 @@ function CartPage() {
 
     const handleCheckOutClick = () => {
         //clearCart();
-        if (isLoggedIn){
-            navigate('/checkout/success');
+        if (!isLoggedIn) {
+            navigate('/medioDePago');
+            //cambiar el "!" de este if, porque se necesita q el usuario este logeado para q cree la compra
+            //navigate('/checkOut/success');
         }
-        else{
+        else {
             window.alert('Para finalizar la compra debe iniciar sesion');
         }
     }
@@ -122,7 +124,7 @@ function CartPage() {
                                     <h4 className='item-price'>$ {item.precio * item.cantidad}</h4>
                                 </div>
                             ))}
-                            
+
                         </div>
                     ) : (
                         <div className="cart-empty">

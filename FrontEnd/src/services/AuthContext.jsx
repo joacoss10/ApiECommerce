@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
 
@@ -7,7 +7,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
-  const [isLoggedIn, setIsLoggedIn] = useState(()=>{
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
     const storedValue = localStorage.getItem('isLoggedIn');
     // Convertir la cadena almacenada en un booleano
     return storedValue ? !!JSON.parse(storedValue) : false;
@@ -27,18 +27,18 @@ export const AuthProvider = ({ children }) => {
         body: JSON.stringify({ user: username, pass: password }),
       });
 
-      
-      
+
+
 
       if (response.ok) {
         setIsLoggedIn(true);
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('username', username); // Guardar el nombre de usuario en el almacenamiento local
         setUsername(username); // Guardar el nombre de usuario en el estado del contexto
-        
+
         navigate('/');
       } else {
-        
+
         throw new Error('Credenciales inválidas');
       }
     } catch (error) {

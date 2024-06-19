@@ -1,0 +1,30 @@
+/* MercadoPago.css */
+
+.mercado-pago-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.barra-celeste {
+    background-color: #07a6f0;
+    /* Color celeste */
+    padding: 10px 0;
+    /* Ajusta el espaciado dentro de la barra */
+    margin-bottom: 20px;
+    /* Margen inferior para separar del resto de los elementos */
+}
+
+.barra-celeste h2 {
+    color: white;
+    /* Color del texto dentro de la barra */
+    margin: 0;
+    /* Elimina el margen interior del título */
+    padding: 10px;
+    /* Añade espacio interno alrededor del texto */
+}
+
+.qr-code {
+    margin-top: 20px;
+}
+
+/* Otros estilos para el contenedor de la imagen y otros elementos si es necesario */
