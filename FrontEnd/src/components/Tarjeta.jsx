@@ -16,7 +16,7 @@ const Tarjeta = () => {
         const [anioSeleccionado, mesSeleccionado] = fechaExpiracion.split('-').map(Number);
         if (numeroTarjeta.length != 16) {
             window.alert('El número de tarjeta debe tener exactamente 16 dígitos.')
-        } else if (anioSeleccionado < anioActual || (anioSeleccionado >= anioActual && mesSeleccionado < mesActual)) {
+        } else if (anioSeleccionado < anioActual || (anioSeleccionado == anioActual && mesSeleccionado < mesActual)) {
             window.alert('La fecha de vencimiento no es valida')
         } else if (cvv.length != 3) {
             window.alert('El codigo de seguridad no es valido')
@@ -40,53 +40,58 @@ const Tarjeta = () => {
     };
 
     return (
-        <div className="tarjeta-formulario">
-            <h2>Datos de la Tarjeta</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="numeroTarjeta">Número de Tarjeta:</label>
-                    <input
-                        type="number"
-                        id="numeroTarjeta"
-                        value={numeroTarjeta}
-                        onChange={(e) => setNumeroTarjeta(e.target.value)}
-                        required
-                    />
-                </div>
-                <div>
-                    <label htmlFor="nombreTitular">Nombre del Titular:</label>
-                    <input
-                        type="text"
-                        id="nombreTitular"
-                        value={nombreTitular}
-                        //onChange={(e) => setNombreTitular(e.target.value)}
-                        onChange={handleNombreTitularChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <label htmlFor="fechaExpiracion">Fecha de Expiración:</label>
-                    <input
-                        type="month"
-                        id="fechaExpiracion"
-                        value={fechaExpiracion}
-                        onChange={(e) => setFechaExpiracion(e.target.value)}
-                        required
-                        autoComplete="off"
-                    />
-                </div>
-                <div>
-                    <label htmlFor="cvv">CVV:</label>
-                    <input
-                        type="number"
-                        id="cvv"
-                        value={cvv}
-                        onChange={(e) => setCvv(e.target.value)}
-                        required
-                    />
-                </div>
-                <button type="submit">Pagar</button>
-            </form>
+        <div>
+            <div className="barra-celeste">
+                <h2>Pago con Tarjeta</h2>
+            </div>
+            <div className="tarjeta-formulario">
+                <h2>Datos de la Tarjeta</h2>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="numeroTarjeta">Número de Tarjeta:</label>
+                        <input
+                            type="number"
+                            id="numeroTarjeta"
+                            value={numeroTarjeta}
+                            onChange={(e) => setNumeroTarjeta(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="nombreTitular">Nombre del Titular:</label>
+                        <input
+                            type="text"
+                            id="nombreTitular"
+                            value={nombreTitular}
+                            //onChange={(e) => setNombreTitular(e.target.value)}
+                            onChange={handleNombreTitularChange}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="fechaExpiracion">Fecha de Expiración:</label>
+                        <input
+                            type="month"
+                            id="fechaExpiracion"
+                            value={fechaExpiracion}
+                            onChange={(e) => setFechaExpiracion(e.target.value)}
+                            required
+                            autoComplete="off"
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="cvv">CVV:</label>
+                        <input
+                            type="number"
+                            id="cvv"
+                            value={cvv}
+                            onChange={(e) => setCvv(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <button type="submit">Pagar</button>
+                </form>
+            </div>
         </div>
     );
 };

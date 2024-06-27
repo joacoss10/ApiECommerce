@@ -1,15 +1,13 @@
-
-
-.wrapper{
+.wrapper {
     width: 420px;
     background: rgba(73, 73, 73, 0.116);
     border: 2px solid rgba(255, 255, 255, 0.26);
     backdrop-filter: blur(20px);
-    box-shadow:   0 10px rgba(0,0,0,.2);
+    box-shadow: 0 10px rgba(0, 0, 0, .2);
     color: #f3f3f3;
     border-radius: 9px;
     padding: 30px 40px;
-    
+
 }
 
 .wrapper h1 {
@@ -18,25 +16,25 @@
     margin-bottom: 45px;
 }
 
-.wrapper .input-box{
+.wrapper .input-box {
     width: 100%;
     height: 50px;
     margin-top: 35px;
     margin-bottom: 5px;
-    
+
 }
 
 .input-box {
     display: flex;
     align-items: center;
     margin-top: 10px;
-    border: 2px solid rgba(255,255,255,.2);
+    border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 10px;
-    padding: 17px ;
+    padding: 17px;
     padding-right: 7px;
 }
 
-.input-box input{
+.input-box input {
     width: 90%;
     height: 100%;
     background: transparent;
@@ -47,21 +45,22 @@
     color: #fff;
     padding: 20px 25px 20px 0px;
     margin-left: 17px;
-    
+
 }
 
 
-.input-box input::placeholder{
+.input-box input::placeholder {
     color: #818181;
 }
 
-.login-error{
+.login-error {
     width: 100%;
     height: 15px;
     margin-bottom: 35px;
     margin-left: 5px;
 }
-.login-error span{
+
+.login-error span {
     font-size: 14px;
     color: red;
     font-weight: 600;
@@ -69,7 +68,7 @@
 
 
 
-.wrapper .remember-forgot{
+.wrapper .remember-forgot {
     display: flex;
     justify-content: space-between;
     font-size: 14px;
@@ -77,19 +76,19 @@
     margin-left: 5px;
 }
 
-.remember-forgot label input{
+.remember-forgot label input {
     accent-color: #fff;
     margin-right: 3px;
 
 }
 
-.remember-forgot a{
+.remember-forgot a {
     color: #fff;
     text-decoration: none;
 
 }
 
-.remember-forgot a:hover{
+.remember-forgot a:hover {
     text-decoration: underline;
 }
 
@@ -100,7 +99,7 @@
     border: none;
     outline: none;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     cursor: pointer;
     font-size: 16px;
     color: #333;
@@ -113,7 +112,7 @@
     color: #000b1a;
 }
 
-.wrapper .register-link{
+.wrapper .register-link {
     font-size: 14.5px;
     text-align: center;
     margin-top: 20px;
@@ -126,6 +125,6 @@
     cursor: pointer;
 }
 
-.register-link p a:hover{
+.register-link p a:hover {
     text-decoration: underline;
 }

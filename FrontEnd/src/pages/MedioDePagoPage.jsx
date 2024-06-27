@@ -1,13 +1,15 @@
-import MediosDePago from "../components/MediosDePago";
-import Nav from '../components/Nav'
-import React from 'react'
+import React from 'react';
+import MediosDePago from '../components/MediosDePago';
+import Nav from '../components/Nav';
+
 function MediosDePagoPage() {
     return (
-        <div className='BRUNU'>
-            {/*quiero que apareza el nav, pero lo superpone nashe*/}
+        <div>
+            <Nav />
             <MediosDePago />
         </div>
     );
 }
 
 export default MediosDePagoPage;
+

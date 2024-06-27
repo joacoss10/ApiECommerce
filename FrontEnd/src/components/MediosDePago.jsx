@@ -11,16 +11,18 @@ const MediosDePago = () => {
     };
 
     return (
-        <div>
+        <div className="medios-de-pago-container">
             <label htmlFor='Seleccione metodo de pago' id='TituloLabel'>
                 <b>Seleccione metodo de pago</b>
             </label>
-            <button id="mercadoPagoButton" className="payment-button" onClick={handleButtonClick2}>
-                Mercado Pago
-            </button>
-            <button id="tarjetaButton" className="payment-button" onClick={handleButtonClick}>
-                Tarjeta
-            </button>
+            <div className="buttons-container">
+                <button id="mercadoPagoButton" className="payment-button" onClick={handleButtonClick2}>
+                    Mercado Pago
+                </button>
+                <button id="tarjetaButton" className="payment-button" onClick={handleButtonClick}>
+                    Tarjeta
+                </button>
+            </div>
         </div>
     );
 };

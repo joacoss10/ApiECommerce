@@ -1,15 +1,12 @@
-/* MediosDePago.css */
-
 /* Estilo para el contenedor principal */
 .medios-de-pago-container {
-    margin-top: 500em;
+    margin-top: 300px;
+    /* Ajusta según la altura del Nav */
     text-align: center;
-    margin-top: 20px;
 }
 
 /* Estilo para el título */
 #TituloLabel {
-    margin-top: 10em;
     font-size: 1.2em;
     margin-bottom: 10px;
     display: block;
