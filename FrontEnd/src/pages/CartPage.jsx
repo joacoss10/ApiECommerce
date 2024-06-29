@@ -9,52 +9,49 @@ import ClearIcon from '@mui/icons-material/Clear';
 import { useNavigate } from 'react-router-dom';
 import CarritoVacio from '../components/CarritoVacio'
 import { useAuth } from '../services/AuthContext';
+import { addToCart, removeFromCart, clearCart, updateQuantity } from '../redux/cartActions';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 function CartPage() {
-    const { removeFromCart, getCantidadItems, getTotal, cartItems, clearCart, setCartItems } = useCart();
+    const cartItems = useSelector(state => state.cartItems);
+    const dispatch = useDispatch();
+    //const { removeFromCart, getCantidadItems, getTotal, cartItems, clearCart, setCartItems } = useCart();
     const [envio, setEnvio] = useState('Gratis');
-
     const { isLoggedIn } = useAuth();
     const navigate = useNavigate();
+
+
+    const getCantidadItems=()=>{
+        return cartItems.reduce((total, item) => total + item.cantidad, 0);
+    }
+    const getTotal=()=>{
+        return cartItems.reduce((total, item) => total + (item.precio * item.cantidad), 0);
+    }
+    const eliminarProducto = (id)=>{
+        console.log(id)
+        dispatch(removeFromCart(id))
+    }
 
     const handleProductClick = (id) => {
         navigate(`/product/${id}`)
     }
 
-    const aumentarCantidad = (id) => {
-        const updatedCartItems = cartItems.map(item => {
-            if (item.id === id && item.cantidad < item.stockDisponible && item.cantidad < 6) {
-                return { ...item, cantidad: item.cantidad + 1 };
-            }
-            return item;
-        });
-        setCartItems(updatedCartItems);
-
+    const aumentarCantidad = (id, cant)=>{
+        dispatch(updateQuantity(id,cant+1));
     }
 
-    const disminuirCantidad = (id) => {
-        const updatedCartItems = cartItems.map(item => {
-            if (item.id === id && item.cantidad > 1) {
-                return { ...item, cantidad: item.cantidad - 1 };
-            }
-            return item;
-        });
-
-        setCartItems(updatedCartItems);
-
+    const disminuirCantidad = (id,cant)=>{
+        dispatch(updateQuantity(id,cant-1));
     }
-    const eliminarProducto = (id) => {
-        removeFromCart(id);
-    }
+    
 
     useEffect(() => {
-        const total = getTotal(); // Obtener el total
-        // Actualizar el costo de envío en función del total
+        const total = getTotal(); 
         if (total < 100000) {
-            setEnvio(5000); // Si el total es menor a 100000, el envío cuesta 5000
+            setEnvio(5000); 
         } else {
-            setEnvio(0); // Si el total es mayor o igual a 100000, el envío es gratis
+            setEnvio(0); 
         }
     }, [getTotal()]);
 

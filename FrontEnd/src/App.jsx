@@ -21,7 +21,8 @@ import MediosDePago from './components/MediosDePago'
 import TarjetaPage from './pages/TarjetaPage'
 import MediosDePagoPage from './pages/MedioDePagoPage'
 import MpPage from './pages/MpPage'
-
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 
 
@@ -33,6 +34,7 @@ function App() {
   const categorias = ['Boca', 'River', 'Lanus', 'Independiente', 'Racing', 'San Lorenzo', 'Equipos Sudamericanos', 'Equipos Europeos', 'Equipos Argentinos', 'Argentina', 'Brasil', 'Uruguay', 'Europa', 'Otros', 'Otros Equipos'];
   const [currentPage, setCurrentPage] = useState(1);
   return (
+    <Provider store={store}>
     <AuthProvider>
       <CartProvider>
         <Routes>
@@ -70,6 +72,7 @@ function App() {
         </Routes>
       </CartProvider>
     </AuthProvider>
+    </Provider>
   );
 }
 export default App

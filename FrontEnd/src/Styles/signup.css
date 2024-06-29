@@ -167,3 +167,8 @@
 .signup-register-link p a:hover{
     text-decoration: underline;
 }
+
+
+#signup-p{
+    font-size: 1.02em;
+}

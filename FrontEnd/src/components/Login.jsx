@@ -5,12 +5,15 @@ import "../styles/login.css";
 import { useNavigate } from 'react-router-dom';
 import Return from '../components/Return';
 import { useAuth } from '../services/AuthContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUsername, setToken } from '../redux/clientActions';
 
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
+  const dispatch = useDispatch();
 
 
   const { login, isLoggedIn } = useAuth();
@@ -33,17 +36,32 @@ function Login() {
     event.preventDefault();
 
     try {
-      await login(username, password); // Espera a que la solicitud de inicio de sesión se complete
+      const response = await fetch('http://127.0.0.1:8080/login', {
+        method: 'POST',
+        headers: {
+         'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ user: username, pass: password }),
+      });
+  
+  
+  
+  
+      if (response.ok) {
+        const data = await response.json();
 
-      if (isLoggedIn == true) {
-        // Si isLoggedIn es true después de iniciar sesión, redirigir al usuario al menú
+        dispatch(setUsername(username));
+        dispatch(setToken(data.access_token));
+  
+        navigate('/');
       } else {
-        setError(true);
+  
+        throw new Error('Credenciales inválidas');
       }
     } catch (error) {
-      // Establecer el estado de error en true
-      setError(true);
+      console.error('Error al iniciar sesión:', error.message);
     }
+    
   };
 
   const navigate = useNavigate();
@@ -80,7 +98,7 @@ function Login() {
         <button type='submit' className='btn'>Login</button>
 
         <div className="register-link">
-          <p>No tenes una cuenta? <a onClick={handleClickSignup}>Registrate</a></p>
+          <p id='login-p'>No tenes una cuenta? <a onClick={handleClickSignup}>Registrate</a></p>
         </div>
       </form>
     </div>

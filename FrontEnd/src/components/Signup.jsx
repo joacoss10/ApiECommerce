@@ -159,7 +159,7 @@ function Signup() {
           </div>
           <button type='submit' className='signup-btn' onClick={handleSignUpClick}>Registrarse</button>
           <div className="signup-register-link">
-            <p>Ya tenes una cuenta? <a onClick={handleClickLogin}>Ingresa</a></p>
+            <p id='signup-p'>Ya tenes una cuenta? <a onClick={handleClickLogin}>Ingresa</a></p>
           </div>
         </form>
       ) : (

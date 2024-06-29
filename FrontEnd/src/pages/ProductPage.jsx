@@ -8,32 +8,30 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { useCart } from '../services/CartContext'; // Importa el hook useCart
 import ProductGallery from '../components/ProductGallery';
+import { useDispatch, useSelector } from 'react-redux'; // Importa useDispatch y useSelector de React Redux
+import { addToCart } from '../redux/cartActions'; // Importa la acción addToCart
 
 function ProductPage({ producto }) {
   const navigate = useNavigate();
+  const dispatch = useDispatch(); // Obtén la función dispatch de React Redux
+  const cartItems = useSelector(state => state.cartItems); // Obtén el estado del carrito de compras desde Redux
+  
   const handleClick = () => {
     navigate(`/categoria/${producto.categoria}/1`);
   }
 
-  const { addToCart, checkAndRestoreCartFromLocalStorage, getTotal, cartItems } = useCart(); // Obtiene las funciones necesarias del contexto del carrito
-  
-
   useEffect(() => {
-
     const isProductInCart = cartItems.find(item => item.id === producto.id);
     setIsAddedToCart(!!isProductInCart);
-  }, []);
+  }, [cartItems, producto.id]);
 
   const [cantidad, setCantidad] = useState(1);
-
   const [isAddedToCart, setIsAddedToCart] = useState(false);
 
   useEffect(() => {
-    // Si el stock del producto es 0, establece la cantidad en 0
     if (producto.stockDisponible === 0) {
       setCantidad(0);
     } else {
-      // Si el stock es mayor que 0, asegúrate de que la cantidad sea al menos 1
       setCantidad(1);
     }
   }, [producto.stockDisponible]);
@@ -54,9 +52,14 @@ function ProductPage({ producto }) {
   const isOutOfStock = producto.stockDisponible === 0;
 
   const handleAgregarAlCarrito = () => {
-    addToCart({ ...producto, cantidad }); // Agrega el producto al carrito con la cantidad seleccionada
+    const item = {
+      ...producto,
+      cantidad: cantidad
+  };
+  dispatch(addToCart(item))
     setIsAddedToCart(true);
   };
+  
   const imageUrl = Array.isArray(producto.imagenURL) ? producto.imagenURL[0] : producto.imagenURL;
   return (
     <div className="productPage">

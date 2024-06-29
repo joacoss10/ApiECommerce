@@ -128,3 +128,7 @@
 .register-link p a:hover {
     text-decoration: underline;
 }
+
+#login-p{
+    font-size: 1.02em;
+}
