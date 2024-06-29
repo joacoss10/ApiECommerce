@@ -87,7 +87,7 @@ function ProductPage({ producto }) {
             </div>
             <div className={`btn ${isClickable ? '' : 'disabled'}`}>
               <div className={`layer ${isOutOfStock ? 'gray-layer' : ''}`}></div>
-              <button onClick={handleAgregarAlCarrito} disabled={!isClickable}><p>Agregar </p> </button>
+              <button onClick={handleAgregarAlCarrito} disabled={!isClickable}><p id='p'>Agregar </p> </button>
             </div>
           </div>
           <div className="aviso-producto">

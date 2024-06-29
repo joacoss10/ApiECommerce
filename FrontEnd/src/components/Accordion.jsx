@@ -34,7 +34,7 @@ function Accordion() {
                         <div>{selected === i ? (<RemoveIcon/>) : (<AddIcon/>)}</div>
                     </div>
                     <div className={selected === i ? 'content show' : 'content-accordion'}>
-                        <p>{item.description}</p>
+                        <p id='accordion-p'>{item.description}</p>
                     </div>
                 </div>
             ))}
