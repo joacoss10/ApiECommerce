@@ -1,6 +1,5 @@
 const initialState = {
     token: null,
-    username: ''
   };
   
   const clientReducer = (state = initialState, action) => {

@@ -10,10 +10,18 @@ import Menu from '../components/Menu';
 import "../styles/Menu.css";
 import Logoo from '../assets/camisetas-bianchi.png'
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 function Nav() {
-    const { isLoggedIn, username, logout } = useAuth();
+    const userInfo = useSelector(state => state.token);
+    const isLoggedIn = false;
+    const username = '';
+    if (userInfo != null){
+        const isLoggedIn = true;
+        const username = useSelector(state => state.username);
+    }
+    //const { username, logout } = useAuth();
     const navigate = useNavigate();
     const [anchorEl, setAnchorEl] = useState(null);
     let aux;

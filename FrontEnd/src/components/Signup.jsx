@@ -7,9 +7,12 @@ import { useNavigate } from 'react-router-dom';
 import Return from '../components/Return';
 import "../styles/signup.css";
 import { Password } from '@mui/icons-material';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUsername, setToken } from '../redux/clientActions';
 
 function Signup() {
   const [selectedOption, setSelectedOption] = useState("");
+  const dispatch = useDispatch();
 
   // Función para manejar el cambio de opción seleccionada
   const handleOptionChange = (event) => {
@@ -62,20 +65,19 @@ function Signup() {
         body: JSON.stringify(formData) // Enviar datos del formulario como JSON
       });
 
-      const responseBody = await response.text(); // Obtener el cuerpo de la respuesta en formato de texto
+      const data = await response.json(); // Obtener el cuerpo de la respuesta en formato de texto
       
-      navigate(`/signup/result/${responseBody}`);
+      //navigate(`/signup/result/${data.access_token}`);
 
 
       // Verificar si la solicitud fue exitosa
       if (response.ok) {
-        const responseBody = await response.text(); // Obtener el cuerpo de la respuesta en formato de texto
+        dispatch(setUsername(formData.username));
+        dispatch(setToken(data.access_token));
+        navigate(`/signup/result/ok`);
         
-        navigate(`/otra-ruta/${responseBody}`);
-        // Manejar la respuesta aquí si es necesario
       } else {
-        // Si la solicitud falla, manejar el error aquí
-        throw new Error('Error en la solicitud de registro');
+        navigate(`/signup/result/${data.access_token}`);
       }
     } catch (error) {
       // Manejar errores de red o del servidor aquí
