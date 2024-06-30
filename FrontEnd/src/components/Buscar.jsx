@@ -29,7 +29,6 @@ function Buscar() {
     }
   }, [botonPalabra]);*/
 
-
   useEffect(() =>{
 
     const fetchBusqueda = async () => {

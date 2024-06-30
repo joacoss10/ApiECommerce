@@ -9,6 +9,24 @@ const ProductCard = ({ product }) => {
         const isConfirmed = window.confirm('¿Está seguro que quiere eliminar este producto?');
         if (isConfirmed) {
             // Lógica para eliminar el producto...
+            const fetchEliminar = async () => {
+                try {
+                  //console.log("HOLA A TODOS");
+                  const response = await fetch(`http://localhost:8080/product/delete?id=${product.id}`,{
+                    method: 'DELETE',
+                    headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*' 
+                    }
+                  });
+                  if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                  }
+                } catch (error) {
+                  console.log("Hubo un error");
+                }
+              };
+              fetchEliminar();
         }
     };
 

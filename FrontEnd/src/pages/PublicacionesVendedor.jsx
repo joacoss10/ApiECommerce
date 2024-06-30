@@ -12,20 +12,27 @@ const PublicacionesVendedor = (userName) => {
     const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchPublicaciones = async () => {
+
+    const fetchBusqueda = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/getByUsername?username=${username}`); //http://localhost:8080/getByUsername?username=siempreBoca12
+        console.log("HOLA A TODOS");
+        const response = await fetch(`http://localhost:8080/product/getByUsername?username=${username}`,{
+          method: 'GET',
+          headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*' 
+          }
+        });
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        setProductosVendedor(data);
+        setListaProductos(data);
       } catch (error) {
-        setError(error);
+        console.log("Hubo un error");
       }
     };
-
-    fetchPublicaciones();
+    fetchBusqueda();
   }, [username]);
 
     //const productosVendedor = productos.filter(producto => producto.username_vendedor === username)

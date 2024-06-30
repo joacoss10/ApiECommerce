@@ -29,6 +29,24 @@ const EditarVender = () => {
   };
   const enviar = () => {
     if (formData.titulo.trim() && formData.descripcion && formData.precio && formData.stock && formData.categoria && formData.imagen) {
+      //REVISAR PARA DESPUES
+      const fetchEditar = async () => {
+        try {
+          const response = await fetch(`http://localhost:8080/product/search?param=${botonPalabra}`,{
+            method: 'PUT',
+            headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*' 
+            }
+          });
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+        } catch (error) {
+          console.log("Hubo un error");
+        }
+      };
+      fetchEditar();
       window.alert('Publibacion editada');
       //SUBIR CAMBIOS A LA BD
       navigate("/PublicacionesVendedor")

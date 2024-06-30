@@ -16,6 +16,7 @@ const Vender = () => {
         if (titulo && descripcion && stock && precio && file) {
             window.alert("Publicacion creada exitosamente")
             //ACA IRIA LA LOGICA DE CREAR LA PUBLICACION EN LA BD
+            
         }
     };
 
