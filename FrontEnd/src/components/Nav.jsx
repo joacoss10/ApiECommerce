@@ -10,17 +10,26 @@ import Menu from '../components/Menu';
 import "../styles/Menu.css";
 import Logoo from '../assets/camisetas-bianchi.png'
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { jwtDecode } from "jwt-decode"
 
 
 function Nav() {
-    const userInfo = useSelector(state => state.token);
-    const isLoggedIn = false;
-    const username = '';
-    if (userInfo != null){
-        const isLoggedIn = true;
-        const username = useSelector(state => state.username);
+    const [decodedToken, setDecodedToken] = useState(null);
+    const token = useSelector(state => state.client.token);
+    console.log("token nav:", token);
+    let isLoggedIn = false;
+    if (token) {
+        const decoded = jwtDecode(token);
+        console.log(decoded);
+        //setDecodedToken(decoded.sub);
+        isLoggedIn = true;
+    } else {
+        // Manejo si el token es null o undefined
+        console.log('Token is null or undefined');
+        isLoggedIn = false;
     }
+
     //const { username, logout } = useAuth();
     const navigate = useNavigate();
     const [anchorEl, setAnchorEl] = useState(null);
@@ -102,7 +111,7 @@ function Nav() {
                             {isLoggedIn ? (
                                 <div className="user-manage">
                                     <MuiButton className='top-right-buttons' style={{ color: 'black', textTransform: 'none' }} onClick={(event) => handleClickAccount(event)}>
-                                        <PersonOutlineOutlinedIcon /> <span id='username'>{username}</span>
+                                        <PersonOutlineOutlinedIcon /> <span id='username'>{jwtDecode(token).sub}</span>
                                     </MuiButton>
                                     <MuiMenu className='MuiMenu'
                                         anchorEl={anchorEl}

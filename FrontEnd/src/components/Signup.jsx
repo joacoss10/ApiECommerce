@@ -8,7 +8,7 @@ import Return from '../components/Return';
 import "../styles/signup.css";
 import { Password } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
-import { setUsername, setToken } from '../redux/clientActions';
+import { setToken } from '../redux/clientActions';
 
 function Signup() {
   const [selectedOption, setSelectedOption] = useState("");

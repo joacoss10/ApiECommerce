@@ -1,19 +1,17 @@
+import { SET_TOKEN } from '../redux/actionTypes';
+
 const initialState = {
     token: null,
   };
   
   const clientReducer = (state = initialState, action) => {
     switch (action.type) {
-      case 'SET_TOKEN':
+      case SET_TOKEN:
         return {
           ...state,
           token: action.payload
         };
-      case 'SET_USERNAME':
-        return {
-          ...state,
-          username: action.payload
-        };
+      
       default:
         return state;
     }

@@ -14,7 +14,7 @@ function Login() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
   const dispatch = useDispatch();
-  const token = useSelector(state => state.token);
+  const token = useSelector(state => state.client.token);
 
   dispatch(setToken('testing'));
   console.log(token)
@@ -55,7 +55,9 @@ function Login() {
         console.log(data.access_token);
         
         dispatch(setToken(data.access_token));
-  
+
+        //const tokenUpdated = useSelector(state => state.token);
+        //console.log("token updated", tokenUpdated);
         navigate('/');
       } else {
         setError(true);
