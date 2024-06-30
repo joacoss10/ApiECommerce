@@ -1,37 +1,39 @@
-import React from 'react'
-import '../styles/Buscar.css'
-import productos from '../utils/productos.json'
-import { useState, useEffect } from 'react'
-import Card from "./Card.jsx";
-
-
+import React, { useState, useEffect } from 'react';
+import '../styles/Buscar.css';
+import productos from '../utils/productos.json';
+import Card from './Card.jsx';
+import { Button } from '@mui/material';
 
 function Buscar() {
-  const [buscar, setBuscar] = useState('');
+  const [botonPalabra, setBotonPalabra] = useState('');
+  const [palabra, setPalabra] = useState('');
   const [listaProductos, setListaProductos] = useState([]);
 
-  const handleBuscar = (e) => {
-    setBuscar(e.target.value);
+  const handlePalabra = (e) => {
+    setPalabra(e.target.value);
+  };
+
+  const handleBoton = () => {
+    setBotonPalabra(palabra);
   };
 
   useEffect(() => {
-    if (buscar) {
-      const nuevosProductos = productos.filter(p => {
-        return p.nombre.toLowerCase().includes(buscar.toLowerCase());
-      });
+    if (botonPalabra) {
+      const nuevosProductos = productos.filter(p => 
+        p.nombre.toLowerCase().includes(botonPalabra.toLowerCase())
+      );
       setListaProductos(nuevosProductos);
-    }
-    else {
+    } else {
       setListaProductos([]);
     }
-  }, [buscar]
-  )
+  }, [botonPalabra]);
 
   return (
-
     <div className='Contenedor'>
-      <input id='input' type="text" onChange={handleBuscar} />
-
+      <div className='barra-busqueda'>
+        <input id='input' type='text' value={palabra} onChange={handlePalabra} />
+        <Button id='boton' onClick={handleBoton}>Buscar</Button>
+      </div>
       <div className='buscar-productos'>
         <div className='buscar-cards'>
           {listaProductos.length > 0 ? (
@@ -44,7 +46,7 @@ function Buscar() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Buscar
+export default Buscar;
