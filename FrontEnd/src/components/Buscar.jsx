@@ -17,7 +17,8 @@ function Buscar() {
     setBotonPalabra(palabra);
   };
 
-  useEffect(() => {
+  /*useEffect(() => {
+
     if (botonPalabra) {
       const nuevosProductos = productos.filter(p => 
         p.nombre.toLowerCase().includes(botonPalabra.toLowerCase())
@@ -26,7 +27,32 @@ function Buscar() {
     } else {
       setListaProductos([]);
     }
-  }, [botonPalabra]);
+  }, [botonPalabra]);*/
+
+
+  useEffect(() =>{
+
+    const fetchBusqueda = async () => {
+      try {
+        console.log("HOLA A TODOS");
+        const response = await fetch(`http://localhost:8080/product/search?param=${botonPalabra}`,{
+          method: 'GET',
+          headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*' 
+          }
+        });
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setListaProductos(data);
+      } catch (error) {
+        console.log("Hubo un error");
+      }
+    };
+    fetchBusqueda();
+  },[botonPalabra]);
 
   return (
     <div className='Contenedor'>

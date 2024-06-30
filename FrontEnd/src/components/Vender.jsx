@@ -2,6 +2,7 @@ import React from "react";
 import ComboBox from "./ComboBox";
 import '../styles/Vender.css'
 const Vender = () => {
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
