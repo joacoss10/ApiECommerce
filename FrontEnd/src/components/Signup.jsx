@@ -35,7 +35,8 @@ function Signup() {
     mail: null,
     password: null,
     nombre: null,
-    apellido: null
+    apellido: null,
+    role:'USER'
 
   });
 
