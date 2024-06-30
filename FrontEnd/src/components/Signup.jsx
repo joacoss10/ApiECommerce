@@ -72,7 +72,7 @@ function Signup() {
 
       // Verificar si la solicitud fue exitosa
       if (response.ok) {
-        dispatch(setUsername(formData.username));
+        //dispatch(setUsername(formData.username));
         dispatch(setToken(data.access_token));
         navigate(`/signup/result/ok`);
         

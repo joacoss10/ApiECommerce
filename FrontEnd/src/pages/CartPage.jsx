@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 function CartPage() {
-    const cartItems = useSelector(state => state.cartItems);
+    const cartItems = useSelector(state => state.cart.cartItems);
     const dispatch = useDispatch();
     //const { removeFromCart, getCantidadItems, getTotal, cartItems, clearCart, setCartItems } = useCart();
     const [envio, setEnvio] = useState('Gratis');

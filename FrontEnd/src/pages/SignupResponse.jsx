@@ -28,7 +28,7 @@ function SignupResponse() {
                 {showSuccess ? (
                     <>
                         <h2 className='signup-result-title-ok'>Cuenta creada exitosamente</h2>
-                        <span className='signup-result-span'>Inicia sesión haciendo click <Link to={'/login'} className='signup-result-link'>aquí</Link></span>
+                        <span className='signup-result-span'>Inicia sesión haciendo click <Link to={'/'} className='signup-result-link'>aquí</Link></span>
                     </>
                 ) : (
                     <>

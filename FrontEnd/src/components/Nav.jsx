@@ -10,19 +10,17 @@ import Menu from '../components/Menu';
 import "../styles/Menu.css";
 import Logoo from '../assets/camisetas-bianchi.png'
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { jwtDecode } from "jwt-decode"
+import { setToken } from '../redux/clientActions';
 
 
 function Nav() {
+    const dispatch = useDispatch();
     const [decodedToken, setDecodedToken] = useState(null);
     const token = useSelector(state => state.client.token);
-    console.log("token nav:", token);
     let isLoggedIn = false;
-    if (token) {
-        const decoded = jwtDecode(token);
-        console.log(decoded);
-        //setDecodedToken(decoded.sub);
+    if (token!= null) {
         isLoggedIn = true;
     } else {
         // Manejo si el token es null o undefined
@@ -79,7 +77,7 @@ function Nav() {
             document.querySelector('.div-nav').classList.remove("menu-open");
             document.querySelector('.nav-top-logo').classList.remove("menu-open");
         }
-        logout();
+        dispatch(setToken(null));
     }
 
     const handleClickHome = () => {

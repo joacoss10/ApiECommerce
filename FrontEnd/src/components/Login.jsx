@@ -16,7 +16,7 @@ function Login() {
   const dispatch = useDispatch();
   const token = useSelector(state => state.client.token);
 
-  dispatch(setToken('testing'));
+  //dispatch(setToken('testing'));
   console.log(token)
   const { login, isLoggedIn } = useAuth();
 

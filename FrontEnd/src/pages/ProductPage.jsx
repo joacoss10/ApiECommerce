@@ -14,7 +14,7 @@ import { addToCart } from '../redux/cartActions'; // Importa la acción addToCar
 function ProductPage({ producto }) {
   const navigate = useNavigate();
   const dispatch = useDispatch(); // Obtén la función dispatch de React Redux
-  const cartItems = useSelector(state => state.cartItems); // Obtén el estado del carrito de compras desde Redux
+  const cartItems = useSelector(state => state.cart.cartItems); // Obtén el estado del carrito de compras desde Redux
   
   const handleClick = () => {
     navigate(`/categoria/${producto.categoria}/1`);
