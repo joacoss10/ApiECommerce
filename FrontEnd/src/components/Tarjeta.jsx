@@ -14,7 +14,7 @@ const Tarjeta = () => {
     const [cvv, setCvv] = useState('');
     const navigate = useNavigate();
 
-
+    const [cuponAplicado, setCuponAplicado] = useState(0);
     const location = useLocation();
     const cupon = new URLSearchParams(location.search).get('cupon');
     console.log("cuponfinal ", cupon);
@@ -43,20 +43,23 @@ const Tarjeta = () => {
             
             const username = jwtDecode(token).sub;
             const today = new Date();
-            const options = {
-                year: 'numeric', month: '2-digit', day: '2-digit',
-                hour: '2-digit', minute: '2-digit', second: '2-digit',
-                timeZone: 'America/Buenos_Aires'  // Ajusta la zona horaria según tu necesidad
-            };
-            const fechaPago = today.toLocaleString('es-AR', options);
+            const fechaPago = today.toISOString().slice(0, 19).replace('T', ' ');
             const productList = cartItems.map(item => ({
                 id: item.id,
                 cant: item.cantidad
             }));
+            fetchCupon();
             let total = cartItems.reduce((total, item) => total + (item.precio * item.cantidad), 0);
+
+            total = total - total *(cuponAplicado/100);
+            
             if (total <= 100000){
                 total = total + 5000;
             }
+
+            console.log(total);
+
+            
             
             const raw = JSON.stringify({
                 "username_comprador": username,
@@ -98,6 +101,25 @@ const Tarjeta = () => {
         // Verifica si el valor ingresado cumple con la expresión regular
         if (soloLetrasRegex.test(valorIngresado) || valorIngresado === '') {
             setNombreTitular(valorIngresado);
+        }
+    };
+
+
+
+
+    //FETCH CUPON
+    const fetchCupon = async () => {
+        try {
+          const response = await fetch(`http://localhost:8080/cupon/check?cupon=${cupon}`);
+          if (!response.ok) {
+            throw new Error('Error al obtener los datos del servidor');
+          }
+          const data = await response.json();
+          setCuponAplicado(data); // Almacenar la respuesta en el estado
+          console.log(data)
+        } catch (error) {
+          console.error('Error al obtener los datos:', error);
+          // Manejo de errores, por ejemplo mostrar un mensaje al usuario
         }
     };
 
