@@ -16,16 +16,18 @@ function ProdsPage() {
     const [products,setProducts] = useState([]);
     const fetchProducts = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/product/get?categoria=&page=${paginaActual}`);
+        const response = await fetch(`http://localhost:8080/product/get?categoria=&page=${paginaActual}&min=${minPrice}&max=${maxPrice}`);
         if (response.ok){
           const data = await response.json();
           setProducts(data);
+          console.log('data',data);
+          console.log('uri',`http://localhost:8080/product/get?categoria=&page=${paginaActual}&min=${minPrice}&max=${maxPrice}` )
         }else{
           setProducts([]);
         }
         
-        console.log('pagina',paginaActual)
-        console.log('data',data);
+        //console.log('pagina',paginaActual)
+        //console.log('data',data);
       } catch (error) {
         console.error('Error fetching products:', error);
       }
@@ -44,7 +46,7 @@ function ProdsPage() {
 
     const [minPrice, setMinPrice] = useState(localStorage.getItem('minPrice') || '');
     const [maxPrice, setMaxPrice] = useState(localStorage.getItem('maxPrice') || '');
-    const [filteredProducts, setFilteredProducts] = useState(productos);
+    
     const [minPriceInput, setMinPriceInput] = useState(localStorage.getItem('minPrice') || '');
     const [maxPriceInput, setMaxPriceInput] = useState(localStorage.getItem('maxPrice') || '');
     const [currentPage, setCurrentPage] = useState(parseInt(paginaActual));
@@ -59,17 +61,6 @@ function ProdsPage() {
 
     
     
-    const filtered = productos.filter(producto => {
-      if (minPrice && maxPrice) {
-        return producto.precio >= minPrice && producto.precio <= maxPrice;
-      } else if (minPrice) {
-        return producto.precio >= minPrice;
-      } else if (maxPrice) {
-        return producto.precio <= maxPrice;
-      }
-      return true;
-    });
-    setFilteredProducts(filtered);
     setFilterTriggered(!filterTriggered);
   };
 
@@ -99,14 +90,18 @@ function ProdsPage() {
     localStorage.setItem('maxPrice', maxPrice);
     applyFilters(); // Aplicar filtros cada vez que cambian los precios mínimos o máximos
   }, [minPrice, maxPrice]);
+  
 
   const renderProducts = () => {
-    const startIndex = (currentPage - 1) * productsPerPage;
-    const endIndex = startIndex + productsPerPage;
     return products.map(producto => (
       <Card key={producto.id} producto={producto} />
     ));
   };
+  useEffect(() => {
+    renderProducts();
+  }, [products]);
+
+
   const handlePageChange = (pageNumber) => {
     window.scrollTo(0, 0);
     localStorage.setItem('cPage',pageNumber);
@@ -114,9 +109,10 @@ function ProdsPage() {
     navigate(`/productos/page/${pageNumber}`);
   };
   useEffect(() => {
-    // Asegúrate de que currentPage se establezca correctamente al cargar la página manualmente
     setCurrentPage(parseInt(paginaActual) || 1);
   }, [paginaActual]);
+
+
 
   return (
     
@@ -159,7 +155,7 @@ function ProdsPage() {
         </div>
         {/* Pagination */}
         <div className="pagination">
-          {[...Array(Math.ceil(filteredProducts.length / productsPerPage)).keys()].map(number => (
+          {[...Array(Math.ceil(products.length / productsPerPage)).keys()].map(number => (
             <button key={number} onClick={() => handlePageChange(number + 1)} disabled={currentPage === number + 1}>
               {number + 1}
             </button>
