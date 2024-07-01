@@ -3,11 +3,26 @@ import { Link } from 'react-router-dom';
 import '../styles/Menu.css'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useAuth } from '../services/AuthContext';
+import { useSelector } from 'react-redux';
+import { useEffect,useState } from 'react';
+
 
 const Menu = () => {
+    
+    const token = useSelector(state => state.client.token);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        if (token != null) {
+        setIsLoggedIn(true);
+        } else {
+        console.log('Token is null or undefined');
+        setIsLoggedIn(false);
+        }
+    }, [token]);
 
 
-    const { isLoggedIn } = useAuth();
+    
 
 
     return (

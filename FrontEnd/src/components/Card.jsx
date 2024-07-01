@@ -8,14 +8,16 @@ function Card({ producto }) {
 
     const navigate = useNavigate();
     const handleClickProductView = () => {
-        navigate(`/product/${producto.id}`);
+        navigate(`/product/${producto.id}`, { state : {producto} });
     };
     const imageUrl = Array.isArray(producto.imagenURL) ? producto.imagenURL[0] : producto.imagenURL;
+
+    const file = producto.files[1];
     return (
         <div className='container' onClick={handleClickProductView}>
 
             <div className='imgBox'>
-                <img src={imageUrl} alt="imagen" />
+                <img src={`data:image/jpeg;base64,${file.content}`} alt="imagen" />
             </div>
             <div className="info">
                 <h2> {producto.nombre} </h2>

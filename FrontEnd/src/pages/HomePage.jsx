@@ -12,6 +12,7 @@ function HomePage() {
   const [filteredProducts, setFilteredProducts] = useState(productos);
   const [minPriceInput, setMinPriceInput] = useState(localStorage.getItem('minPrice') || '');
   const [maxPriceInput, setMaxPriceInput] = useState(localStorage.getItem('maxPrice') || '');
+  const [prods,setProds] = useState([]);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -22,6 +23,27 @@ function HomePage() {
   const handleClickProdsPage = () => {
     navigate('productos/page/1')
   }
+
+  useEffect(() => {
+    // Hace la solicitud fetch a la API cuando el componente se monta
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/product/get?categoria=&page=1'); // Cambia esta URL por la URL de tu API
+        const data = await response.json();
+        setProds(data);
+        console.log('productos', prods);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
+    
+  }, []);
+
+  
+
+
 
   return (
     <div className="home">
@@ -34,9 +56,13 @@ function HomePage() {
       </div>
       <div className='product-box'>
         <div className="cards">
-          {filteredProducts.slice(0, 8).map(producto => (
-            <Card key={producto.id} producto={producto} />
-          ))}
+          {prods.length > 0 ? (
+            prods.slice(0, 8).map(producto => (
+              <Card key={producto.id} producto={producto} />
+            ))
+          ) : (
+            <p>Loading products...</p> // Mensaje de carga mientras se obtienen los productos
+          )}
         </div>
       </div>
       <div className="ver-todo">

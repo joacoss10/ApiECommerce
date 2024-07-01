@@ -142,7 +142,7 @@ function Nav() {
 
 
                 <div className="nav-bottom">
-                    <Menu />
+                    <Menu/>
 
                 </div>
 

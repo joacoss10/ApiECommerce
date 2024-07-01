@@ -10,6 +10,7 @@ function ProductGallery({ producto }) {
     } else {
       setImagenSeleccionada(producto.imagenURL);
     }
+    setImagenSeleccionada(producto.files[0]); //sacar arriba
   }, [producto]);
 
   const handleClick = (imagen) => {
@@ -21,15 +22,15 @@ function ProductGallery({ producto }) {
     <div className='imgs'>
       {imagenSeleccionada && (
         <div className='selected-img'>
-          <img src={imagenSeleccionada} alt="Imagen seleccionada" />
+          <img src={`data:image/jpeg;base64,${imagenSeleccionada.content}`} alt="Imagen seleccionada" />
         </div>
       )}
       <div className='product-imgs'>
-        {Array.isArray(producto.imagenURL) ? (
-          producto.imagenURL.map((imagen, index) => (
+        {Array.isArray(producto.files) ? (
+          producto.files.map((imagen, index) => (
             <img 
               key={index} 
-              src={imagen} 
+              src={`data:image/jpeg;base64,${imagen.content}`}
               alt={`Imagen ${index}`} 
               onClick={() => handleClick(imagen)} 
               className={imagen === imagenSeleccionada ? 'selected' : ''}
