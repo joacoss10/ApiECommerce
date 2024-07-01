@@ -12,7 +12,7 @@ function Card({ producto }) {
     };
     const imageUrl = Array.isArray(producto.imagenURL) ? producto.imagenURL[0] : producto.imagenURL;
 
-    const file = producto.files[1];
+    const file = producto.files[0];
     return (
         <div className='container' onClick={handleClickProductView}>
 
