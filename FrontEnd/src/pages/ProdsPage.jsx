@@ -12,6 +12,7 @@ function ProdsPage() {
     const {paginaActual} = useParams();
     const navigate = useNavigate();
     const [filterTriggered, setFilterTriggered] = useState(false);
+    const [pages, setPages] = useState(0);
 
     const [products,setProducts] = useState([]);
     const fetchProducts = async () => {
@@ -20,8 +21,8 @@ function ProdsPage() {
         if (response.ok){
           const data = await response.json();
           setProducts(data);
-          console.log('data',data);
-          console.log('uri',`http://localhost:8080/product/get?categoria=&page=${paginaActual}&min=${minPrice}&max=${maxPrice}` )
+          //console.log('data',data);
+          //console.log('uri',`http://localhost:8080/product/get?categoria=&page=${paginaActual}&min=${minPrice}&max=${maxPrice}` )
         }else{
           setProducts([]);
         }
@@ -32,6 +33,20 @@ function ProdsPage() {
         console.error('Error fetching products:', error);
       }
     };
+
+    const fetchPages = async () => {
+      try{
+        const response = await fetch(`http://localhost:8080/product/get/pages?categoria=&min=${minPrice}&max=${maxPrice}`);
+        if(response.ok){
+          const data = await response.json();
+          console.log('pagesTOTALES',data);
+          setPages(data);
+        }
+      }
+      catch(error){
+        console.log('Error fetching products:', error);
+      }
+    }
 
 
     useEffect(() => {
@@ -96,9 +111,11 @@ function ProdsPage() {
     return products.map(producto => (
       <Card key={producto.id} producto={producto} />
     ));
+    
   };
   useEffect(() => {
     renderProducts();
+    fetchPages();
   }, [products]);
 
 
@@ -106,6 +123,7 @@ function ProdsPage() {
     window.scrollTo(0, 0);
     localStorage.setItem('cPage',pageNumber);
     setCurrentPage(parseInt(pageNumber));
+    setProducts([]);
     navigate(`/productos/page/${pageNumber}`);
   };
   useEffect(() => {
@@ -155,7 +173,7 @@ function ProdsPage() {
         </div>
         {/* Pagination */}
         <div className="pagination">
-          {[...Array(Math.ceil(products.length / productsPerPage)).keys()].map(number => (
+          {[...Array(pages).keys()].map(number => (
             <button key={number} onClick={() => handlePageChange(number + 1)} disabled={currentPage === number + 1}>
               {number + 1}
             </button>

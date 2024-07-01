@@ -7,7 +7,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 function CategoryPage({ categoria }) {
   const navigate = useNavigate();
   const {paginaActual} = useParams();
-  
+  const [pages, setPages] = useState(0);
   const [products,setProducts] = useState([]);
     
   const fetchProducts = async () => {
@@ -30,10 +30,24 @@ function CategoryPage({ categoria }) {
       
   };
 
+  const fetchPages = async () => {
+    try{
+      const response = await fetch(`http://localhost:8080/product/get/pages?categoria=${categoria}&min=&max=`);
+      if(response.ok){
+        const data = await response.json();
+        console.log('pagesTOTALES',data);
+        setPages(data);
+      }
+    }
+    catch(error){
+      console.log('Error fetching products:', error);
+    }
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
     fetchProducts();
+    fetchPages();
   }, []);
 
 
@@ -58,7 +72,9 @@ function CategoryPage({ categoria }) {
   useEffect(() => {
     window.scrollTo(0, 0);
     fetchProducts();
-  }, [paginaActual]);
+    fetchPages();
+  }, [paginaActual,categoria]);
+  
 
 
   return (
@@ -74,8 +90,8 @@ function CategoryPage({ categoria }) {
 
         </div>
         <div className="pagination">
-          {[...Array(Math.ceil(products.length / productsPerPage)).keys()].map(number => (
-            <button key={number} onClick={() => handlePageChange(number + 1)} disabled={parseInt(currentPage) === number + 1}>
+          {[...Array(pages).keys()].map(number => (
+            <button key={number} onClick={() => handlePageChange(number + 1)} disabled={currentPage === number + 1}>
               {number + 1}
             </button>
           ))}
