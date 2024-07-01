@@ -1,22 +1,43 @@
 import React, { useState, useEffect } from 'react'
 import Nav from '../components/Nav'
 import '../styles/categorypage.css'
-import productos from '../utils/productos.json'
 import Card from '../components/Card'
 import { useParams, useNavigate } from 'react-router-dom'
 
 function CategoryPage({ categoria }) {
   const navigate = useNavigate();
-  const paginaActual = useParams();
+  const {paginaActual} = useParams();
+  
+  const [products,setProducts] = useState([]);
+    
+  const fetchProducts = async () => {
+      
+    try {
+      const response = await fetch(`http://localhost:8080/product/get?categoria=${categoria}&page=${paginaActual}&min=&max=`);
+      if (response.ok){
+        const data = await response.json();
+        setProducts(data);
+        console.log('data',data);
+        console.log('uri',`http://localhost:8080/product/get?categoria=${categoria}&page=${paginaActual}&min=&max=` )
+      }else{
+        setProducts([]);
+      }
+          
+        
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+      
+  };
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    fetchProducts();
   }, []);
-  let productosFiltrados;
-  const [filteredProducts, setFilteredProducts] = useState(null);
 
 
-  const [currentPage, setCurrentPage] = useState(parseInt(paginaActual.paginaActual));
+  const [currentPage, setCurrentPage] = useState(parseInt(paginaActual));
   const productsPerPage = 8;
   
 
@@ -27,29 +48,17 @@ function CategoryPage({ categoria }) {
     navigate(`/categoria/${categoria}/${pageNumber}`);
   };
 
-  if (categoria === 'Equipos Argentinos' || categoria === 'Equipos Sudamericanos') {
-    productosFiltrados = productos.filter(producto =>
-      producto.categoria === categoria ||
-      producto.categoria === 'Boca' ||
-      producto.categoria === 'River' ||
-      producto.categoria === 'Lanus' ||
-      producto.categoria === 'Independiente' ||
-      producto.categoria === 'Racing' ||
-      producto.categoria === 'San Lorenzo'
-    );
-  } else {
-    productosFiltrados = productos.filter(producto => producto.categoria === categoria);
-
-  }
+  
 
   const renderProducts = () => {
-
-    const startIndex = (currentPage - 1) * productsPerPage;
-    const endIndex = startIndex + productsPerPage;
-    return productosFiltrados.slice(startIndex, endIndex).map(producto => (
+    return products.map(producto => (
       <Card key={producto.id} producto={producto} />
     ));
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    fetchProducts();
+  }, [paginaActual]);
 
 
   return (
@@ -65,7 +74,7 @@ function CategoryPage({ categoria }) {
 
         </div>
         <div className="pagination">
-          {[...Array(Math.ceil(productosFiltrados.length / productsPerPage)).keys()].map(number => (
+          {[...Array(Math.ceil(products.length / productsPerPage)).keys()].map(number => (
             <button key={number} onClick={() => handlePageChange(number + 1)} disabled={parseInt(currentPage) === number + 1}>
               {number + 1}
             </button>
@@ -78,3 +87,24 @@ function CategoryPage({ categoria }) {
 }
 
 export default CategoryPage
+
+
+
+
+
+/*
+if (categoria === 'Equipos Argentinos' || categoria === 'Equipos Sudamericanos') {
+    productosFiltrados = productos.filter(producto =>
+      producto.categoria === categoria ||
+      producto.categoria === 'Boca' ||
+      producto.categoria === 'River' ||
+      producto.categoria === 'Lanus' ||
+      producto.categoria === 'Independiente' ||
+      producto.categoria === 'Racing' ||
+      producto.categoria === 'San Lorenzo'
+    );
+  } else {
+    productosFiltrados = productos.filter(producto => producto.categoria === categoria);
+
+  }
+*/

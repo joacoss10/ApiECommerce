@@ -104,7 +104,7 @@ function CartPage() {
                                         <IconButton className='delete' aria-label="delete" onClick={() => eliminarProducto(item.id)}  >
                                             <ClearIcon />
                                         </IconButton>
-                                        <img src={Array.isArray(item.imagenURL) ? item.imagenURL[0] : item.imagenURL} alt="imagen" />
+                                        <img src={`data:image/jpeg;base64,${item.files[0].content}`} alt="imagen" />
                                         <p onClick={() => handleProductClick(item.id)}>{item.nombre}</p>
                                     </div>
                                     <div className="cart-manage-container">
