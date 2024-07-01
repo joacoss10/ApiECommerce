@@ -78,6 +78,8 @@ function CartPage() {
     const [cupon, setCupon] = useState('');
     const [cuponAplicado, setCuponAplicado] = useState(false);
 
+    //console.log('cupon: ',cartItems.cupon);
+
     const handleCuponChange = (event) => {
         setCupon(event.target.value);
     };
@@ -93,7 +95,8 @@ function CartPage() {
     const handleCheckOutClick = () => {
         //clearCart();
         if (isLoggedIn) {
-            navigate('/medioDePago');
+            setCupon('hola che');
+            navigate(`/medioDePago?cupon=${cupon}`);
             //cambiar el "!" de este if, porque se necesita q el usuario este logeado para q cree la compra
             //navigate('/checkOut/success');
         }

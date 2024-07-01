@@ -5,6 +5,7 @@ import "../styles/Tarjeta.css"
 import { useDispatch, useSelector } from "react-redux";
 import { jwtDecode } from "jwt-decode";
 import { clearCart } from "../redux/cartActions";
+import { useLocation } from 'react-router-dom';
 
 const Tarjeta = () => {
     const [numeroTarjeta, setNumeroTarjeta] = useState('');
@@ -12,6 +13,12 @@ const Tarjeta = () => {
     const [fechaExpiracion, setFechaExpiracion] = useState('');
     const [cvv, setCvv] = useState('');
     const navigate = useNavigate();
+
+
+    const location = useLocation();
+    const cupon = new URLSearchParams(location.search).get('cupon');
+    console.log("cuponfinal ", cupon);
+
 
     const cartItems = useSelector(state => state.cart.cartItems);
     const token = useSelector(state => state.client.token);
@@ -36,7 +43,12 @@ const Tarjeta = () => {
             
             const username = jwtDecode(token).sub;
             const today = new Date();
-            const fechaPago = today.toISOString().slice(0, 19).replace('T', ' ');
+            const options = {
+                year: 'numeric', month: '2-digit', day: '2-digit',
+                hour: '2-digit', minute: '2-digit', second: '2-digit',
+                timeZone: 'America/Buenos_Aires'  // Ajusta la zona horaria según tu necesidad
+            };
+            const fechaPago = today.toLocaleString('es-AR', options);
             const productList = cartItems.map(item => ({
                 id: item.id,
                 cant: item.cantidad

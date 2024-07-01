@@ -1,13 +1,14 @@
 import React from 'react'
 import "../styles/medioDePago.css"
 import { useNavigate } from 'react-router-dom';
-const MediosDePago = () => {
+const MediosDePago = (cupon) => {
+    console.log("mediosdepago", cupon.cupon)
     const navigate = useNavigate();
     const handleButtonClick = () => {
-        navigate('/medioDePago/tarjeta');
+        navigate(`/medioDePago/tarjeta?cupon=${cupon.cupon}`);
     };
     const handleButtonClick2 = () => {
-        navigate('/medioDePago/mercadoPago');//redireccionado a mp
+        navigate(`/medioDePago/mercadoPago`);//redireccionado a mp
     };
 
     return (

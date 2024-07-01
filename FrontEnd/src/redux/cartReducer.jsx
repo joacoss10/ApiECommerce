@@ -40,6 +40,7 @@ const cartReducer = (state = initialState, action) => {
         ...state,
         cartItems: [] // Limpiar el arreglo de elementos del carrito
       };
+      
     default:
       return state;
   }
