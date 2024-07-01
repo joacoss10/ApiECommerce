@@ -23,8 +23,7 @@ function Nav() {
     if (token!= null) {
         isLoggedIn = true;
     } else {
-        // Manejo si el token es null o undefined
-        console.log('Token is null or undefined');
+        
         isLoggedIn = false;
     }
 

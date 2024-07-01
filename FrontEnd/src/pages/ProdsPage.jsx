@@ -11,11 +11,34 @@ import '../styles/prodspage.css'
 function ProdsPage() {
     const {paginaActual} = useParams();
     const navigate = useNavigate();
-    console.log(paginaActual)
+    const [filterTriggered, setFilterTriggered] = useState(false);
+
+    const [products,setProducts] = useState([]);
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch(`http://localhost:8080/product/get?categoria=&page=${paginaActual}`);
+        if (response.ok){
+          const data = await response.json();
+          setProducts(data);
+        }else{
+          setProducts([]);
+        }
+        
+        console.log('pagina',paginaActual)
+        console.log('data',data);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+        fetchProducts();
+    }, [paginaActual, filterTriggered]);
+
+
+    //fetch a productos
 
 
 
@@ -47,6 +70,7 @@ function ProdsPage() {
       return true;
     });
     setFilteredProducts(filtered);
+    setFilterTriggered(!filterTriggered);
   };
 
   const handleMinPriceChange = (e) => {
@@ -79,7 +103,7 @@ function ProdsPage() {
   const renderProducts = () => {
     const startIndex = (currentPage - 1) * productsPerPage;
     const endIndex = startIndex + productsPerPage;
-    return filteredProducts.slice(startIndex, endIndex).map(producto => (
+    return products.map(producto => (
       <Card key={producto.id} producto={producto} />
     ));
   };
