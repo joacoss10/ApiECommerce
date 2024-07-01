@@ -1,7 +1,11 @@
 import React from "react";
 import ComboBox from "./ComboBox";
 import '../styles/Vender.css'
+
+
+
 const Vender = () => {
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -10,11 +14,36 @@ const Vender = () => {
         const stock = document.getElementById('Stock').value;
         const precio = document.getElementById('Precio').value;
         const file = document.getElementById('File').value;
+        const categoria = document.getElementById('ComboBox').value;
+
 
 
         if (titulo && descripcion && stock && precio && file) {
+
+            const fetchBusqueda = async () => {
+                try {
+                  const response = await fetch(`http://localhost:8080/product/create`,{
+                    method: 'POST',
+                    headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*' ,
+                    'Authorization': `Bearer ${token}` 
+                    }
+                  });
+                  if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                  }
+                  const data = await response.json();
+                  console.log(data);
+                  setListaProductos(data);
+                } catch (error) {
+                  console.log("Hubo un error");
+                }
+              };
+              fetchBusqueda();
+
             window.alert("Publicacion creada exitosamente")
-            //ACA IRIA LA LOGICA DE CREAR LA PUBLICACION EN LA BD
+
         }
     };
 

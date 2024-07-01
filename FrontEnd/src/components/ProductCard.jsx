@@ -1,14 +1,35 @@
 import React from "react";
 import '../styles/productcard.css'
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from "react-redux";
 
 const ProductCard = ({ product }) => {
+    const token = useSelector(state => state.client.token);
+
     const navigate = useNavigate();
 
     const handleDeleteClick = () => {
         const isConfirmed = window.confirm('¿Está seguro que quiere eliminar este producto?');
         if (isConfirmed) {
-            // Lógica para eliminar el producto...
+            
+            const fetchEliminar = async () => {
+                try {
+                  const response = await fetch(`http://localhost:8080/product/delete?id=${product.id}`,{ 
+                    method: 'DELETE',
+                    headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*',
+                    'Authorization': `Bearer ${token}` 
+                    }
+                  });
+                  if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                  }
+                } catch (error) {
+                  console.log("Hubo un error");
+                }
+              };
+              fetchEliminar();
         }
     };
 

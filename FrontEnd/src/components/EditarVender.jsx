@@ -29,6 +29,34 @@ const EditarVender = () => {
   };
   const enviar = () => {
     if (formData.titulo.trim() && formData.descripcion && formData.precio && formData.stock && formData.categoria && formData.imagen) {
+      
+      const fetchActualizar= async () => {
+        try {
+          const formData = new FormData();
+
+
+          const response = await fetch(`http://localhost:8080/product/edit`,{
+            method: 'PUT',
+            //body: ,
+            headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*' ,
+            'Authorization': `Bearer ${token}` 
+            }
+          });
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          const data = await response.json();
+          console.log(data);
+          setListaProductos(data);
+        } catch (error) {
+          console.log("Hubo un error");
+        }
+      };
+      fetchActualizar();
+      
+      
       window.alert('Publibacion editada');
       //SUBIR CAMBIOS A LA BD
       navigate("/PublicacionesVendedor")
