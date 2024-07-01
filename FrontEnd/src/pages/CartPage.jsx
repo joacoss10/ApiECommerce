@@ -76,18 +76,31 @@ function CartPage() {
     //CUPON
 
     const [cupon, setCupon] = useState('');
-    const [cuponAplicado, setCuponAplicado] = useState(false);
+    const [cuponAplicado, setCuponAplicado] = useState(0);
 
     //console.log('cupon: ',cartItems.cupon);
 
     const handleCuponChange = (event) => {
         setCupon(event.target.value);
     };
+    //FETCH CUPON
+    const fetchCupon = async () => {
+        try {
+          const response = await fetch(`http://localhost:8080/cupon/check?cupon=${cupon}`);
+          if (!response.ok) {
+            throw new Error('Error al obtener los datos del servidor');
+          }
+          const data = await response.json();
+          setCuponAplicado(data); // Almacenar la respuesta en el estado
+          console.log(data)
+        } catch (error) {
+          console.error('Error al obtener los datos:', error);
+          // Manejo de errores, por ejemplo mostrar un mensaje al usuario
+        }
+    };
 
     const handleCuponClick = () => {
-        if (cupon === '90futbol' || cupon === 'bianchi') {
-            setCuponAplicado(true);
-        }
+        fetchCupon();
     };
 
     //CHECKOUT
@@ -172,11 +185,7 @@ function CartPage() {
                             </div>
                             <div className="cart-total">
                                 <span className='cart-price'>Total: </span>
-                                {cuponAplicado ? (
-                                    <span className='cart-price'>$ {getTotal() * 0.8 + envio}</span>
-                                ) : (
-                                    <span className='cart-price'>$ {getTotal() + envio}</span>
-                                )}
+                                <span className='cart-price'>$ {getTotal()-getTotal()*(cuponAplicado/100) + envio}</span>
                             </div>
                             <div className="btn">
                                 <div className="layer"></div>
