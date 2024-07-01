@@ -2,12 +2,20 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import "../styles/Tarjeta.css"
+import { useDispatch, useSelector } from "react-redux";
+import { jwtDecode } from "jwt-decode";
+import { clearCart } from "../redux/cartActions";
+
 const Tarjeta = () => {
     const [numeroTarjeta, setNumeroTarjeta] = useState('');
     const [nombreTitular, setNombreTitular] = useState('');
     const [fechaExpiracion, setFechaExpiracion] = useState('');
     const [cvv, setCvv] = useState('');
     const navigate = useNavigate();
+
+    const cartItems = useSelector(state => state.cart.cartItems);
+    const token = useSelector(state => state.client.token);
+    const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -23,8 +31,50 @@ const Tarjeta = () => {
         } else if (!nombreTitular.trim()) {
             window.alert('Ingrese un nombre')
         } else {
-            window.alert('tarjeta registrada exitosamente')
+            //window.alert('tarjeta registrada exitosamente')
             //logica de pago 
+            
+            const username = jwtDecode(token).sub;
+            const today = new Date();
+            const fechaPago = today.toISOString().slice(0, 19).replace('T', ' ');
+            const productList = cartItems.map(item => ({
+                id: item.id,
+                cant: item.cantidad
+            }));
+            let total = cartItems.reduce((total, item) => total + (item.precio * item.cantidad), 0);
+            if (total <= 100000){
+                total = total + 5000;
+            }
+            
+            const raw = JSON.stringify({
+                "username_comprador": username,
+                "productList": productList,
+                "pago": {
+                  "medioDePago": "Tarjeta de debito",
+                  "monto": total,
+                  "currency": "ARS",
+                  "fechaPago": fechaPago,
+                  "estado": "Pagado",
+                  "detalles": "Pago final"
+                }
+              });
+            //ACA HACER EL FETCH PARA CREAR ORDER
+            fetch('http://localhost:8080/order/create', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${token}`
+                },
+                body: raw
+              })
+              .then(response => response.json())
+              .then(data => {
+                console.log('Success:', data);
+              })
+              .catch((error) => {
+                console.error('Error:', error);
+            });
+            dispatch(clearCart());
             navigate('/checkout/success');
         }
     };
@@ -38,6 +88,8 @@ const Tarjeta = () => {
             setNombreTitular(valorIngresado);
         }
     };
+
+
 
     return (
         <div>

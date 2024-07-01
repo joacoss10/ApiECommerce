@@ -18,7 +18,15 @@ function CartPage() {
     const dispatch = useDispatch();
     //const { removeFromCart, getCantidadItems, getTotal, cartItems, clearCart, setCartItems } = useCart();
     const [envio, setEnvio] = useState('Gratis');
-    const { isLoggedIn } = useAuth();
+    const token = useSelector(state => state.client.token);
+    let isLoggedIn;
+    if (token){
+        isLoggedIn = true;
+    }else{
+        isLoggedIn = false;
+    }
+
+    //const { isLoggedIn } = useAuth();
     const navigate = useNavigate();
 
 
@@ -37,12 +45,22 @@ function CartPage() {
         navigate(`/product/${id}`)
     }
 
-    const aumentarCantidad = (id, cant)=>{
-        dispatch(updateQuantity(id,cant+1));
+    const aumentarCantidad = (id, cant, stockDisponible)=>{
+        console.log(cant);
+        if (cant <= 6 && cant <= stockDisponible-1){
+            dispatch(updateQuantity(id,cant+1));
+        }
+        
+        console.log('aumentar',cartItems);
     }
 
     const disminuirCantidad = (id,cant)=>{
-        dispatch(updateQuantity(id,cant-1));
+        console.log(cant - 1);
+        if(cant >= 2){
+            dispatch(updateQuantity(id,cant-1));
+        }
+        
+        console.log('disminuir',cartItems);
     }
     
 
@@ -74,7 +92,7 @@ function CartPage() {
 
     const handleCheckOutClick = () => {
         //clearCart();
-        if (!isLoggedIn) {
+        if (isLoggedIn) {
             navigate('/medioDePago');
             //cambiar el "!" de este if, porque se necesita q el usuario este logeado para q cree la compra
             //navigate('/checkOut/success');
@@ -110,11 +128,11 @@ function CartPage() {
                                     <div className="cart-manage-container">
                                         <div className="cart-manage">
                                             <div className="cart-cantidad">
-                                                <RemoveIcon fontSize='small' className='cart-controllers' onClick={() => disminuirCantidad(item.id)} />
+                                                <RemoveIcon fontSize='small' className='cart-controllers' onClick={() => disminuirCantidad(item.id, item.cantidad)} />
                                                 <div className="cart-number">
                                                     <span>{item.cantidad}</span>
                                                 </div>
-                                                <AddIcon fontSize='small' className='cart-controllers' onClick={() => aumentarCantidad(item.id)} />
+                                                <AddIcon fontSize='small' className='cart-controllers' onClick={() => aumentarCantidad(item.id, item.cantidad, item.stockDisponible)} />
                                             </div>
                                         </div>
                                     </div>
