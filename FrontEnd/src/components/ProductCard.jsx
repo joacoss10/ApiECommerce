@@ -3,15 +3,17 @@ import '../styles/productcard.css'
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
+
 const ProductCard = ({ product }) => {
     const token = useSelector(state => state.client.token);
 
+    console.log(product);
     const navigate = useNavigate();
 
     const handleDeleteClick = () => {
         const isConfirmed = window.confirm('¿Está seguro que quiere eliminar este producto?');
         if (isConfirmed) {
-            
+            // Lógica para eliminar el producto...
             const fetchEliminar = async () => {
                 try {
                   const response = await fetch(`http://localhost:8080/product/delete?id=${product.id}`,{ 
@@ -30,6 +32,7 @@ const ProductCard = ({ product }) => {
                 }
               };
               fetchEliminar();
+              navigate('/')
         }
     };
 
@@ -39,13 +42,13 @@ const ProductCard = ({ product }) => {
             navigate('/EditarVender', { state: { productData: product } });
         }
     };
-    const imageUrl = Array.isArray(product.imagenURL) ? product.imagenURL[0] : product.imagenURL;
-
+    //const imageUrl = Array.isArray(product.imagenURL) ? product.imagenURL[0] : product.imagenURL;
+    const file = product.files[0];
     
     return (
         <div className="product-card">
             <section className="SeccionImagen">
-                <img src={imageUrl} className="product-image" alt={product.nombre} />
+                <img src={`data:image/jpeg;base64,${file.content}`} className="product-image" alt={product.nombre} />
             </section>
 
             <section className="Texto">
@@ -64,6 +67,8 @@ const ProductCard = ({ product }) => {
             </section>
         </div>
     );
+
+    
 };
 
 export default ProductCard;

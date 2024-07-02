@@ -5,12 +5,15 @@ import '../styles/publicacionesvendedor.css';
 import productos from '../utils/productos.json';
 import { useAuth } from "../services/AuthContext";
 import { useSelector } from "react-redux";
+import { jwtDecode } from "jwt-decode";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const PublicacionesVendedor = (userName) => {
     const [productosVendedor, setProductosVendedor] = useState([]);
-    const { username } = useAuth();
-
+    //const { username } = useAuth();
+    const navigate = useNavigate();
     const token = useSelector(state => state.client.token)
+    const username = jwtDecode(token).sub;
 
     //const productosVendedor = productos.filter(producto => producto.username_vendedor === username)
 
@@ -18,9 +21,9 @@ const PublicacionesVendedor = (userName) => {
         const fetchBusqueda = async () => {
 
             //CAMBIAR EL NOMBRE POR EL TOKEN
-            const nombre = 'bautisalva02'
+            
             try {
-              const response = await fetch(`http://localhost:8080/product/getByUsername?nombre=${nombre}&page=1&size=2`,{
+              const response = await fetch(`http://localhost:8080/product/getByUsername?username=${username}`,{
                 method: 'GET',
                 headers: {
                 'Content-Type': 'application/json',
@@ -39,17 +42,28 @@ const PublicacionesVendedor = (userName) => {
             }
           };
           fetchBusqueda();
+          
     },[])
+
+    const renderProducts = () => {
+      console.log(productosVendedor)
+      if(productosVendedor != []){
+        return productosVendedor.map(producto => (
+          <ProductCard key={producto.id} product={producto} />
+        ));
+      }
+    };
+
+    useEffect(() => {
+      renderProducts();
+    }, [productosVendedor]);
 
 
     return (
         <div className="div-publicaciones">
             <Nav />
             <div className="publicaciones-container">
-                {productosVendedor.map(producto => (
-                    /*productosVendedor.map(producto => (*/                                    //USR ESTA LINEA PARA LA ENTREGA, MUESTRA SOLO LOS DELUSUARIO LOGEADO
-                    <ProductCard key={producto.id} product={producto} />
-                ))}
+                {renderProducts()}
             </div>
         </div>
     );

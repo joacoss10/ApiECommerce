@@ -10,9 +10,10 @@ function Card({ producto }) {
     const handleClickProductView = () => {
         navigate(`/product/${producto.id}`, { state : {producto} });
     };
+
     const imageUrl = Array.isArray(producto.imagenURL) ? producto.imagenURL[0] : producto.imagenURL;
 
-    const file = producto.files[1];
+    const file = producto.files[0]; //ESTO CAMBIO
     return (
         <div className='container' onClick={handleClickProductView}>
 

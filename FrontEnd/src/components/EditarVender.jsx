@@ -9,6 +9,11 @@ const EditarVender = () => {
   const location = useLocation();
   const { productData } = location.state;
 
+  const [categoria, setCategoria] = useState('');
+
+    const handleChangeCategoria = (selectedOption) => {
+        setCategoria(selectedOption.value);
+    };
 
   const [formData, setFormData] = useState({
     titulo: productData.nombre,

@@ -1,24 +1,101 @@
-import React from "react";
+import React, {useRef, useState} from "react";
 import ComboBox from "./ComboBox";
 import '../styles/Vender.css'
+import { useAuth } from "../services/AuthContext";
+import { useSelector } from "react-redux";
+import { jwtDecode } from "jwt-decode";
 
 
 
 const Vender = () => {
 
-    const handleSubmit = (event) => {
+    //const {username} = useAuth();
+    const token = useSelector(state => state.client.token);
+    const username = jwtDecode(token).sub;
+
+
+    const [categoria, setCategoria] = useState('');
+
+    const handleChangeCategoria = (selectedOption) => {
+        setCategoria(selectedOption.value);
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+    
+        const titulo = document.getElementById('Titulo').value;
+        const descripcion = document.getElementById('Descripcion').value.trim();
+        const stock = document.getElementById('Stock').value;
+        const precio = document.getElementById('Precio').value;
+        const file = document.getElementById('File').files[0]; // Acceder al archivo seleccionado
+        //const categoria = document.getElementById('ComboBox').value;
+    
+        const formData = new FormData();
+        formData.append('nombre', titulo);
+        formData.append('descripcion', descripcion);
+        formData.append('categoria', categoria);
+        formData.append('precio', precio);
+        formData.append('stockDisponible', stock);
+        formData.append('username_vendedor', username); // Supongo que 'username' está definido en tu contexto
+        formData.append('files', file);
+
+
+        try {
+            const response = await fetch('http://localhost:8080/product/create', {
+                method: 'POST',
+                headers: {
+                    
+                    'Authorization': `Bearer ${token}` // Asegúrate de que 'token' esté definido en tu contexto
+                },
+                body: formData
+            });
+    
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+    
+            const data = await response.text(); // Convertir la respuesta a texto
+
+            console.log(data); // Aquí deberías recibir el string de respuesta del backend
+
+            window.alert("Producto creado exitosamente");
+    
+        } catch (error) {
+            console.error('Hubo un error al enviar la solicitud:', error);
+            // Manejo de errores: mostrar mensaje al usuario, registrar en algún servicio de errores, etc.
+        }
+    };
+
+    /*const handleSubmit = (event) => {
         event.preventDefault();
 
-        const titulo = document.getElementById('Titulo').value;
+        /*const titulo = document.getElementById('Titulo').value;
         const descripcion = document.getElementById('Descripcion').value.trim();
         const stock = document.getElementById('Stock').value;
         const precio = document.getElementById('Precio').value;
         const file = document.getElementById('File').value;
         const categoria = document.getElementById('ComboBox').value;
 
+        const titulo = event.target.elements['Titulo'].value;
+        const descripcion = event.target.elements['Descripcion'].value.trim();
+        const stock = event.target.elements['Stock'].value;
+        const precio = event.target.elements['Precio'].value;
+        const file = event.target.elements['File'].files[0];
+        const categoria = event.target.elements['ComboBox'].value;
+
 
 
         if (titulo && descripcion && stock && precio && file) {
+
+            const bodyData = {
+                nombre: titulo,
+                descripcion: descripcion,
+                categoria: categoria, // Ahora categoria es obtenida del estado
+                precio: precio,
+                stockDisponible: stock,
+                username_vendedor: username, // Asegúrate de tener username definido
+                files: file
+            };
 
             const fetchBusqueda = async () => {
                 try {
@@ -28,8 +105,9 @@ const Vender = () => {
                     'Content-Type': 'application/json',
                     'Access-Control-Allow-Origin': '*' ,
                     'Authorization': `Bearer ${token}` 
-                    }
-                  });
+                    },
+                    body: bodyData
+                });
                   if (!response.ok) {
                     throw new Error('Network response was not ok');
                   }
@@ -43,9 +121,15 @@ const Vender = () => {
               fetchBusqueda();
 
             window.alert("Publicacion creada exitosamente")
+            //ACA IRIA LA LOGICA DE CREAR LA PUBLICACION EN LA BD
+
+
+
+
+
 
         }
-    };
+    };*/
 
     return (
         <main className="Contenedor-vender">
@@ -74,6 +158,8 @@ const Vender = () => {
                     <ComboBox id='ComboBox'
                         styles={{ control: (provided) => ({ ...provided, width: '100%', marginTop: '1em', marginLeft: '0em' }) }}
                         placeholder="Seleccione la categoría del producto..."
+                        onChange={handleChangeCategoria}
+                        value={categoria}
                     />
                 </div>
 
