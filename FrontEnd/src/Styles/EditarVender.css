@@ -1,0 +1,19 @@
+#Botones-edit input {
+    background-color: #0a3558;
+    color: white;
+    border: none;
+    padding: 0.5em 0.9em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 0.4em 0.2em;
+    border-radius: 0.3em;
+    cursor: pointer;
+    transition: 0.3 ease;
+}
+
+#Botones-edit input:hover {
+    background-color: #187bcc;
+
+}

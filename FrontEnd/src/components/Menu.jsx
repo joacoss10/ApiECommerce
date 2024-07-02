@@ -68,7 +68,7 @@ const Menu = () => {
                             }</li>
                         <li className='desplegable'>
                             {isLoggedIn ? (
-                                <Link to="/PublicacionesVendedor">Mis publicaiones</Link>
+                                <Link to="/PublicacionesVendedor">Mis publicaciones</Link>
                             ) : (
                                 <Link to="/login">Mis publicaiones</Link> /*CAMBIAR A     /login */
                             )

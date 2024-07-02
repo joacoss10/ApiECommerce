@@ -49,7 +49,7 @@ function App() {
       }
     };
     fetchProductos();
-  }, []);
+  }, [products]);
 
 
   return (

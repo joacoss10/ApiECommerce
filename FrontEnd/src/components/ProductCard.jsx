@@ -39,7 +39,7 @@ const ProductCard = ({ product }) => {
     const handleEditClick = () => {
         const isConfirmed = window.confirm('¿Quiere editar este producto?');
         if (isConfirmed) {
-            navigate('/EditarVender', { state: { productData: product } });
+            navigate('/EditarVender', { state: { productData: product.id } });
         }
     };
     //const imageUrl = Array.isArray(product.imagenURL) ? product.imagenURL[0] : product.imagenURL;

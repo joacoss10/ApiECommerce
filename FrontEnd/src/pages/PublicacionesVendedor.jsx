@@ -42,7 +42,7 @@ const PublicacionesVendedor = (userName) => {
           };
           fetchBusqueda();
           
-    },[])
+    },[productosVendedor])
 
     const renderProducts = () => {
       console.log(productosVendedor)
