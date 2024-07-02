@@ -3,20 +3,25 @@ import ComboBox from "./ComboBox";
 import { useLocation } from 'react-router-dom';
 import "../styles/Vender.css"
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from "react-redux";
 
 const EditarVender = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { productData } = location.state;
+  const token = useSelector(state => state.client.token);
+
 
 
   const [formData, setFormData] = useState({
     titulo: productData.nombre,
     descripcion: productData.descripcion,
-    stock: productData.stockDisponible,
+    stockDisponible: productData.stockDisponible,
     precio: productData.precio,
     categoria: productData.categoria,
-    imagen: productData.imagenURL
+    imagen: productData.imagenURL,
+    id_producto: productData.id
+
   });
 
 
@@ -27,10 +32,34 @@ const EditarVender = () => {
       [name]: value
     });
   };
-  const enviar = () => {
+  const enviar = async(event) => {
     if (formData.titulo.trim() && formData.descripcion && formData.precio && formData.stock && formData.categoria && formData.imagen) {
       window.alert('Publibacion editada');
       //SUBIR CAMBIOS A LA BD
+      try {
+        const response = await fetch('http://localhost:8080/product/edit', {
+            method: 'POST',
+            headers: {
+                
+              'Authorization': `Bearer ${token}` // Asegúrate de que 'token' esté definido en tu contexto
+            },
+            body: formData
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        const data = await response.text(); // Convertir la respuesta a texto
+
+        console.log(data); // Aquí deberías recibir el string de respuesta del backend
+
+        window.alert("Producto creado exitosamente");
+
+    } catch (error) {
+        console.error('Hubo un error al enviar la solicitud:', error);
+        // Manejo de errores: mostrar mensaje al usuario, registrar en algún servicio de errores, etc.
+    }
       navigate("/PublicacionesVendedor")
     }
 

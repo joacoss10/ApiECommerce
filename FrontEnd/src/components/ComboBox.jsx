@@ -11,11 +11,12 @@ const ComboBox = ({ defaultValue, placeholder, onChange, styles }) => {
         { value: 'SanLorenzo', label: 'San lorenzo' },
         { value: 'EquipoArgentino', label: 'Equipo argentino' },
         { value: 'EquipoSudamericano', label: 'Equipo sudamericano' },
-        { value: 'EquipoEuropeo', label: 'Equipo europeo' },
-        { value: 'OtrosEquipos', label: 'Otros Equipos' },
-        { value: 'SeleccionArgentina', label: 'Selección Argentina' },
-        { value: 'SeleccionBrasil', label: 'Selección Brasil' },
-        { value: 'SeleccionUruguay', label: 'Selección Uruguay' },
+        { value: 'Equipo Europeo', label: 'Equipo europeo' },
+        { value: 'Otros Equipos', label: 'Otros Equipos' },
+        { value: 'Seleccion Argentina', label: 'Selección Argentina' },
+        { value: 'Seleccion Brasil', label: 'Selección Brasil' },
+        { value: 'Seleccion Uruguay', label: 'Selección Uruguay' },
+        { value: 'Europa', label: 'Europa' },
         { value: 'Selecciones', label: 'Selecciones' }
     ];
 
