@@ -21,7 +21,6 @@ const EditarVender = () => {
     categoria: productData.categoria,
     imagen: productData.imagenURL,
     id_producto: productData.id
-
   });
 
 
@@ -38,9 +37,8 @@ const EditarVender = () => {
       //SUBIR CAMBIOS A LA BD
       try {
         const response = await fetch('http://localhost:8080/product/edit', {
-            method: 'POST',
+            method: 'PUT',
             headers: {
-                
               'Authorization': `Bearer ${token}` // Asegúrate de que 'token' esté definido en tu contexto
             },
             body: formData

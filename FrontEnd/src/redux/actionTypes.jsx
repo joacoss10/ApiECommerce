@@ -6,3 +6,6 @@ export const CLEAR_CART = 'CLEAR_CART';
 export const SET_TOKEN = 'SET_TOKEN';
 
 export const UPDATE_TOTAL = 'UPDATE_TOTAL'; 
+
+export const SET_ID = 'SET_ID'
+export const SET_STOCK = 'SET_STOCK'
