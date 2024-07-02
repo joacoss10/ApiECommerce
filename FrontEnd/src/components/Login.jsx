@@ -18,7 +18,7 @@ function Login() {
 
   //dispatch(setToken('testing'));
   console.log(token)
-  const { login, isLoggedIn } = useAuth();
+  
 
 
 

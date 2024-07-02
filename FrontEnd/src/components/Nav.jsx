@@ -90,7 +90,7 @@ function Nav() {
         navigate("/cart"); // Alternar la visibilidad del carrito al hacer clic en el ícono del carrito
     };
     const handleOrdersClick = () => {
-        navigate("/cart")                   //CAMBIAR
+        navigate("/orders")                   //CAMBIAR
     }
     return (
         <>

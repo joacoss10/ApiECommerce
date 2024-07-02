@@ -22,6 +22,7 @@ import MediosDePagoPage from './pages/MedioDePagoPage'
 import MpPage from './pages/MpPage'
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import OrdersPage from './pages/OrdersPage'
 
 
 
@@ -63,7 +64,7 @@ function App() {
           <Route path='/cart' element={<CartPage />} />
           <Route path='/EditarVender' element={<EditPage />} />
           <Route path='/buscar' element={<BuscarPage />} />
-
+          
           {products.map(producto => (
             <Route
               key={producto.id}
@@ -71,7 +72,7 @@ function App() {
               element={<ProductPage producto={producto} />}
             />
           ))}
-
+          
           {categorias.map(categoria => (
             <Route
               key={categoria}
@@ -87,6 +88,7 @@ function App() {
           <Route path='/productos/page/:paginaActual' element={<ProdsPage />} />
           <Route path='/medioDePago/tarjeta' element={<TarjetaPage />} />
           <Route path='/medioDePago/mercadoPago' element={<MpPage />} />
+          <Route path='/orders' element={<OrdersPage />} />
 
         </Routes>
       
