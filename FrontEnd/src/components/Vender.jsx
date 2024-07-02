@@ -21,17 +21,17 @@ const Vender = () => {
     return (
         <main className="Contenedor-vender">
             <form className="Formulario" onSubmit={handleSubmit}>
-                <label for='Titulo' id='TituloLabel'><b>Título</b></label>
+                <label htmlFor='Titulo' id='TituloLabel'><b>Título</b></label>
                 <input type="text" id='Titulo' placeholder="Escriba el título" maxLength={20} pattern="\S.*" required></input>
 
-                <label for='Descripcion' id='DescripcionLabel'><b>Descripción</b></label>
+                <label htmlFor='Descripcion' id='DescripcionLabel'><b>Descripción</b></label>
                 <div className="description">
                     <textarea type="text" id='Descripcion' placeholder="Describa su producto" pattern="\S.*" required></textarea>
                 </div>
 
                 <section id='LabelStockPrecio'>
-                    <label for='Stock' id='StockLabel'><b>Stock</b></label>
-                    <label for='Precio' id='PrecioLabel'><b>Precio</b></label>
+                    <label htmlFor='Stock' id='StockLabel'><b>Stock</b></label>
+                    <label htmlFor='Precio' id='PrecioLabel'><b>Precio</b></label>
 
                 </section>
                 <section id='InputStockPrecio'>
@@ -40,7 +40,7 @@ const Vender = () => {
                 </section>
 
 
-                <label for='ComboBox' id='ComboBoxLabel'><b>Seleccione la categoria</b></label>
+                <label htmlFor='ComboBox' id='ComboBoxLabel'><b>Seleccione la categoria</b></label>
                 <div className="comboBox-container">
                     <ComboBox id='ComboBox'
                         styles={{ control: (provided) => ({ ...provided, width: '100%', marginTop: '1em', marginLeft: '0em' }) }}

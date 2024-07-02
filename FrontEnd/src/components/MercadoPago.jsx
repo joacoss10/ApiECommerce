@@ -19,11 +19,11 @@ const MercadoPago = () => {
             <div className="image-container">
                 <img src={logo} alt="Logo" className="foto" />
             </div>
-            <p>Puede escanear el código QR para realizar el pago.</p>
+            <p id='p'>Puede escanear el código QR para realizar el pago.</p>
             <div className="qr-code">
                 <QRCode value={qrData} size={170} />
             </div>
-            <p> O puede pagar por la web</p>
+            <p id='p'> O puede pagar por la web</p>
             <button className='BotonPagar' onClick={HandleOnClick} >Pagar</button>
         </div >
     );
