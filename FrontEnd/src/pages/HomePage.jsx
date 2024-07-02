@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import "../styles/Home.css";
 import Card from '../components/Card';
-import productos from '../utils/productos.json';
+
 import arg from "../assets/arg.jpg";
 import Nav from '../components/Nav';
 import { useNavigate } from 'react-router-dom';
 
 function HomePage() {
-  const [minPrice, setMinPrice] = useState(localStorage.getItem('minPrice') || '');
-  const [maxPrice, setMaxPrice] = useState(localStorage.getItem('maxPrice') || '');
-  const [filteredProducts, setFilteredProducts] = useState(productos);
-  const [minPriceInput, setMinPriceInput] = useState(localStorage.getItem('minPrice') || '');
-  const [maxPriceInput, setMaxPriceInput] = useState(localStorage.getItem('maxPrice') || '');
+  
   const [prods,setProds] = useState([]);
   useEffect(() => {
     window.scrollTo(0, 0);

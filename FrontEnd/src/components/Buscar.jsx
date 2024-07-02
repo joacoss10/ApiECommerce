@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/Buscar.css'
-import productos from '../utils/productos.json'
+
 import { useState, useEffect } from 'react'
 import Card from "./Card.jsx";
 import { Button } from '@mui/material';

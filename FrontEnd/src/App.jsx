@@ -10,7 +10,7 @@ import PublicacionesVendedor from './pages/PublicacionesVendedor'
 import EditPage from './pages/EditPage'
 import { Routes, Route } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import productos from './utils/productos.json';
+
 
 import BuscarPage from './pages/BuscarPage'
 import CategoryPage from './pages/CategoryPage'

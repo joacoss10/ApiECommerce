@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom'
 import Card from '../components/Card';
-import productos from '../utils/productos.json'; 
+ 
 import Nav from '../components/Nav';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import '../styles/prodspage.css'
