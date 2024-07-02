@@ -68,7 +68,7 @@ function OrdersPage() {
             
             
             <div className="orders">
-                    {orders && orders.lenght > 0 ? (
+                    {orders  ? (
                         orders.map(order => (
                             <div key={order.id} className='order'>
                                 <div className="order-info">

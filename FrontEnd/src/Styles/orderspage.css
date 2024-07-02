@@ -32,6 +32,7 @@
     box-shadow:10px 10px 25px 10px rgba(0, 0, 0, 0.116);
     margin-bottom: 1em;
     padding: 2em;
+    padding-bottom: 0.5em;
 }
 .order{
     margin-bottom: 1.5em;

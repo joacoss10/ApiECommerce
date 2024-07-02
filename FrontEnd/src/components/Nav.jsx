@@ -78,6 +78,7 @@ function Nav() {
             document.querySelector('.nav-top-logo').classList.remove("menu-open");
         }
         dispatch(setToken(null));
+        navigate('/');
     }
 
     const handleClickHome = () => {
