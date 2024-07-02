@@ -6,7 +6,7 @@ import Chip from '@mui/material/Chip';
 import { useNavigate } from 'react-router-dom';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import { useCart } from '../services/CartContext'; // Importa el hook useCart
+
 import ProductGallery from '../components/ProductGallery';
 import { useDispatch, useSelector } from 'react-redux'; // Importa useDispatch y useSelector de React Redux
 import { addToCart } from '../redux/cartActions'; // Importa la acción addToCart

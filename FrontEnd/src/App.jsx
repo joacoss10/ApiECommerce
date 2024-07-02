@@ -11,8 +11,7 @@ import EditPage from './pages/EditPage'
 import { Routes, Route } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import productos from './utils/productos.json';
-import { CartProvider } from './services/CartContext';
-import { AuthProvider } from './services/AuthContext';
+
 import BuscarPage from './pages/BuscarPage'
 import CategoryPage from './pages/CategoryPage'
 import SignupResponse from './pages/SignupResponse'
@@ -55,8 +54,7 @@ function App() {
   return (
     
     <Provider store={store}>
-    <AuthProvider>
-      <CartProvider>
+    
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/login' element={<LoginPage />} />
@@ -91,8 +89,7 @@ function App() {
           <Route path='/medioDePago/mercadoPago' element={<MpPage />} />
 
         </Routes>
-      </CartProvider>
-    </AuthProvider>
+      
     </Provider>
   );
 }

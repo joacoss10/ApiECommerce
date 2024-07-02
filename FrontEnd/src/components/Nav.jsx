@@ -6,7 +6,7 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../services/AuthContext';
+
 import Menu from '../components/Menu';
 import "../styles/Menu.css";
 import Logoo from '../assets/camisetas-bianchi.png'

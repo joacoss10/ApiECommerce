@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import Nav from '../components/Nav';
 import "../styles/cart.css";
-import { useCart } from '../services/CartContext'; // Importa el hook useCart
+
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import IconButton from '@mui/material/IconButton';
 import ClearIcon from '@mui/icons-material/Clear';
 import { useNavigate } from 'react-router-dom';
 import CarritoVacio from '../components/CarritoVacio'
-import { useAuth } from '../services/AuthContext';
+
 import { addToCart, removeFromCart, clearCart, updateQuantity } from '../redux/cartActions';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateTotal } from '../redux/cartActions';

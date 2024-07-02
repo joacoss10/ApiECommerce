@@ -3,7 +3,7 @@ import ProductCard from "../components/ProductCard";
 import Nav from "../components/Nav";
 import '../styles/publicacionesvendedor.css';
 import productos from '../utils/productos.json';
-import { useAuth } from "../services/AuthContext";
+
 
 const PublicacionesVendedor = (userName) => {
     const { username } = useAuth();
