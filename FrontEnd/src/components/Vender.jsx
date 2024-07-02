@@ -3,11 +3,12 @@ import ComboBox from "./ComboBox";
 import '../styles/Vender.css'
 import { useSelector } from "react-redux";
 import { jwtDecode } from "jwt-decode";
+import { useNavigate } from 'react-router-dom';
 
 
 
 const Vender = () => {
-
+    const navigate = useNavigate();
     //const {username} = useAuth();
     const token = useSelector(state => state.client.token);
     const username = jwtDecode(token).sub;
@@ -58,6 +59,7 @@ const Vender = () => {
             console.log(data); // Aquí deberías recibir el string de respuesta del backend
 
             window.alert("Producto creado exitosamente");
+            navigate('/')
     
         } catch (error) {
             console.error('Hubo un error al enviar la solicitud:', error);

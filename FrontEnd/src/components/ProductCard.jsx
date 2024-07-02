@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import '../styles/productcard.css'
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from "react-redux";
@@ -6,8 +6,8 @@ import { useSelector } from "react-redux";
 
 const ProductCard = ({ product }) => {
     const token = useSelector(state => state.client.token);
-
-    console.log(product);
+    const [producto, setProducto] = useState(product);
+    //console.log(producto);
     const navigate = useNavigate();
 
     const handleDeleteClick = () => {
@@ -27,12 +27,13 @@ const ProductCard = ({ product }) => {
                   if (!response.ok) {
                     throw new Error('Network response was not ok');
                   }
+                  setProducto(null);
                 } catch (error) {
                   console.log("Hubo un error");
                 }
               };
               fetchEliminar();
-              navigate('/')
+              
         }
     };
 
@@ -45,26 +46,43 @@ const ProductCard = ({ product }) => {
     //const imageUrl = Array.isArray(product.imagenURL) ? product.imagenURL[0] : product.imagenURL;
     const file = product.files[0];
     
+    const renderProduct = () => {
+        if (producto!=null){
+            return (
+                <div className="product-card">
+                    <section className="SeccionImagen">
+                        <img src={`data:image/jpeg;base64,${file.content}`} className="product-image" alt={product.nombre} />
+                    </section>
+        
+                    <section className="Texto">
+                        <h2 id="product-title">{product.nombre}</h2>
+                        <p id="product-description">{product.descripcion}</p>
+                    </section>
+        
+                    <section className="StockYPrecio">
+                        <p><b>${product.precio}</b></p>
+                        <p><b>Stock: {product.stockDisponible}</b></p>
+                    </section>
+        
+                    <section className="Botones">
+                        <button className="Eliminar" onClick={handleDeleteClick}>🗑️</button>
+                        <button className="Editar" onClick={handleEditClick}>✏️</button>
+                    </section>
+                </div>
+            );
+        }
+        
+        
+      };
+      useEffect(() => {
+        renderProduct();
+        
+      }, [producto]);
+
+
     return (
-        <div className="product-card">
-            <section className="SeccionImagen">
-                <img src={`data:image/jpeg;base64,${file.content}`} className="product-image" alt={product.nombre} />
-            </section>
-
-            <section className="Texto">
-                <h2 id="product-title">{product.nombre}</h2>
-                <p id="product-description">{product.descripcion}</p>
-            </section>
-
-            <section className="StockYPrecio">
-                <p><b>${product.precio}</b></p>
-                <p><b>Stock: {product.stockDisponible}</b></p>
-            </section>
-
-            <section className="Botones">
-                <button className="Eliminar" onClick={handleDeleteClick}>🗑️</button>
-                <button className="Editar" onClick={handleEditClick}>✏️</button>
-            </section>
+        <div >
+            {renderProduct()}
         </div>
     );
 

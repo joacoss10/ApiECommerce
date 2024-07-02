@@ -77,7 +77,7 @@ function OrdersPage() {
                                         <p>{order.pago.fechaPago}</p>
                                     </div>
                                     
-                                    <p>${order.pago.monto}</p>
+                                    <p id='order-monto'>${order.pago.monto}</p>
                                 </div>
                                 
                                 <div className="order-elements">

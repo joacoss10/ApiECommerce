@@ -34,7 +34,7 @@ const PublicacionesVendedor = (userName) => {
                 throw new Error('Network response was not ok');
               }
               const data = await response.json();
-              console.log(data);
+              //console.log(data);
               setProductosVendedor(data);
             } catch (error) {
               console.log("Hubo un error");
@@ -42,7 +42,7 @@ const PublicacionesVendedor = (userName) => {
           };
           fetchBusqueda();
           
-    },[productosVendedor])
+    },[])
 
     const renderProducts = () => {
       console.log(productosVendedor)
@@ -55,7 +55,7 @@ const PublicacionesVendedor = (userName) => {
 
     useEffect(() => {
       renderProducts();
-    }, [productosVendedor]);
+    }, []);
 
 
     return (

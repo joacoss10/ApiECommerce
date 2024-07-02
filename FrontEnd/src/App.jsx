@@ -43,7 +43,7 @@ function App() {
         const response = await fetch("http://localhost:8080/product/get/all");
         const data = await response.json();
         setProdctos(data);
-        console.log(products);
+        
       } catch (error) {
         console.error('Error fetching productos:', error);
       }
