@@ -4,6 +4,7 @@ import { Menu as MuiMenu, MenuItem } from '@mui/material';
 import "../styles/nav.css";
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../services/AuthContext';
 import Menu from '../components/Menu';
@@ -88,6 +89,9 @@ function Nav() {
     const handleCartClick = () => {
         navigate("/cart"); // Alternar la visibilidad del carrito al hacer clic en el ícono del carrito
     };
+    const handleOrdersClick = () => {
+        navigate("/cart")                   //CAMBIAR
+    }
     return (
         <>
             <div className='div-nav'>
@@ -117,12 +121,13 @@ function Nav() {
                                         PaperProps={{
                                             style: {
                                                 width: '200px', // Ancho fijo del menú
-                                                height: '62px', // Altura máxima del menú si es necesario
+                                                height: '100px', // Altura máxima del menú si es necesario
                                                 padding: '4px',
                                             },
                                         }}
                                     >
 
+                                        <MenuItem onClick={handleOrdersClick}><ShoppingBagOutlinedIcon fontSize='small' style={{ marginRight: '7px' }} /> Mis pedidos</MenuItem>
                                         <MenuItem onClick={handleClickLogout}><LogoutOutlinedIcon fontSize='small' style={{ marginRight: '7px' }} /> Cerrar sesión</MenuItem>
                                     </MuiMenu>
                                 </div>

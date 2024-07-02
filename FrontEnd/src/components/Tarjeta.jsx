@@ -1,11 +1,12 @@
 // Tarjeta.js
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import "../styles/Tarjeta.css"
 import { useDispatch, useSelector } from "react-redux";
 import { jwtDecode } from "jwt-decode";
 import { clearCart } from "../redux/cartActions";
-import { useLocation } from 'react-router-dom';
+
+
 
 const Tarjeta = () => {
     const [numeroTarjeta, setNumeroTarjeta] = useState('');
@@ -14,15 +15,15 @@ const Tarjeta = () => {
     const [cvv, setCvv] = useState('');
     const navigate = useNavigate();
 
-    const [cuponAplicado, setCuponAplicado] = useState(0);
-    const location = useLocation();
-    const cupon = new URLSearchParams(location.search).get('cupon');
-    console.log("cuponfinal ", cupon);
-
 
     const cartItems = useSelector(state => state.cart.cartItems);
     const token = useSelector(state => state.client.token);
+    const total = useSelector(state => state.cart.total);
     const dispatch = useDispatch();
+
+    
+
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -48,24 +49,18 @@ const Tarjeta = () => {
                 id: item.id,
                 cant: item.cantidad
             }));
-            fetchCupon();
-            let total = cartItems.reduce((total, item) => total + (item.precio * item.cantidad), 0);
-
-            total = total - total *(cuponAplicado/100);
             
-            if (total <= 100000){
-                total = total + 5000;
-            }
-
-            console.log(total);
+            
 
             
+
+            console.log(total)
             
             const raw = JSON.stringify({
                 "username_comprador": username,
                 "productList": productList,
                 "pago": {
-                  "medioDePago": "Tarjeta de debito",
+                  "medioDePago": "Tarjeta bancaria",
                   "monto": total,
                   "currency": "ARS",
                   "fechaPago": fechaPago,
@@ -91,6 +86,7 @@ const Tarjeta = () => {
             });
             dispatch(clearCart());
             navigate('/checkout/success');
+            
         }
     };
     const soloLetrasRegex = /^[a-zA-Z\s]*$/;
@@ -105,23 +101,6 @@ const Tarjeta = () => {
     };
 
 
-
-
-    //FETCH CUPON
-    const fetchCupon = async () => {
-        try {
-          const response = await fetch(`http://localhost:8080/cupon/check?cupon=${cupon}`);
-          if (!response.ok) {
-            throw new Error('Error al obtener los datos del servidor');
-          }
-          const data = await response.json();
-          setCuponAplicado(data); // Almacenar la respuesta en el estado
-          console.log(data)
-        } catch (error) {
-          console.error('Error al obtener los datos:', error);
-          // Manejo de errores, por ejemplo mostrar un mensaje al usuario
-        }
-    };
 
 
 

@@ -4,20 +4,31 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
     padding-bottom: 0em;
 }
 
+.barra-busqueda {
+    display: flex;
+    align-items: center;
+    margin-top: 16em;
+}
+
 #input {
-    margin-top: 20em;
     box-shadow: 0.5em 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.05);
     border-radius: 1.5em;
     background-color: #ffffff;
-
-    display: flex;
-    flex-direction: column;
     width: 30em;
     padding: 0.5em 2.3em;
+    margin-right: 1em; /* Espacio entre el input y el botón /
+}
+
+#boton {
+    background-color: beige;
+    border-color: #2c2c2c;
+    color: black;
+    padding: 0.5em 2.3em;
+    border-radius: 1.5em;
+    cursor: pointer; / Cambia el cursor cuando esté sobre el botón */
 }
 
 .buscar-productos {
@@ -32,8 +43,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 34px;
-    /* Espacio entre las tarjetas */
     max-width: 1400px;
-    /* Ancho máximo para el contenedor de tarjetas */
     justify-content: center;
 }

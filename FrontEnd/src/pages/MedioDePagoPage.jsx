@@ -2,16 +2,19 @@ import React from 'react';
 import MediosDePago from '../components/MediosDePago';
 import Nav from '../components/Nav';
 import { useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function MediosDePagoPage() {
-    const location = useLocation();
-    const cupon = new URLSearchParams(location.search).get('cupon');
-    console.log('mediodepagopage',cupon);
+    
+
+
+    const totalRedux = useSelector(state => state.cart.total);
+    console.log('t red', totalRedux);
     //window.alert(cupon);
     return (
         <div>
             <Nav />
-            <MediosDePago cupon = {cupon}/>
+            <MediosDePago/>
         </div>
     );
 }

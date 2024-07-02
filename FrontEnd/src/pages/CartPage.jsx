@@ -11,10 +11,12 @@ import CarritoVacio from '../components/CarritoVacio'
 import { useAuth } from '../services/AuthContext';
 import { addToCart, removeFromCart, clearCart, updateQuantity } from '../redux/cartActions';
 import { useDispatch, useSelector } from 'react-redux';
+import { updateTotal } from '../redux/cartActions';
 
 
 function CartPage() {
     const cartItems = useSelector(state => state.cart.cartItems);
+    const totalRedux = useSelector(state => state.cart.total);
     const dispatch = useDispatch();
     //const { removeFromCart, getCantidadItems, getTotal, cartItems, clearCart, setCartItems } = useCart();
     const [envio, setEnvio] = useState('Gratis');
@@ -108,8 +110,8 @@ function CartPage() {
     const handleCheckOutClick = () => {
         //clearCart();
         if (isLoggedIn) {
-            setCupon('hola che');
-            navigate(`/medioDePago?cupon=${cupon}`);
+            
+            navigate(`/medioDePago`);
             //cambiar el "!" de este if, porque se necesita q el usuario este logeado para q cree la compra
             //navigate('/checkOut/success');
         }
@@ -117,6 +119,15 @@ function CartPage() {
             window.alert('Para finalizar la compra debe iniciar sesion');
         }
     }
+
+    useEffect(() => {
+        const total = getTotal()-getTotal()*(cuponAplicado/100) + envio;
+        
+        dispatch(updateTotal(total));
+
+        console.log('total redux',total);
+    }, [getTotal(),cuponAplicado,envio,cartItems]);
+    
 
 
     return (

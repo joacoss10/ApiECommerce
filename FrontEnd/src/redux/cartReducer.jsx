@@ -1,7 +1,8 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, UPDATE_QUANTITY, CLEAR_CART } from '../redux/actionTypes';
+import { ADD_TO_CART, REMOVE_FROM_CART, UPDATE_QUANTITY, CLEAR_CART, UPDATE_TOTAL } from '../redux/actionTypes';
 
 const initialState = {
-  cartItems: []
+  cartItems: [],
+  total: 0
 };
 
 const cartReducer = (state = initialState, action) => {
@@ -40,6 +41,11 @@ const cartReducer = (state = initialState, action) => {
         ...state,
         cartItems: [] // Limpiar el arreglo de elementos del carrito
       };
+    case UPDATE_TOTAL:
+      return {
+        ...state,
+        total: action.payload // Actualiza el total desde la acción
+      };  
       
     default:
       return state;

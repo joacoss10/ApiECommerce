@@ -24,7 +24,7 @@ function Buscar() {
 
     const fetchBusqueda = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/product/search?nombre=${botonPalabra}`,{
+        const response = await fetch(`http://localhost:8080/product/search?param=${botonPalabra}`,{
           method: 'GET',
           headers: {
           'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ function Buscar() {
     <div className='Contenedor'>
       <div className='barra-busqueda'>
         <input id='input' type='text' value={palabra} onChange={handlePalabra} />
-        <Button id='boton' onClick={handleBoton}>Buscar</Button>
+        <Button id='boton' onClick={handleBoton} style={{ color: 'black', textTransform: 'none' }}>Buscar</Button>
       </div>
       <div className='buscar-productos'>
         <div className='buscar-cards'>

@@ -4,3 +4,5 @@ export const UPDATE_QUANTITY = 'UPDATE_QUANTITY';
 export const CLEAR_CART = 'CLEAR_CART';
 
 export const SET_TOKEN = 'SET_TOKEN';
+
+export const UPDATE_TOTAL = 'UPDATE_TOTAL'; 
