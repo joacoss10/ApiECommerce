@@ -9,7 +9,7 @@ function MediosDePagoPage() {
 
 
     const totalRedux = useSelector(state => state.cart.total);
-    console.log('t red', totalRedux);
+    //console.log('t red', totalRedux);
     //window.alert(cupon);
     return (
         <div>

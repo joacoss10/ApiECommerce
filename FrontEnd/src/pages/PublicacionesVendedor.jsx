@@ -37,7 +37,7 @@ const PublicacionesVendedor = (userName) => {
               //console.log(data);
               setProductosVendedor(data);
             } catch (error) {
-              console.log("Hubo un error");
+              //console.log("Hubo un error");
             }
           };
           fetchBusqueda();
@@ -45,7 +45,7 @@ const PublicacionesVendedor = (userName) => {
     },[])
 
     const renderProducts = () => {
-      console.log(productosVendedor)
+      //console.log(productosVendedor)
       if(productosVendedor != []){
         return productosVendedor.map(producto => (
           <ProductCard key={producto.id} product={producto} />

@@ -16,7 +16,7 @@ const Menu = () => {
         if (token != null) {
         setIsLoggedIn(true);
         } else {
-        console.log('Token is null or undefined');
+        //console.log('Token is null or undefined');
         setIsLoggedIn(false);
         }
     }, [token]);

@@ -39,12 +39,12 @@ function ProdsPage() {
         const response = await fetch(`http://localhost:8080/product/get/pages?categoria=&min=${minPrice}&max=${maxPrice}`);
         if(response.ok){
           const data = await response.json();
-          console.log('pagesTOTALES',data);
+          //console.log('pagesTOTALES',data);
           setPages(data);
         }
       }
       catch(error){
-        console.log('Error fetching products:', error);
+        //console.log('Error fetching products:', error);
       }
     }
 
@@ -69,8 +69,8 @@ function ProdsPage() {
 
   const applyFilters = () => {
     setCurrentPage(1);
-    console.log('min',minPrice);
-    console.log('max',maxPrice);
+    //console.log('min',minPrice);
+    //console.log('max',maxPrice);
     setMinPrice(minPriceInput);
     setMaxPrice(maxPriceInput);
 

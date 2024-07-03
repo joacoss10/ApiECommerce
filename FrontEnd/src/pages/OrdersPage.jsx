@@ -35,7 +35,7 @@ function OrdersPage() {
             }));
 
             setOrders(adjustedData);
-            console.log('data', data);
+            //console.log('data', data);
             
             
           } catch (error) {
@@ -47,7 +47,7 @@ function OrdersPage() {
     }, [token,username]);
 
     useEffect(() => {
-        console.log('orders', orders);
+        //console.log('orders', orders);
     }, [orders]);
 
 

@@ -27,7 +27,7 @@ function HomePage() {
         const response = await fetch('http://localhost:8080/product/get?categoria=&page=1'); // Cambia esta URL por la URL de tu API
         const data = await response.json();
         setProds(data);
-        console.log('productos', prods);
+        //console.log('productos', prods);
       } catch (error) {
         console.error("Error fetching products:", error);
       }

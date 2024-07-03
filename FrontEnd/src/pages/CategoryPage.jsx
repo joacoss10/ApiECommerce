@@ -17,8 +17,8 @@ function CategoryPage({ categoria }) {
       if (response.ok){
         const data = await response.json();
         setProducts(data);
-        console.log('data',data);
-        console.log('uri',`http://localhost:8080/product/get?categoria=${categoria}&page=${paginaActual}&min=&max=` )
+        //console.log('data',data);
+        //console.log('uri',`http://localhost:8080/product/get?categoria=${categoria}&page=${paginaActual}&min=&max=` )
       }else{
         setProducts([]);
       }
@@ -35,12 +35,12 @@ function CategoryPage({ categoria }) {
       const response = await fetch(`http://localhost:8080/product/get/pages?categoria=${categoria}&min=&max=`);
       if(response.ok){
         const data = await response.json();
-        console.log('pagesTOTALES',data);
+        //console.log('pagesTOTALES',data);
         setPages(data);
       }
     }
     catch(error){
-      console.log('Error fetching products:', error);
+      //console.log('Error fetching products:', error);
     }
   }
 

@@ -35,10 +35,10 @@ function Buscar() {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log(data);
+        //console.log(data);
         setListaProductos(data);
       } catch (error) {
-        console.log("Hubo un error");
+        //console.log("Hubo un error");
       }
     };
     fetchBusqueda();

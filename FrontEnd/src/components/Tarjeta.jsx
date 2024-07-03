@@ -54,7 +54,7 @@ const Tarjeta = () => {
 
             
 
-            console.log(total)
+            //console.log(total)
             
             const raw = JSON.stringify({
                 "username_comprador": username,
@@ -79,7 +79,7 @@ const Tarjeta = () => {
               })
               .then(response => response.json())
               .then(data => {
-                console.log('Success:', data);
+                //console.log('Success:', data);
               })
               .catch((error) => {
                 console.error('Error:', error);

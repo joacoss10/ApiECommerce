@@ -12,7 +12,7 @@ const EditarVender = () => {
   const token = useSelector(state=>state.client.token);
   const [stock, setStock] = useState(0);
 
-  console.log('id? ',productData)
+  //console.log('id? ',productData)
  /*
   const [formData, setFormData] = useState({
     titulo: productData.nombre,
@@ -62,7 +62,7 @@ const EditarVender = () => {
 
         const data = await response.json(); // Convertir la respuesta a texto
 
-        console.log(data); // Aquí deberías recibir el string de respuesta del backend
+        //console.log(data); // Aquí deberías recibir el string de respuesta del backend
 
         window.alert("Producto editado exitosamente");
 
@@ -76,7 +76,7 @@ const EditarVender = () => {
   }
   const handleStockChange = (e) => {
     setStock(e.target.value);
-    console.log('stock ',stock);
+    //console.log('stock ',stock);
   }
   return (
     <main className="Contenedor-vender">

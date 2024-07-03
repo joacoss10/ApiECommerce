@@ -39,7 +39,7 @@ function CartPage() {
         return cartItems.reduce((total, item) => total + (item.precio * item.cantidad), 0);
     }
     const eliminarProducto = (id)=>{
-        console.log(id)
+        //console.log(id)
         dispatch(removeFromCart(id))
     }
 
@@ -48,21 +48,21 @@ function CartPage() {
     }
 
     const aumentarCantidad = (id, cant, stockDisponible)=>{
-        console.log(cant);
+        //console.log(cant);
         if (cant <= 6 && cant <= stockDisponible-1){
             dispatch(updateQuantity(id,cant+1));
         }
         
-        console.log('aumentar',cartItems);
+        //console.log('aumentar',cartItems);
     }
 
     const disminuirCantidad = (id,cant)=>{
-        console.log(cant - 1);
+        //console.log(cant - 1);
         if(cant >= 2){
             dispatch(updateQuantity(id,cant-1));
         }
         
-        console.log('disminuir',cartItems);
+        //console.log('disminuir',cartItems);
     }
     
 
@@ -94,7 +94,7 @@ function CartPage() {
           }
           const data = await response.json();
           setCuponAplicado(data); // Almacenar la respuesta en el estado
-          console.log(data)
+          //console.log(data)
         } catch (error) {
           console.error('Error al obtener los datos:', error);
           // Manejo de errores, por ejemplo mostrar un mensaje al usuario
@@ -125,7 +125,7 @@ function CartPage() {
         
         dispatch(updateTotal(total));
 
-        console.log('total redux',total);
+        //console.log('total redux',total);
     }, [getTotal(),cuponAplicado,envio,cartItems]);
     
 

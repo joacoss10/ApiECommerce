@@ -56,7 +56,7 @@ const Vender = () => {
     
             const data = await response.text(); // Convertir la respuesta a texto
 
-            console.log(data); // Aquí deberías recibir el string de respuesta del backend
+            //console.log(data); // Aquí deberías recibir el string de respuesta del backend
 
             window.alert("Producto creado exitosamente");
             navigate('/')

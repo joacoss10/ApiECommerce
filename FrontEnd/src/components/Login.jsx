@@ -17,7 +17,7 @@ function Login() {
   const token = useSelector(state => state.client.token);
 
   //dispatch(setToken('testing'));
-  console.log(token)
+  //console.log(token)
   
 
 
@@ -36,8 +36,8 @@ function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(username)
-    console.log(password)
+    //console.log(username)
+    //console.log(password)
     try {
       const response = await fetch('http://127.0.0.1:8080/user/login', {
         method: 'POST',
@@ -48,11 +48,11 @@ function Login() {
       });
   
   
-      console.log
+      //console.log
   
       if (response.ok) {
         const data = await response.json();
-        console.log(data.access_token);
+        //console.log(data.access_token);
         
         dispatch(setToken(data.access_token));
 
